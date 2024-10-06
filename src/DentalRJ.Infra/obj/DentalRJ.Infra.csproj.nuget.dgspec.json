@@ -4,14 +4,14 @@
     "/Users/sergio/DentalRJ/src/DentalRJ.Infra/DentalRJ.Infra.csproj": {}
   },
   "projects": {
-    "/Users/sergio/DentalRJ/src/DentalRJ.Infra/DentalRJ.Infra.csproj": {
+    "/Users/sergio/DentalRJ/src/DentalRJ.Domain/DentalRJ.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/sergio/DentalRJ/src/DentalRJ.Infra/DentalRJ.Infra.csproj",
-        "projectName": "DentalRJ.Infra",
-        "projectPath": "/Users/sergio/DentalRJ/src/DentalRJ.Infra/DentalRJ.Infra.csproj",
+        "projectUniqueName": "/Users/sergio/DentalRJ/src/DentalRJ.Domain/DentalRJ.Domain.csproj",
+        "projectName": "DentalRJ.Domain",
+        "projectPath": "/Users/sergio/DentalRJ/src/DentalRJ.Domain/DentalRJ.Domain.csproj",
         "packagesPath": "/Users/sergio/.nuget/packages/",
-        "outputPath": "/Users/sergio/DentalRJ/src/DentalRJ.Infra/obj/",
+        "outputPath": "/Users/sergio/DentalRJ/src/DentalRJ.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/sergio/.nuget/NuGet/NuGet.Config"
@@ -43,6 +43,165 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.402/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/sergio/DentalRJ/src/DentalRJ.Infra/DentalRJ.Infra.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/sergio/DentalRJ/src/DentalRJ.Infra/DentalRJ.Infra.csproj",
+        "projectName": "DentalRJ.Infra",
+        "projectPath": "/Users/sergio/DentalRJ/src/DentalRJ.Infra/DentalRJ.Infra.csproj",
+        "packagesPath": "/Users/sergio/.nuget/packages/",
+        "outputPath": "/Users/sergio/DentalRJ/src/DentalRJ.Infra/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/sergio/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/sergio/DentalRJ/src/DentalRJ.Domain/DentalRJ.Domain.csproj": {
+                "projectPath": "/Users/sergio/DentalRJ/src/DentalRJ.Domain/DentalRJ.Domain.csproj"
+              },
+              "/Users/sergio/DentalRJ/src/DentalRJ.Services/DentalRJ.Services.csproj": {
+                "projectPath": "/Users/sergio/DentalRJ/src/DentalRJ.Services/DentalRJ.Services.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.402/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/sergio/DentalRJ/src/DentalRJ.Services/DentalRJ.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/sergio/DentalRJ/src/DentalRJ.Services/DentalRJ.Services.csproj",
+        "projectName": "DentalRJ.Services",
+        "projectPath": "/Users/sergio/DentalRJ/src/DentalRJ.Services/DentalRJ.Services.csproj",
+        "packagesPath": "/Users/sergio/.nuget/packages/",
+        "outputPath": "/Users/sergio/DentalRJ/src/DentalRJ.Services/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/sergio/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/sergio/DentalRJ/src/DentalRJ.Domain/DentalRJ.Domain.csproj": {
+                "projectPath": "/Users/sergio/DentalRJ/src/DentalRJ.Domain/DentalRJ.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

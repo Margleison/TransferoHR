@@ -3,14 +3,13 @@ using DentalRJ.Domain.Entities;
 using DentalRJ.Domain.Enums;
 using DentalRJ.Services.Model;
 using DentalRJ.Services.Exceptions;
-using DentalRJ.Services.Interfaces.Base;
 using DentalRJ.Services.Params;
+using DentalRJ.Services.Interfaces;
 
 namespace DentalRJ.Services.Implementation;
 
 public class ConsultorioService: NamedBaseService<ConsultingRoom, ConsultingRoomParams>
 {
-    
     private readonly INamedBaseEntityRepository<Clinic, ClinicParams> _clinicRepository;
     
     public ConsultorioService(IMapper mapper, INamedBaseEntityRepository<ConsultingRoom, ConsultingRoomParams> repo, INamedBaseEntityRepository<Clinic, ClinicParams> clinicRepo)

@@ -1,6 +1,6 @@
 using AutoMapper;
 using DentalRJ.Domain.Entities;
-using DentalRJ.Services.Interfaces.Base;
+using DentalRJ.Services.Interfaces;
 using DentalRJ.Services.Params;
 
 namespace DentalRJ.Services.Implementation;

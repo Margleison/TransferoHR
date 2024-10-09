@@ -3,10 +3,11 @@ using DentalRJ.Domain.Entities;
 using DentalRJ.Domain.Enums;
 using DentalRJ.Infra.Database;
 using DentalRJ.Infra.Repositories.Base;
+using DentalRJ.Services.Params;
 
 namespace DentalRJ.Infra.Repositories;
 
-public class ConsultingRoomRepository : NamedBaseEntityRepository<ConsultingRoom>
+public class ConsultingRoomRepository : NamedBaseEntityRepository<ConsultingRoom, ConsultingRoomParams>
 {
     public ConsultingRoomRepository(ApplicationDbContext db) : base(db)
     {

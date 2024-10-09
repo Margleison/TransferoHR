@@ -1,26 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "/Users/sergio/DentalRJ/src/DentalRJ.WebApi/DentalRJ.WebApi.csproj": {}
+    "C:\\Users\\sergi\\source\\repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.WebApi\\DentalRJ.WebApi.csproj": {}
   },
   "projects": {
-    "/Users/sergio/DentalRJ/src/DentalRJ.Domain/DentalRJ.Domain.csproj": {
+    "C:\\Users\\sergi\\source\\repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.Domain\\DentalRJ.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/sergio/DentalRJ/src/DentalRJ.Domain/DentalRJ.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\sergi\\source\\repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.Domain\\DentalRJ.Domain.csproj",
         "projectName": "DentalRJ.Domain",
-        "projectPath": "/Users/sergio/DentalRJ/src/DentalRJ.Domain/DentalRJ.Domain.csproj",
-        "packagesPath": "/Users/sergio/.nuget/packages/",
-        "outputPath": "/Users/sergio/DentalRJ/src/DentalRJ.Domain/obj/",
+        "projectPath": "C:\\Users\\sergi\\source\\repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.Domain\\DentalRJ.Domain.csproj",
+        "packagesPath": "C:\\Users\\sergi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sergi\\source\\repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/sergio/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\sergi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -59,38 +61,40 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.402/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/sergio/DentalRJ/src/DentalRJ.Infra/DentalRJ.Infra.csproj": {
+    "C:\\Users\\sergi\\source\\repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.Infra\\DentalRJ.Infra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/sergio/DentalRJ/src/DentalRJ.Infra/DentalRJ.Infra.csproj",
+        "projectUniqueName": "C:\\Users\\sergi\\source\\repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.Infra\\DentalRJ.Infra.csproj",
         "projectName": "DentalRJ.Infra",
-        "projectPath": "/Users/sergio/DentalRJ/src/DentalRJ.Infra/DentalRJ.Infra.csproj",
-        "packagesPath": "/Users/sergio/.nuget/packages/",
-        "outputPath": "/Users/sergio/DentalRJ/src/DentalRJ.Infra/obj/",
+        "projectPath": "C:\\Users\\sergi\\source\\repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.Infra\\DentalRJ.Infra.csproj",
+        "packagesPath": "C:\\Users\\sergi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sergi\\source\\repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.Infra\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/sergio/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\sergi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/sergio/DentalRJ/src/DentalRJ.Domain/DentalRJ.Domain.csproj": {
-                "projectPath": "/Users/sergio/DentalRJ/src/DentalRJ.Domain/DentalRJ.Domain.csproj"
+              "C:\\Users\\sergi\\source\\repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.Domain\\DentalRJ.Domain.csproj": {
+                "projectPath": "C:\\Users\\sergi\\source\\repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.Domain\\DentalRJ.Domain.csproj"
               },
-              "/Users/sergio/DentalRJ/src/DentalRJ.Services/DentalRJ.Services.csproj": {
-                "projectPath": "/Users/sergio/DentalRJ/src/DentalRJ.Services/DentalRJ.Services.csproj"
+              "C:\\Users\\sergi\\source\\repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.Services\\DentalRJ.Services.csproj": {
+                "projectPath": "C:\\Users\\sergi\\source\\repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.Services\\DentalRJ.Services.csproj"
               }
             }
           }
@@ -114,15 +118,25 @@
               "target": "Package",
               "version": "[12.0.1, )"
             },
+            "LinqKit": {
+              "target": "Package",
+              "version": "[1.3.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.8, )"
+              "version": "[8.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.8, )"
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.10, )"
             },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
@@ -145,35 +159,37 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.402/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/sergio/DentalRJ/src/DentalRJ.Services/DentalRJ.Services.csproj": {
+    "C:\\Users\\sergi\\source\\repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.Services\\DentalRJ.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/sergio/DentalRJ/src/DentalRJ.Services/DentalRJ.Services.csproj",
+        "projectUniqueName": "C:\\Users\\sergi\\source\\repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.Services\\DentalRJ.Services.csproj",
         "projectName": "DentalRJ.Services",
-        "projectPath": "/Users/sergio/DentalRJ/src/DentalRJ.Services/DentalRJ.Services.csproj",
-        "packagesPath": "/Users/sergio/.nuget/packages/",
-        "outputPath": "/Users/sergio/DentalRJ/src/DentalRJ.Services/obj/",
+        "projectPath": "C:\\Users\\sergi\\source\\repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.Services\\DentalRJ.Services.csproj",
+        "packagesPath": "C:\\Users\\sergi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sergi\\source\\repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.Services\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/sergio/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\sergi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/sergio/DentalRJ/src/DentalRJ.Domain/DentalRJ.Domain.csproj": {
-                "projectPath": "/Users/sergio/DentalRJ/src/DentalRJ.Domain/DentalRJ.Domain.csproj"
+              "C:\\Users\\sergi\\source\\repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.Domain\\DentalRJ.Domain.csproj": {
+                "projectPath": "C:\\Users\\sergi\\source\\repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.Domain\\DentalRJ.Domain.csproj"
               }
             }
           }
@@ -218,35 +234,37 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.402/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/sergio/DentalRJ/src/DentalRJ.WebApi/DentalRJ.WebApi.csproj": {
+    "C:\\Users\\sergi\\source\\repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.WebApi\\DentalRJ.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/sergio/DentalRJ/src/DentalRJ.WebApi/DentalRJ.WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\sergi\\source\\repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.WebApi\\DentalRJ.WebApi.csproj",
         "projectName": "DentalRJ.WebApi",
-        "projectPath": "/Users/sergio/DentalRJ/src/DentalRJ.WebApi/DentalRJ.WebApi.csproj",
-        "packagesPath": "/Users/sergio/.nuget/packages/",
-        "outputPath": "/Users/sergio/DentalRJ/src/DentalRJ.WebApi/obj/",
+        "projectPath": "C:\\Users\\sergi\\source\\repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.WebApi\\DentalRJ.WebApi.csproj",
+        "packagesPath": "C:\\Users\\sergi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sergi\\source\\repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/sergio/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\sergi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/sergio/DentalRJ/src/DentalRJ.Infra/DentalRJ.Infra.csproj": {
-                "projectPath": "/Users/sergio/DentalRJ/src/DentalRJ.Infra/DentalRJ.Infra.csproj"
+              "C:\\Users\\sergi\\source\\repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.Infra\\DentalRJ.Infra.csproj": {
+                "projectPath": "C:\\Users\\sergi\\source\\repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.Infra\\DentalRJ.Infra.csproj"
               }
             }
           }
@@ -268,13 +286,19 @@
           "dependencies": {
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
-              "version": "[8.0.8, )"
+              "version": "[8.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.8, )"
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.10, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -300,7 +324,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.402/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

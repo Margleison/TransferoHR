@@ -1,14 +1,15 @@
 using AutoMapper;
 using DentalRJ.Domain.Entities.Base;
 using DentalRJ.Domain.Enums;
-using DentalRJ.Services.Interfaces.Base;
 using DentalRJ.Services.Exceptions;
 using DentalRJ.Services.Model.Base;
 using DentalRJ.Services.Params;
+using DentalRJ.Services.Interfaces;
 
 namespace DentalRJ.Services.Implementation
 {
-    public class NamedBaseService<T, TNamedParams> where T : NamedBaseEntity where TNamedParams : NamedParams
+    public class NamedBaseService<T, TNamedParams> 
+        where T : NamedBaseEntity where TNamedParams : NamedParams
     {
         private readonly string _entityName;
         protected readonly INamedBaseEntityRepository<T, TNamedParams> _repo; 
@@ -31,8 +32,8 @@ namespace DentalRJ.Services.Implementation
         }
         public async Task<NamedGetModel> GetById(Guid id)
         {
-            var entity = await Get(id); // Chama o método Get para obter a entidade
-            return _mapper.Map<NamedGetModel>(entity); // Mapeia a entidade para NamedGetModel
+            var entity = await Get(id); 
+            return _mapper.Map<NamedGetModel>(entity);
         }
         public async Task<T> GetByName(string name) 
             => await _repo.GetByName(name, null);

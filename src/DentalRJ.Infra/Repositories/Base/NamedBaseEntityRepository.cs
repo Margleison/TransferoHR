@@ -1,14 +1,16 @@
 ﻿using System.Linq.Expressions;
-using DentalRJ.Domain.Entities;
 using DentalRJ.Domain.Entities.Base;
 using DentalRJ.Domain.Enums;
 using DentalRJ.Infra.Database;
-using DentalRJ.Services.Interfaces.Base;
+using DentalRJ.Services.Interfaces;
 using DentalRJ.Services.Params;
+using LinqKit;
 
 namespace DentalRJ.Infra.Repositories.Base;
 
-public class NamedBaseEntityRepository<TEntity> : BaseEntityRepository<TEntity, GenericParams>, INamedBaseEntityRepository<TEntity, NamedParams> where TEntity : NamedBaseEntity
+public class NamedBaseEntityRepository<TEntity, TNamedParams> : BaseEntityRepository<TEntity, GenericParams>, INamedBaseEntityRepository<TEntity, TNamedParams> 
+    where TEntity : NamedBaseEntity
+    where TNamedParams : NamedParams
 {
     public NamedBaseEntityRepository(ApplicationDbContext db) : base(db)
     {
@@ -30,9 +32,23 @@ public class NamedBaseEntityRepository<TEntity> : BaseEntityRepository<TEntity, 
         return await FirstAsync(filter);
     }
 
-    public Task<IEnumerable<TEntity>> GetAllAsync(NamedParams param)
+    public async  Task<IEnumerable<TEntity>> GetAllAsync(TNamedParams param)
     {
-        throw new NotImplementedException();
-    }
-}
+        var predicate = PredicateBuilder.New<TEntity>(true);
 
+        if (!string.IsNullOrEmpty(param.Name))
+            predicate = predicate.And(x => x.Name.Contains(param.Name));
+
+        if (!string.IsNullOrEmpty(param.Status))
+        {
+            Enum.TryParse(param.Status, out EntityStatusEnum status);
+            predicate = predicate.And(x => x.Status == status);
+        }
+            
+        else
+            predicate = predicate.And(x => x.Status != EntityStatusEnum.Inactive);
+
+        return await ListAsync(predicate);
+    }
+
+}

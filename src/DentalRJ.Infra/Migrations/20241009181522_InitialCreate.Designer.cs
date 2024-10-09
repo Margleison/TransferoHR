@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DentalRJ.Infra.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241006141431_InitialCreate")]
+    [Migration("20241009181522_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -20,7 +20,7 @@ namespace DentalRJ.Infra.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.8")
+                .HasAnnotation("ProductVersion", "8.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
@@ -95,7 +95,7 @@ namespace DentalRJ.Infra.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("SomeEntities");
+                    b.ToTable("Company");
                 });
 
             modelBuilder.Entity("DentalRJ.Domain.Entities.Clinic", b =>

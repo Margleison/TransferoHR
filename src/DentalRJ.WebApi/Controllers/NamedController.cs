@@ -1,21 +1,23 @@
 using AutoMapper;
 using DentalRJ.Domain.Entities.Base;
-using DentalRJ.Services.Implementation; // Para o serviço
+using DentalRJ.Services.Implementation;
 using Microsoft.AspNetCore.Mvc;
+using DentalRJ.Services.Params;
 
 namespace DentalRJ.WebApi.Controllers
 {
   [ApiController]
   [Route("api/[controller]")]
-  public class GenericController<T, TCreateModel, TUpdateModel, TGenericParams> : ControllerBase
+  public class NamedController<T, TCreateModel, TUpdateModel, TNamedParams> : ControllerBase
       where T : NamedBaseEntity
       where TCreateModel : class
       where TUpdateModel : class
-  {
-    private readonly NamedBaseService<T> _service;
+      where TNamedParams : NamedParams
+    {
+    private readonly NamedBaseService<T, TNamedParams> _service;
     private readonly IMapper _mapper;
 
-    public GenericController(NamedBaseService<T> service, IMapper mapper)
+    public NamedController(NamedBaseService<T, TNamedParams> service, IMapper mapper)
     {
       _service = service;
       _mapper = mapper;
@@ -23,9 +25,9 @@ namespace DentalRJ.WebApi.Controllers
 
     // GET: api/{controller}
     [HttpGet]
-    public async Task<IActionResult> GetAll([FromQuery] TGenericParams param)
+    public async Task<IActionResult> GetAll([FromQuery] TNamedParams NamedParams)
     {
-      var entities = await _service.GetAllAsync(); // Use o método da service
+      var entities = await _service.GetAllAsync(NamedParams);
       return Ok(entities);
     }
 
@@ -33,7 +35,7 @@ namespace DentalRJ.WebApi.Controllers
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(Guid id)
     {
-      var entity = await _service.GetById(id); // Use o método da service
+      var entity = await _service.GetById(id);
       if (entity == null)
         return NotFound();
 
@@ -47,7 +49,7 @@ namespace DentalRJ.WebApi.Controllers
       if (!ModelState.IsValid)
         return BadRequest(ModelState);
 
-      var entity = await _service.Insert(createModel, "system"); // Use a service para criar
+      var entity = await _service.Insert(createModel, "system");
       return CreatedAtAction(nameof(GetById), new { id = entity.Id }, entity);
     }
 
@@ -58,7 +60,7 @@ namespace DentalRJ.WebApi.Controllers
       if (!ModelState.IsValid)
         return BadRequest(ModelState);
 
-      await _service.Update(id, updateModel, "system"); // Use a service para atualizar
+      await _service.Update(id, updateModel, "system");
       return NoContent();
     }
 

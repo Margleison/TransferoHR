@@ -2,10 +2,11 @@
 using DentalRJ.Domain.Entities;
 using DentalRJ.Infra.Database;
 using DentalRJ.Infra.Repositories.Base;
+using DentalRJ.Services.Params;
 
 namespace DentalRJ.Infra.Repositories;
 
-public class DentistaRepository : NamedBaseEntityRepository<Dentist>
+public class DentistaRepository : NamedBaseEntityRepository<Dentist, DentistParams>
 {
     public DentistaRepository(ApplicationDbContext db) : base(db)
     {

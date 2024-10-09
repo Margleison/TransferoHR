@@ -15,7 +15,7 @@ namespace DentalRJ.Infra.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "SomeEntities",
+                name: "Company",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
@@ -31,7 +31,7 @@ namespace DentalRJ.Infra.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SomeEntities", x => x.Id);
+                    table.PrimaryKey("PK_Company", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -55,9 +55,9 @@ namespace DentalRJ.Infra.Migrations
                 {
                     table.PrimaryKey("PK_Clinic", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Clinic_SomeEntities_CompanyId",
+                        name: "FK_Clinic_Company_CompanyId",
                         column: x => x.CompanyId,
-                        principalTable: "SomeEntities",
+                        principalTable: "Company",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 })
@@ -76,7 +76,7 @@ namespace DentalRJ.Infra.Migrations
                 name: "Clinic");
 
             migrationBuilder.DropTable(
-                name: "SomeEntities");
+                name: "Company");
         }
     }
 }

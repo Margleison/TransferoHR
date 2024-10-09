@@ -1,19 +1,20 @@
 using AutoMapper;
-using DentalRJ.Domain.Entities;
 using DentalRJ.Domain.Entities.Base;
 using DentalRJ.Domain.Enums;
 using DentalRJ.Services.Interfaces.Base;
 using DentalRJ.Services.Exceptions;
+using DentalRJ.Services.Model.Base;
+using DentalRJ.Services.Params;
 
 namespace DentalRJ.Services.Implementation
 {
-    public class NamedBaseService<T> where T : NamedBaseEntity
+    public class NamedBaseService<T, TNamedParams> where T : NamedBaseEntity where TNamedParams : NamedParams
     {
         private readonly string _entityName;
-        protected readonly INamedBaseEntityRepository<T> _repo; 
+        protected readonly INamedBaseEntityRepository<T, TNamedParams> _repo; 
         protected readonly IMapper _mapper;
 
-        public NamedBaseService(IMapper mapper, INamedBaseEntityRepository<T> repo, string entityName)
+        public NamedBaseService(IMapper mapper, INamedBaseEntityRepository<T, TNamedParams> repo, string entityName)
         {
             _repo = repo;
             _mapper = mapper;
@@ -28,10 +29,13 @@ namespace DentalRJ.Services.Implementation
 
             return obj;
         }
-
+        public async Task<NamedGetModel> GetById(Guid id)
+        {
+            var entity = await Get(id); // Chama o método Get para obter a entidade
+            return _mapper.Map<NamedGetModel>(entity); // Mapeia a entidade para NamedGetModel
+        }
         public async Task<T> GetByName(string name) 
             => await _repo.GetByName(name, null);
-
         public virtual async Task<T> Insert<TCreateModel>(TCreateModel createModel, string CreatedBy) where TCreateModel : class
         {
             var nameProperty = typeof(TCreateModel).GetProperty("Name")?.GetValue(createModel, null)?.ToString();
@@ -46,21 +50,18 @@ namespace DentalRJ.Services.Implementation
 
             return newEntity;
         }
-
-        public async Task Update<TUpdateModel>(TUpdateModel updateModel, string AtualizadoPor) where TUpdateModel : class
+        public async Task Update<TUpdateModel>(Guid id, TUpdateModel updateModel, string AtualizadoPor) where TUpdateModel : class
         {
-            var idProperty = typeof(TUpdateModel).GetProperty("Id")?.GetValue(updateModel);
-            var obj = await Get((Guid)idProperty);
+            var obj = await Get(id);
             
             var nameProperty = typeof(TUpdateModel).GetProperty("Name")?.GetValue(updateModel, null)?.ToString();
-            ServiceException.When(await _repo.GetByName(nameProperty, (Guid)idProperty) != null, $"{_entityName} name already exists. [Name={nameProperty}]");
+            ServiceException.When(await _repo.GetByName(nameProperty, id) != null, $"{_entityName} name already exists. [Name={nameProperty}]");
             
             _mapper.Map(updateModel, obj);
             obj.UpdatedAt = DateTime.Now;
             obj.UpdatedBy = AtualizadoPor;
             await _repo.UpdateAsync(obj);
         }
-
         public async Task Activate(Guid id, string AtualizadoPor)
         {
             var obj = await Get(id);
@@ -71,7 +72,6 @@ namespace DentalRJ.Services.Implementation
             obj.UpdatedBy = AtualizadoPor;
             await _repo.UpdateAsync(obj);
         }
-
         public async Task Deactivate(Guid id, string AtualizadoPor)
         {
             var obj = await Get(id);
@@ -82,7 +82,6 @@ namespace DentalRJ.Services.Implementation
             obj.UpdatedBy = AtualizadoPor;
             await _repo.UpdateAsync(obj);
         }
-
         public async Task Delete(Guid id, string AtualizadoPor)
         {
             var obj = await Get(id);
@@ -92,6 +91,11 @@ namespace DentalRJ.Services.Implementation
             obj.UpdatedAt = DateTime.Now;
             obj.UpdatedBy = AtualizadoPor;
             await _repo.UpdateAsync(obj);
+        }
+        public async Task<IEnumerable<NamedGetModel>> GetAllAsync(TNamedParams param)
+        {
+            var entities = await _repo.GetAllAsync(param); // Obtenha as entidades do repositório
+            return _mapper.Map<IEnumerable<NamedGetModel>>(entities); // Mapeia a lista de entidades para NamedGetModel
         }
     }
 }

@@ -4,15 +4,16 @@ using DentalRJ.Domain.Enums;
 using DentalRJ.Services.Model;
 using DentalRJ.Services.Exceptions;
 using DentalRJ.Services.Interfaces.Base;
+using DentalRJ.Services.Params;
 
 namespace DentalRJ.Services.Implementation;
 
-public class ConsultorioService: NamedBaseService<ConsultingRoom>
+public class ConsultorioService: NamedBaseService<ConsultingRoom, ConsultingRoomParams>
 {
     
-    private readonly INamedBaseEntityRepository<Clinic> _clinicRepository;
+    private readonly INamedBaseEntityRepository<Clinic, ClinicParams> _clinicRepository;
     
-    public ConsultorioService(IMapper mapper, INamedBaseEntityRepository<ConsultingRoom> repo, INamedBaseEntityRepository<Clinic> clinicRepo)
+    public ConsultorioService(IMapper mapper, INamedBaseEntityRepository<ConsultingRoom, ConsultingRoomParams> repo, INamedBaseEntityRepository<Clinic, ClinicParams> clinicRepo)
         : base(mapper, repo, "Consulting Room")
     {
         _clinicRepository = clinicRepo;

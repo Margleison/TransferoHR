@@ -1,8 +1,9 @@
 ﻿using DentalRJ.Domain.Entities.Base;
+using DentalRJ.Services.Params;
 
 namespace DentalRJ.Services.Interfaces.Base;
 
-public interface INamedBaseEntityRepository<TEntity>: IBaseEntityRepository<TEntity> where TEntity : NamedBaseEntity
+public interface INamedBaseEntityRepository<TEntity, TNamedParams>: IBaseEntityRepository<TEntity, TNamedParams> where TEntity : NamedBaseEntity where TNamedParams : NamedParams
 {
     Task<TEntity>? GetByName(string name,  Guid? excId);
     Task<TEntity>? GetByNameAndOwner(Guid ownerId, string name,  Guid? excId);

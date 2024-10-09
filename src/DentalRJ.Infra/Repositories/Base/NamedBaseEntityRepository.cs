@@ -4,10 +4,11 @@ using DentalRJ.Domain.Entities.Base;
 using DentalRJ.Domain.Enums;
 using DentalRJ.Infra.Database;
 using DentalRJ.Services.Interfaces.Base;
+using DentalRJ.Services.Params;
 
 namespace DentalRJ.Infra.Repositories.Base;
 
-public class NamedBaseEntityRepository<TEntity> : BaseEntityRepository<TEntity>, INamedBaseEntityRepository<TEntity> where TEntity : NamedBaseEntity 
+public class NamedBaseEntityRepository<TEntity> : BaseEntityRepository<TEntity, GenericParams>, INamedBaseEntityRepository<TEntity, NamedParams> where TEntity : NamedBaseEntity
 {
     public NamedBaseEntityRepository(ApplicationDbContext db) : base(db)
     {
@@ -27,6 +28,11 @@ public class NamedBaseEntityRepository<TEntity> : BaseEntityRepository<TEntity>,
             filter = x => x.Name == name && x.Status != EntityStatusEnum.Deleted && x.Id != excId;
         
         return await FirstAsync(filter);
+    }
+
+    public Task<IEnumerable<TEntity>> GetAllAsync(NamedParams param)
+    {
+        throw new NotImplementedException();
     }
 }
 

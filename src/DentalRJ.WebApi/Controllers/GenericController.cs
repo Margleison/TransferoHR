@@ -1,31 +1,31 @@
 using AutoMapper;
-using DentalRJ.Domain.Entities.Base; // Supondo que você tenha uma classe base
-using DentalRJ.Services.Interfaces.Base; // Para o repositório
+using DentalRJ.Domain.Entities.Base;
+using DentalRJ.Services.Implementation; // Para o serviço
 using Microsoft.AspNetCore.Mvc;
 
 namespace DentalRJ.WebApi.Controllers
 {
   [ApiController]
   [Route("api/[controller]")]
-  public class GenericController<T, TCreateModel, TUpdateModel> : ControllerBase
-      where T : NamedBaseEntity // Altere conforme necessário
-      where TCreateModel : class // Para o modelo de criação
-      where TUpdateModel : class // Para o modelo de atualização
+  public class GenericController<T, TCreateModel, TUpdateModel, TGenericParams> : ControllerBase
+      where T : NamedBaseEntity
+      where TCreateModel : class
+      where TUpdateModel : class
   {
-    private readonly INamedBaseEntityRepository<T> _repository;
+    private readonly NamedBaseService<T> _service;
     private readonly IMapper _mapper;
 
-    public GenericController(INamedBaseEntityRepository<T> repository, IMapper mapper)
+    public GenericController(NamedBaseService<T> service, IMapper mapper)
     {
-      _repository = repository;
+      _service = service;
       _mapper = mapper;
     }
 
     // GET: api/{controller}
     [HttpGet]
-    public async Task<IActionResult> GetAll()
+    public async Task<IActionResult> GetAll([FromQuery] TGenericParams param)
     {
-      var entities = await _repository.GetAllAsync();
+      var entities = await _service.GetAllAsync(); // Use o método da service
       return Ok(entities);
     }
 
@@ -33,7 +33,7 @@ namespace DentalRJ.WebApi.Controllers
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(Guid id)
     {
-      var entity = await _repository.GetAsync(id);
+      var entity = await _service.GetById(id); // Use o método da service
       if (entity == null)
         return NotFound();
 
@@ -47,8 +47,7 @@ namespace DentalRJ.WebApi.Controllers
       if (!ModelState.IsValid)
         return BadRequest(ModelState);
 
-      var entity = _mapper.Map<T>(createModel);
-      await _repository.AddAsync(entity);
+      var entity = await _service.Insert(createModel, "system"); // Use a service para criar
       return CreatedAtAction(nameof(GetById), new { id = entity.Id }, entity);
     }
 
@@ -59,29 +58,28 @@ namespace DentalRJ.WebApi.Controllers
       if (!ModelState.IsValid)
         return BadRequest(ModelState);
 
-      var entity = await _repository.GetAsync(id);
-      if (entity == null)
-        return NotFound();
-
-      _mapper.Map(updateModel, entity);
-      await _repository.UpdateAsync(entity);
+      await _service.Update(id, updateModel, "system"); // Use a service para atualizar
       return NoContent();
     }
 
-
-/*
     // DELETE: api/{controller}/{id}
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(Guid id)
     {
-      var entity = await _repository.GetAsync(id);
-      if (entity == null)
-        return NotFound();
-
-      await _repository.DeleteAsync(entity);
+        await _service.Delete(id, "system");
+        return NoContent();
+    }
+    [HttpPut("{id}/activate")]
+    public async Task<IActionResult> Activate(Guid id)
+    {
+      await _service.Activate(id, "system");
       return NoContent();
     }
-  }
-  */
+    [HttpPut("{id}/deactivate")]
+    public async Task<IActionResult> Deactivate(Guid id)
+    {
+      await _service.Deactivate(id, "system");
+      return NoContent();
+    }
   }
 }

@@ -7,7 +7,7 @@ using DentalRJ.Services.Interfaces;
 
 namespace DentalRJ.Services.Implementation;
 
-public class ClinicService: NamedBaseService<Clinic, ClinicParams>
+public class ClinicService: NamedBaseService<Clinic, ClinicParams, ClinicGetModel>
 {
     
     private readonly INamedBaseEntityRepository<Company, NamedParams> _companyRepository;
@@ -16,7 +16,7 @@ public class ClinicService: NamedBaseService<Clinic, ClinicParams>
     {
         _companyRepository = companyRepo;
     }
-    
+
     public override async Task<Clinic> Insert<TCreateModel>(TCreateModel createModel, string CreatedBy)
      {
         if (createModel is ClinicCreateModel clinicCreateModel)

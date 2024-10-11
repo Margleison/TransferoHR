@@ -10,10 +10,10 @@ namespace DentalRJ.WebApi.Controllers
 {
   [Route("api/[controller]")]
   [ApiController]
-  public class CompanyController : NamedController<Company, CompanyCreateModel, NamedUpdateModel, NamedParams>
+  public class CompanyController : NamedController<Company, CompanyCreateModel, NamedUpdateModel, NamedGetModel, NamedParams>
   {
     public CompanyController(CompanyService companyService, IMapper mapper)
-        : base(companyService, mapper) // Passando o serviço em vez do repositório
+        : base(companyService, mapper)
     {
     }
   }

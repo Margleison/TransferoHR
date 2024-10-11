@@ -14,16 +14,23 @@ namespace DentalRJ.Infra.Repositories.Base;
 public class BaseEntityRepository<TEntity, TParams> : IBaseEntityRepository<TEntity, TParams> where TEntity : BaseEntity where TParams: GenericParams
 {
     protected ApplicationDbContext Context;
+    public  Func<IQueryable<TEntity>, IQueryable<TEntity>>? _include = null;
 
     public BaseEntityRepository(ApplicationDbContext db)
     {
         Context = db;
+        _include = null;
     }
 
-    
+    public async Task<TEntity> GetAsync(Guid id)
+    {
+        IQueryable<TEntity> query = Context.Set<TEntity>();
 
-    public async Task<TEntity> GetAsync(Guid id) => 
-        await FirstAsync(x => x.Id == id && x.Status != EntityStatusEnum.Deleted);
+        if (_include != null)
+            query = _include(query);
+
+        return await query.FirstOrDefaultAsync(x => x.Id == id && x.Status != EntityStatusEnum.Deleted);
+    }
 
     public async virtual Task<IEnumerable<TEntity>> GetAllAsync(TParams param) {
         Expression<Func<TEntity, bool>> filter ;
@@ -38,13 +45,29 @@ public class BaseEntityRepository<TEntity, TParams> : IBaseEntityRepository<TEnt
         return await ListAsync(filter);
     }
 
-    protected async Task<IEnumerable<TEntity>> ListAsync(Expression<Func<TEntity, bool>> filter) =>
-        await Context.Set<TEntity>().Where(filter).ToListAsync();
+    protected async Task<IEnumerable<TEntity>> ListAsync(Expression<Func<TEntity, bool>> filter)
+    {
+        IQueryable<TEntity> query = Context.Set<TEntity>();
+        query = query.Where(filter);
 
-    protected async Task<TEntity> FirstAsync(Expression<Func<TEntity, bool>> filter) =>
-            await Context.Set<TEntity>().FirstOrDefaultAsync(filter);
+        if (_include != null)
+            query = _include(query);
 
+        return await query.ToListAsync();
+    }
 
+    protected async Task<TEntity> FirstAsync(Expression<Func<TEntity, bool>> filter) {
+
+        IQueryable<TEntity> query = Context.Set<TEntity>();
+        query = query.Where(filter);
+
+        if (_include != null)
+            query = _include(query);
+
+        return await query.FirstOrDefaultAsync();
+    }
+
+    
     public async Task AddAsync(TEntity newEntity)
     {
         Context.Set<TEntity>().Add(newEntity);

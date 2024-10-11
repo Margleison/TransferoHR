@@ -4,7 +4,7 @@ using DentalRJ.Infra.Repositories.Base;
 using DentalRJ.Services.Interfaces;
 using DentalRJ.Services.Params;
 
-namespace DentalRJ.Infra.implementation
+namespace DentalRJ.Infra.Repositories
 {
     public class CompanyRepository : NamedBaseEntityRepository<Company, NamedParams>, INamedBaseEntityRepository<Company, NamedParams>
     {

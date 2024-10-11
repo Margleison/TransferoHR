@@ -6,7 +6,6 @@ using DentalRJ.Infra.Repositories.Base;
 using DentalRJ.Domain.Entities.Base;
 using DentalRJ.Services.Interfaces;
 using DentalRJ.Domain.Entities;
-using DentalRJ.Infra.implementation;
 using DentalRJ.Infra.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,7 +23,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<INamedBaseEntityRepository<NamedBaseEntity, NamedParams>, NamedBaseEntityRepository<NamedBaseEntity, NamedParams>>();
-builder.Services.AddScoped<INamedBaseEntityRepository<Clinic, ClinicParams>, NamedBaseEntityRepository<Clinic, ClinicParams>>();
+builder.Services.AddScoped<INamedBaseEntityRepository<Clinic, ClinicParams>, ClinicRepository>();
 builder.Services.AddScoped<INamedBaseEntityRepository<Company, NamedParams>, CompanyRepository>();
 
 

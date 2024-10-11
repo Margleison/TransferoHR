@@ -3,21 +3,23 @@ using DentalRJ.Domain.Entities.Base;
 using DentalRJ.Services.Implementation;
 using Microsoft.AspNetCore.Mvc;
 using DentalRJ.Services.Params;
+using DentalRJ.Services.Model.Base;
 
 namespace DentalRJ.WebApi.Controllers
 {
   [ApiController]
   [Route("api/[controller]")]
-  public class NamedController<T, TCreateModel, TUpdateModel, TNamedParams> : ControllerBase
-      where T : NamedBaseEntity
+  public class NamedController<TEntity, TCreateModel, TUpdateModel, TNamedGetModel, TNamedParams> : ControllerBase
+      where TEntity : NamedBaseEntity
       where TCreateModel : class
       where TUpdateModel : class
+      where TNamedGetModel : NamedGetModel
       where TNamedParams : NamedParams
     {
-    private readonly NamedBaseService<T, TNamedParams> _service;
+    private readonly NamedBaseService<TEntity, TNamedParams, TNamedGetModel> _service;
     private readonly IMapper _mapper;
 
-    public NamedController(NamedBaseService<T, TNamedParams> service, IMapper mapper)
+    public NamedController(NamedBaseService<TEntity, TNamedParams, TNamedGetModel> service, IMapper mapper)
     {
       _service = service;
       _mapper = mapper;

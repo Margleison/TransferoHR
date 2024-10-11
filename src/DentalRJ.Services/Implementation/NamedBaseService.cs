@@ -8,8 +8,10 @@ using DentalRJ.Services.Interfaces;
 
 namespace DentalRJ.Services.Implementation
 {
-    public class NamedBaseService<T, TNamedParams> 
-        where T : NamedBaseEntity where TNamedParams : NamedParams
+    public class NamedBaseService<T, TNamedParams, TNamedGetModel> 
+        where T : NamedBaseEntity 
+        where TNamedParams : NamedParams
+        where TNamedGetModel : NamedGetModel
     {
         private readonly string _entityName;
         protected readonly INamedBaseEntityRepository<T, TNamedParams> _repo; 
@@ -30,10 +32,10 @@ namespace DentalRJ.Services.Implementation
 
             return obj;
         }
-        public async Task<NamedGetModel> GetById(Guid id)
+        public async Task<TNamedGetModel> GetById(Guid id)
         {
             var entity = await Get(id); 
-            return _mapper.Map<NamedGetModel>(entity);
+            return _mapper.Map<TNamedGetModel>(entity);
         }
         public async Task<T> GetByName(string name) 
             => await _repo.GetByName(name, null);
@@ -96,7 +98,7 @@ namespace DentalRJ.Services.Implementation
         public async Task<IEnumerable<NamedGetModel>> GetAllAsync(TNamedParams param)
         {
             var entities = await _repo.GetAllAsync(param); // Obtenha as entidades do repositório
-            return _mapper.Map<IEnumerable<NamedGetModel>>(entities); // Mapeia a lista de entidades para NamedGetModel
+            return _mapper.Map<IEnumerable<TNamedGetModel>>(entities); // Mapeia a lista de entidades para NamedGetModel
         }
     }
 }

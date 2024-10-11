@@ -5,6 +5,7 @@ using DentalRJ.Infra.Database;
 using DentalRJ.Services.Interfaces;
 using DentalRJ.Services.Params;
 using LinqKit;
+using Microsoft.EntityFrameworkCore;
 
 namespace DentalRJ.Infra.Repositories.Base;
 
@@ -14,6 +15,7 @@ public class NamedBaseEntityRepository<TEntity, TNamedParams> : BaseEntityReposi
 {
     public NamedBaseEntityRepository(ApplicationDbContext db) : base(db)
     {
+        _include = null;
     }
 
     public virtual Task<TEntity> GetByNameAndOwner(Guid ownerId, string name, Guid? excId = null)

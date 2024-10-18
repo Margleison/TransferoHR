@@ -19,9 +19,19 @@ public class MappingProfile : Profile
                 .ForMember(dest => dest.CompanyName, opt => opt.MapFrom(src => src.Company.Name))
                 .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString())); 
         
-        CreateMap<NamedCreateModel, Specialty>();
-        CreateMap<NamedUpdateModel, Specialty>();
-        CreateMap<Specialty, NamedGetModel>()
+        CreateMap<DentistCreateModel, Dentist>();
+        CreateMap<DentistUpdateModel, Dentist>();
+        CreateMap<Dentist, DentistGetModel>()
+                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()));
+
+        CreateMap<NamedCreateModel, Dentistry>();
+        CreateMap<NamedUpdateModel, Dentistry>();
+        CreateMap<Dentistry, NamedGetModel>()
+                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()));
+
+        CreateMap<PatientCreateModel, Patient>();
+        CreateMap<PatientUpdateModel, Patient>();
+        CreateMap<Patient, PatientGetModel>()
                 .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()));
     }
 }

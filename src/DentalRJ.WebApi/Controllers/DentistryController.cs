@@ -10,10 +10,10 @@ namespace DentalRJ.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class SpecialtyController : NamedController<Specialty, CompanyCreateModel, NamedUpdateModel, NamedGetModel, NamedParams>
+    public class DentistryController : NamedController<Dentistry, CompanyCreateModel, NamedUpdateModel, NamedGetModel, NamedParams>
     {
-        public SpecialtyController(SpecialtyService specialtyService, IMapper mapper)
-            : base(specialtyService, mapper)
+        public DentistryController(DentistryService dentistryService, IMapper mapper)
+            : base(dentistryService, mapper)
         {
         }
     }

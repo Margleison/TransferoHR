@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DentalRJ.Infra.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241018191946_Create-001")]
-    partial class Create001
+    [Migration("20241018221448_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -98,7 +98,56 @@ namespace DentalRJ.Infra.Migrations
                     b.ToTable("Company");
                 });
 
-            modelBuilder.Entity("DentalRJ.Domain.Entities.Specialty", b =>
+            modelBuilder.Entity("DentalRJ.Domain.Entities.Dentist", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<DateOnly>("BirthDate")
+                        .HasColumnType("date");
+
+                    b.Property<string>("CPF")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("CRO")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<byte>("Status")
+                        .HasColumnType("tinyint unsigned");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Dentist");
+                });
+
+            modelBuilder.Entity("DentalRJ.Domain.Entities.Dentistry", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -129,7 +178,76 @@ namespace DentalRJ.Infra.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Specialty");
+                    b.ToTable("Dentistry");
+                });
+
+            modelBuilder.Entity("DentalRJ.Domain.Entities.Patient", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<DateOnly>("BirthDate")
+                        .HasColumnType("date");
+
+                    b.Property<string>("CPF")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("CityName")
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("PostalCode")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("StateCode")
+                        .HasColumnType("longtext");
+
+                    b.Property<byte>("Status")
+                        .HasColumnType("tinyint unsigned");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Patient");
+                });
+
+            modelBuilder.Entity("DentistDentistry", b =>
+                {
+                    b.Property<Guid>("DentistriesId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid>("DentistsId")
+                        .HasColumnType("char(36)");
+
+                    b.HasKey("DentistriesId", "DentistsId");
+
+                    b.HasIndex("DentistsId");
+
+                    b.ToTable("DentistDentistry");
                 });
 
             modelBuilder.Entity("DentalRJ.Domain.Entities.Clinic", b =>
@@ -141,6 +259,21 @@ namespace DentalRJ.Infra.Migrations
                         .IsRequired();
 
                     b.Navigation("Company");
+                });
+
+            modelBuilder.Entity("DentistDentistry", b =>
+                {
+                    b.HasOne("DentalRJ.Domain.Entities.Dentistry", null)
+                        .WithMany()
+                        .HasForeignKey("DentistriesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DentalRJ.Domain.Entities.Dentist", null)
+                        .WithMany()
+                        .HasForeignKey("DentistsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("DentalRJ.Domain.Entities.Company", b =>

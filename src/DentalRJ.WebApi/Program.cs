@@ -25,12 +25,16 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<INamedBaseEntityRepository<NamedBaseEntity, NamedParams>, NamedBaseEntityRepository<NamedBaseEntity, NamedParams>>();
 builder.Services.AddScoped<INamedBaseEntityRepository<Clinic, ClinicParams>, ClinicRepository>();
 builder.Services.AddScoped<INamedBaseEntityRepository<Company, NamedParams>, CompanyRepository>();
-builder.Services.AddScoped<INamedBaseEntityRepository<Specialty, NamedParams>, SpecialtyRepository>();
+builder.Services.AddScoped<INamedBaseEntityRepository<Dentist, DentistParams>, DentistRepository>();
+builder.Services.AddScoped<INamedBaseEntityRepository<Dentistry, NamedParams>, DentistryRepository>();
+builder.Services.AddScoped<INamedBaseEntityRepository<Patient, PatientParams>, PatientRepository>();
 
 
 builder.Services.AddScoped<ClinicService>();
 builder.Services.AddScoped<CompanyService>();
-builder.Services.AddScoped<SpecialtyService>();
+builder.Services.AddScoped<DentistService>();
+builder.Services.AddScoped<DentistryService>();
+builder.Services.AddScoped<PatientService>();
 //builder.Services.AddAutoMapper(typeof(Startup)); // Ajuste conforme necessário
 
 var app = builder.Build();

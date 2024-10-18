@@ -7,9 +7,9 @@ using DentalRJ.Services.Params;
 
 namespace DentalRJ.Infra.Repositories
 {
-    public class SpecialtyRepository: NamedBaseEntityRepository<Specialty, NamedParams>, INamedBaseEntityRepository<Specialty, NamedParams>
+    public class DentistryRepository : NamedBaseEntityRepository<Dentistry, NamedParams>, INamedBaseEntityRepository<Dentistry, NamedParams>
     {
-        public SpecialtyRepository(ApplicationDbContext context) : base(context)
+        public DentistryRepository(ApplicationDbContext context) : base(context)
         {
         }
     }

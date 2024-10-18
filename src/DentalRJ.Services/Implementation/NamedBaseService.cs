@@ -73,7 +73,7 @@ namespace DentalRJ.Services.Implementation
             obj.Status = EntityStatusEnum.Active;
             obj.UpdatedAt = DateTime.Now;
             obj.UpdatedBy = AtualizadoPor;
-            await _repo.UpdateAsync(obj);
+            await _repo.ChangeStatusAsync(obj);
         }
         public async Task Deactivate(Guid id, string AtualizadoPor)
         {
@@ -83,7 +83,7 @@ namespace DentalRJ.Services.Implementation
             obj.Status = EntityStatusEnum.Inactive;
             obj.UpdatedAt = DateTime.Now;
             obj.UpdatedBy = AtualizadoPor;
-            await _repo.UpdateAsync(obj);
+            await _repo.ChangeStatusAsync(obj);
         }
         public async Task Delete(Guid id, string AtualizadoPor)
         {
@@ -93,7 +93,7 @@ namespace DentalRJ.Services.Implementation
             obj.Status = EntityStatusEnum.Deleted;
             obj.UpdatedAt = DateTime.Now;
             obj.UpdatedBy = AtualizadoPor;
-            await _repo.UpdateAsync(obj);
+            await _repo.ChangeStatusAsync(obj);
         }
         public async Task<IEnumerable<NamedGetModel>> GetAllAsync(TNamedParams param)
         {

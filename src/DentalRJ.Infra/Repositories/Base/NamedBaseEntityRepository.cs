@@ -33,7 +33,7 @@ public class NamedBaseEntityRepository<TEntity, TNamedParams> : BaseEntityReposi
         return await FirstAsync(filter);
     }
 
-    public async  Task<IEnumerable<TEntity>> GetAllAsync(TNamedParams param)
+    public async Task<IEnumerable<TEntity>> GetAllAsync(TNamedParams param)
     {
         var predicate = PredicateBuilder.New<TEntity>(true);
 

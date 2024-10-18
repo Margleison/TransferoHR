@@ -3,7 +3,7 @@ namespace DentalRJ.Domain.Entities
 {
 	public class Company : NamedBaseEntity
 	{
-		public IEnumerable<Clinic>? Clinics {get; set;}
-	}
+		public IEnumerable<Clinic>? Clinics {get; set; }
+    }
 }
 

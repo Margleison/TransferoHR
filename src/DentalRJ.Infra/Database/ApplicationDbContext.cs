@@ -13,6 +13,8 @@ namespace DentalRJ.Infra.Database
         // Defina suas DbSets aqui
         public DbSet<Company> Company { get; set; }
         public DbSet<Clinic> Clinic { get; set; }
-        public DbSet<Specialty> Specialty { get; set; }
+        public DbSet<Dentist> Dentist { get; set; }
+        public DbSet<Dentistry> Dentistry { get; set; }
+        public DbSet<Patient> Patient { get; set; }
     }
 }

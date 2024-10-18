@@ -74,6 +74,12 @@ public class BaseEntityRepository<TEntity, TParams> : IBaseEntityRepository<TEnt
 
     public async Task UpdateAsync(TEntity toUpdate)
     {
+        toUpdate.Validate();
+        Context.Entry(toUpdate).State = EntityState.Modified;
+        await Context.SaveChangesAsync();
+    }
+    public async Task ChangeStatusAsync(TEntity toUpdate)
+    {
         Context.Entry(toUpdate).State = EntityState.Modified;
         await Context.SaveChangesAsync();
     }

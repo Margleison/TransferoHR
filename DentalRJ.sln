@@ -5,21 +5,20 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FB5EA469-F64F-4FCB-A09D-89515EDF759F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalRJ.WebApi", "src\DentalRJ.WebApi\DentalRJ.WebApi.csproj", "{F2C6FCC0-A008-497A-A1B3-D1819E3D8565}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DentalRJ.WebApi", "src\DentalRJ.WebApi\DentalRJ.WebApi.csproj", "{F2C6FCC0-A008-497A-A1B3-D1819E3D8565}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalRJ.Services", "src\DentalRJ.Services\DentalRJ.Services.csproj", "{EB9993B0-58A6-4D75-83AC-8C5F0C5538BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DentalRJ.Services", "src\DentalRJ.Services\DentalRJ.Services.csproj", "{EB9993B0-58A6-4D75-83AC-8C5F0C5538BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalRJ.Infra", "src\DentalRJ.Infra\DentalRJ.Infra.csproj", "{3AF0EF23-30D9-4DE2-8632-66B0EE36C818}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DentalRJ.Infra", "src\DentalRJ.Infra\DentalRJ.Infra.csproj", "{3AF0EF23-30D9-4DE2-8632-66B0EE36C818}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalRJ.Domain", "src\DentalRJ.Domain\DentalRJ.Domain.csproj", "{BB41A50D-B07A-4EC2-B974-5792726AF9A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DentalRJ.Domain", "src\DentalRJ.Domain\DentalRJ.Domain.csproj", "{BB41A50D-B07A-4EC2-B974-5792726AF9A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{34382914-9A6E-4F90-B7BF-483EA5CBB282}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{F2C6FCC0-A008-497A-A1B3-D1819E3D8565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -38,6 +37,9 @@ Global
 		{BB41A50D-B07A-4EC2-B974-5792726AF9A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB41A50D-B07A-4EC2-B974-5792726AF9A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB41A50D-B07A-4EC2-B974-5792726AF9A6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F2C6FCC0-A008-497A-A1B3-D1819E3D8565} = {FB5EA469-F64F-4FCB-A09D-89515EDF759F}

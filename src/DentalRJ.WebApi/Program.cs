@@ -25,16 +25,18 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<INamedBaseEntityRepository<NamedBaseEntity, NamedParams>, NamedBaseEntityRepository<NamedBaseEntity, NamedParams>>();
 builder.Services.AddScoped<INamedBaseEntityRepository<Clinic, ClinicParams>, ClinicRepository>();
 builder.Services.AddScoped<INamedBaseEntityRepository<Company, NamedParams>, CompanyRepository>();
+builder.Services.AddScoped<INamedBaseEntityRepository<Specialty, NamedParams>, SpecialtyRepository>();
 
 
 builder.Services.AddScoped<ClinicService>();
 builder.Services.AddScoped<CompanyService>();
+builder.Services.AddScoped<SpecialtyService>();
 //builder.Services.AddAutoMapper(typeof(Startup)); // Ajuste conforme necessário
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment() || app.Environment.IsProduction()) 
 {
     app.UseSwagger();
     app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DentalRJ API v1"));
@@ -46,4 +48,4 @@ app.MapControllers();
 
 app.Run();
 //  src=> dotnet ef migrations add InitialCreate --project DentalRJ.Infra\DentalRJ.Infra.csproj --startup-project DentalRJ.WebApi\DentalRJ.WebApi.csproj --verbose
-// dotnet ef database update --project DentalRJ.Infra/DentalRJ.Infra.csproj --startup-project DentalRJ.WebApi/DentalRJ.WebApi.csproj
+// dotnet ef database update Create-002 --project DentalRJ.Infra/DentalRJ.Infra.csproj --startup-project DentalRJ.WebApi/DentalRJ.WebApi.csproj

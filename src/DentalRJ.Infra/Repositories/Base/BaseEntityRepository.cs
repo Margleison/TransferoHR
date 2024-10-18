@@ -4,9 +4,6 @@ using DentalRJ.Domain.Entities.Base;
 using DentalRJ.Domain.Enums;
 using DentalRJ.Infra.Database;
 using DentalRJ.Services.Params;
-using Microsoft.Extensions.Logging;
-using System.Security.Cryptography.X509Certificates;
-using System.Runtime.InteropServices.Marshalling;
 using DentalRJ.Services.Interfaces;
 
 namespace DentalRJ.Infra.Repositories.Base;
@@ -70,6 +67,7 @@ public class BaseEntityRepository<TEntity, TParams> : IBaseEntityRepository<TEnt
     
     public async Task AddAsync(TEntity newEntity)
     {
+        newEntity.Validate();
         Context.Set<TEntity>().Add(newEntity);
         await Context.SaveChangesAsync();
     }

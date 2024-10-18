@@ -5,7 +5,6 @@ using DentalRJ.Infra.Database;
 using DentalRJ.Services.Interfaces;
 using DentalRJ.Services.Params;
 using LinqKit;
-using Microsoft.EntityFrameworkCore;
 
 namespace DentalRJ.Infra.Repositories.Base;
 

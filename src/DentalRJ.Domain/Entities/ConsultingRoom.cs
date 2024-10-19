@@ -4,7 +4,7 @@ namespace DentalRJ.Domain.Entities
 	public class ConsultingRoom : NamedBaseEntity
 	{
 		public Guid ClinicId { get; set; }
-		public Clinic? Clinic { get; set; }
+		public required Clinic Clinic { get; set; }
     }
 }
 

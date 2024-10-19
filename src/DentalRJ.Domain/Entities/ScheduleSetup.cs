@@ -14,10 +14,10 @@ namespace DentalRJ.Domain.Entities
         public TimeOnly BreakStart { get; set; }
         public TimeOnly BreakEnd { get; set; }
 
-        public ConsultingRoom ConsultingRoom { get; set; }
-        public Dentistry Dentistry { get; set; }
-        public Dentist? Dentist { get; set; }
-        public IEnumerable<ScheduleDay> ScheduleDays { get; set; }
+        public required ConsultingRoom ConsultingRoom { get; set; }
+        public required Dentistry Dentistry { get; set; }
+        public required Dentist Dentist { get; set; }
+        public ICollection<ScheduleDay> ScheduleDays { get; set; } = new List<ScheduleDay>();
 
     }
 }

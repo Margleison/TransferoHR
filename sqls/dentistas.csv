@@ -1,0 +1,887 @@
+id_dentista,"replace(nome_completo, '-', '')",ativo
+6,"Abel Elias de Macedo",1
+752,"Abel Fábio Pereira da Silva (Zdent)",1
+149,"ADMA ABRAHAO",0
+786,"Adriana do Amaral Nunes (Zdent)",1
+490,"Adriana Garcia Barbosa Abreu",1
+745,"Adriely Stasczevski Kozak",1
+855,"Alana de Lima Gabriel",1
+845,"Alana Mayara Guimarães Carnaúba ",1
+999,"Alessandra Martins Esteves",1
+111,"Alessandra Resende",1
+357,"Alexia de Medeiros da Silva",1
+908,"Alexia Quaresma Sá",1
+968,"Alfredo Luiz Domingues Ferreira Junior",1
+672,"Alicia  Da Silva Nunes Conceição",1
+1000,"Aline Andressa",1
+953,"Aline Da Silva Barbosa",1
+688,"ALVARO FELICIO PONCIO DE ANDRADE",1
+911,"Amanda Belchior",1
+939,"Amanda Costa Silva",1
+874,"AMANDA DA SILVA FERREIRA",1
+640,"Amanda De Souza Viegas",1
+162,"Amanda Moura",1
+957,"Amanda Tavares Gonzales Soares",1
+834,"Ana Beatriz Da Silva Coelho",1
+235,"Ana Carla Perdigão",1
+78,"ANA CAROLINA",1
+883,"Ana Carolina Coelho E Coelho",1
+558,"Ana Carolina Guimarães Teixeira ",1
+1001,"Ana Carolina Rocha De Almeida",1
+445,"Ana Carolina Selem",1
+846,"Ana Cecilia Bahia Francisco",1
+1002,"Ana Cecília Bahia Francisco Pinheiro",1
+748,"Ana Cecília Guimarães Ferreira Gonçalves",1
+377,"Ana Cláudia Carvalho dos Santos",1
+100,"ANA DYONIZIO",1
+139,"Ana Luisa Rocha Cardoso",1
+44,"Ana Luiza de Souza Cammarotta ",1
+867,"Ana Luiza Ripoll",1
+42,"Ana Paula Gomes",0
+1003,"Andre Luis Ramos Da Silva",1
+763,"Andréia Silva de Almeida",1
+652,"Andresa Misa Sakato",1
+268,"Andressa Barros",1
+549,"Andressa Coutinho Ribeiro",1
+886,"Andressa Dutra De Avelar",1
+64,"Andressa Filizzola",0
+1004,"Andressa Hajjar Daher",1
+203,"Andressa Lemos",1
+616,"Andressa Oliveira de Carvalho",1
+314,"Andreza Sodre",1
+519,"Ângela Cristina R dos Santos Montes Reis",1
+598,"Anna Carolina Pimentel Durão",1
+843,"Anna Carolina Pimentel Durão",1
+967,"Anna Carolina Rosa de Meirelles",1
+1086,"Anna Caroline Macedo Matiliano",1
+550,"Anna Luiza Silva Flores",1
+824,"Anna Luiza Silva Flores",1
+677,"Anna Luzia Carregal da Rocha",1
+29,ANNIE,0
+148,"ANNIE PAULA",0
+983,"Any Caroliny Fernandes Trancoso Gomes",1
+920,"Ariane Gomes Mazeliah",1
+736,"Ariane Lima Glins",1
+977,"Ariel Flores Blanco",1
+202,"Ariela Corcini",1
+818,"Ariela Corcini (Zdent)",1
+1088,"ARTUR DANTE FERREIRA",1
+1005,"Atílio Camargo Tormin Botelho",1
+732,"Avaliador Cuiabá",1
+647,"AVALIADOR ESTÉTICA FACIAL",1
+648,"AVALIADOR ESTÉTICA FACIAL II",1
+651,"AVALIADOR ESTÉTICA FACIAL III",1
+127,"Barbara Henriques",1
+77,"Barbara Nogueira",0
+75,"Barbara Raposo",0
+917,"Bárbara Vittoria carelli de Oliveira",1
+621,"Beatriz dos Reis Bezerra",1
+369,"Beatriz Faro Wanzeller",1
+59,"Beatriz Faro Wanzeller (ORTO)",1
+862,"Beatriz Freitas Barbosa",1
+356,"Beatriz Guimaraes",1
+313,"Beatriz Guimaraes (ORTO)",1
+974,"Beatriz Melo Muchelin",1
+1006,"Beatriz Rangel",1
+1101,"BEAUTY DAY I",1
+1102,"BEAUTY DAY II",1
+222,"Bernardo Silva",1
+331,"Bernardo Sobreira Vecchiati da Silva",1
+734,"Bianca Goes Pinto",1
+615,"Bianca Mendes Costa",1
+594,"Breno Monteiro Bayeux Guedes",1
+156,"Breno Paiva",0
+385,"Bruna Carmo Rodrigues dos Santos",1
+1079,"BRUNA DOS SANTOS ALVES",1
+1148,"Bruna Gonçalves",1
+865,"Bruna Guilherme Terra Gusmão",1
+579,"Bruna Karin dos Santos Silva",1
+294,"Bruna Letícia da Silva Leite",1
+1068,"BRUNA LIMA",1
+419,"Bruna Mello Faria da Silva",1
+724,"Bruna Mello Faria da Silva (Zdent)",1
+545,"Bruna Mendes da Costa Barreto",1
+816,"Bruna Mendes da Costa Barreto (ENDO)",1
+508,"Bruna Muniz Pistoia",1
+1007,"Bruna Oliveira Lima",1
+337,"Bruna Vasconcelos Antunes Martins",1
+618,"Caiana Serenado Lepesteur",1
+580,"Caio Cezar Araujo Pimentel",1
+412,"Caio Felipe da Silva Reis Machado",1
+1094,"Caio Sampaio de Souza",1
+918,"Camila De Souza Silva",1
+1118,"Camila Martins Ferreira",1
+262,"Camila Nasser",1
+552,"Camila Oliveira Dos Santos",1
+764,"Camila Pinto Machado Corrêa",1
+868,"Camila Silva Alvarenga",1
+285,"Camille Torres Costa Ferreira",1
+915,"Camylla Lopes Moraes",1
+1008,"Camylla Lopes Moraes",1
+708,"Caren Conrado da Fonseca",1
+84,"Carla Mendonca",0
+112,CARLOS,0
+958,"Carlos Augusto De Souza",1
+1009,"Carlos Eduardo",1
+1075,"Carlos Eduardo de Mattos Brandão",1
+119,"CARLOS FIGUEIREDO",1
+1119,"Carlos Henrique Silva Falcao",1
+959,"Carlos Renato",1
+971,"Carlos Roberto De Sant Anna Dos Reis Junior",1
+950,"CARLOS ROBERTO DE SANT'ANNA DOS REIS JUNIOR",1
+1010,"Carmen Cintia Dos Santos Canavezes",1
+159,"Carolina Brandao",1
+522,"Carolina Ferreira Pereira",1
+65,"Carolina Garcia",0
+562,"CAROLINA LUCENA DOS SANTOS VIDAL",1
+819,"Carolina Miranda Quirino	",1
+575,"Carolina Miranda Quirino",1
+806,"Caroline Brito Cavalcante",1
+1011,"Caroline Cassimiro",1
+1145,"Caroline Fagundes Lima",1
+1112,"CAROLINE LO BIANCO",1
+595,"Caroline Magalhães Lauria Vaz",1
+327,"Caroline Martins de Melo",1
+576,"Caroline Nunes Gama Lemos",1
+759,"Caroline Nunes Gama Lemos (Zdent)",1
+641,"Caroline Santos de Oliveira",1
+839,"Carolline Barroso De Araujo Dias",1
+211,"Carolline Dias",1
+738,"Cássia Ferreira De Mesquita",1
+338,"Catharina Lopes Coimbra Nunes Sant’Anna",1
+1012,"Cecília Fernandes",1
+1013,"Christine Lopes",1
+408,"Cinthia Canavezes",1
+430,"Cíntia Ferreira Castilho Do Nascimento	",1
+731,Cirurgia,1
+895,"cirurgia faria lima",1
+1139,"Cirurgia Recreio",1
+903,"Cirurgia São Bernardo",1
+896,"cirurgia sp",1
+1122,"CLAREAMENTO DAY I",1
+1123,"CLAREAMENTO DAY II",1
+1124,"CLAREAMENTO DAY III",1
+436,"CLINICO GERAL ABELARDO BUENO",1
+811,"CLINICO GERAL ABELARDO BUENO II",1
+476,"CLINICO GERAL ALCANTARA",1
+788,"CLINICO GERAL ALCANTARA II",1
+489,"CLINICO GERAL AV PAULISTA",1
+406,"CLINICO GERAL BANGU",1
+930,"CLINICO GERAL BANGU II",1
+450,"CLINICO GERAL BARRA SQUARE",1
+466,"CLINICO GERAL BARRA SQUARE II",1
+402,"CLINICO GERAL BELFORD ROXO",1
+850,"CLINICO GERAL BELFORD ROXO II",1
+417,"CLINICO GERAL BONSUCESSO",1
+851,"CLINICO GERAL BONSUCESSO II",1
+488,"CLÍNICO GERAL BOTAFOGO",1
+544,"CLÍNICO GERAL BOTAFOGO II",1
+633,"CLINICO GERAL BRASÍLIA",1
+638,"CLINICO GERAL BRASÍLIA II",1
+423,"CLINICO GERAL CAMPO GRANDE",1
+770,"CLINICO GERAL CAMPO GRANDE II",1
+789,"CLINICO GERAL CAMPO GRANDE III",1
+790,"CLINICO GERAL CAMPO GRANDE IV",1
+547,"CLINICO GERAL CARIOCA SHOPPING",1
+609,"CLINICO GERAL CARIOCA SHOPPING II",1
+657,"CLINICO GERAL CARIOCA SHOPPING III",1
+504,"CLINICO GERAL CAXIAS",1
+735,"CLINICO GERAL CAXIAS II",1
+791,"CLINICO GERAL CAXIAS III",1
+536,"CLÍNICO GERAL CENTRAL",1
+644,"CLÍNICO GERAL CENTRAL II",1
+477,"CLINICO GERAL CENTRO",1
+469,"CLINICO GERAL CENTRO II",1
+418,"CLINICO GERAL COPACABANA",1
+766,"CLINICO GERAL COPACABANA II",1
+773,"CLINICO GERAL COPACABANA III",1
+718,"CLINICO GERAL CUIABÁ",1
+719,"CLINICO GERAL CUIABÁ II",1
+720,"CLINICO GERAL CUIABÁ III",1
+856,"CLINICO GERAL FARIA LIMA ",1
+857,"CLINICO GERAL FARIA LIMA II",1
+480,"CLINICO GERAL FLAMENGO",1
+601,"CLINICO GERAL FREGUESIA",1
+604,"CLINICO GERAL FREGUESIA II",1
+605,"CLINICO GERAL FREGUESIA II",1
+1150,"CLÍNICO GERAL I  TAQUARA",1
+1151,"CLÍNICO GERAL II  TAQUARA",1
+1152,"CLÍNICO GERAL III  TAQUARA",1
+506,"CLINICO GERAL ILHA DO GOVERNADOR",1
+739,"CLINICO GERAL ILHA DO GOVERNADOR II",1
+1082,"CLINICO GERAL IPANEMA I",1
+1083,"CLINICO GERAL IPANEMA II",1
+1110,"CLINICO GERAL LARGO DO MACHADO I",1
+1111,"CLINICO GERAL LARGO DO MACHADO II",1
+628,"CLINICO GERAL MADUREIRA",1
+1156,"CLINICO GERAL MADUREIRA II",1
+584,"CLINICO GERAL MADUREIRA III",1
+585,"CLINICO GERAL MADUREIRA IV",1
+1081,"CLINICO GERAL MANHUAÇU I",1
+608,"CLINICO GERAL MEIER",1
+627,"CLINICO GERAL NILÓPOLIS",1
+635,"CLINICO GERAL NILÓPOLIS II",1
+391,"CLINICO GERAL NITEROI",1
+670,"CLINICO GERAL NITEROI II",1
+771,"CLINICO GERAL NITEROI II",1
+1127,"CLINICO GERAL NITEROI III",1
+1128,"CLINICO GERAL NITEROI IV",1
+1129,"CLINICO GERAL NITEROI V",1
+505,"CLINICO GERAL NORTE SHOPPING",1
+567,"CLINICO GERAL NORTE SHOPPING II",1
+600,"CLINICO GERAL NORTE SHOPPING III ",1
+427,"CLINICO GERAL NOVA IGUACU",1
+737,"CLINICO GERAL NOVA IGUACU II",1
+792,"CLINICO GERAL NOVA IGUACU III",1
+774,"CLINICO GERAL PRESIDENTE VARGAS ",1
+775,"CLINICO GERAL PRESIDENTE VARGAS ii",1
+610,"CLINICO GERAL RECREIO SHOPPING",1
+611,"CLINICO GERAL RECREIO SHOPPING II",1
+1113,"CLINICO GERAL RIO2 I",1
+1114,"CLINICO GERAL RIO2 II",1
+1115,"CLINICO GERAL RIO2 III",1
+559,"CLINICO GERAL SANTA CRUZ I",1
+560,"CLINICO GERAL SANTA CRUZ II",1
+569,"CLINICO GERAL SANTA CRUZ III",1
+678,"CLINICO GERAL SANTO AMARO",1
+479,"CLINICO GERAL SAO BENTO",1
+614,"CLINICO GERAL SAO BENTO II",1
+701,"CLINICO GERAL SÃO BERNARDO",1
+467,"CLINICO GERAL SÃO CRISTOVÃO",1
+456,"CLÍNICO GERAL SÃO GONÇALO",1
+671,"CLINICO GERAL SÃO GONÇALO II",1
+541,"CLÍNICO GERAL SÃO JOÃO DE MERITI",1
+746,"CLINICO GERAL SÃO JOÃO DE MERITI II",1
+655,"CLINICO GERAL SÃO VICENTE",1
+656,"CLINICO GERAL SÃO VICENTE II",1
+526,"CLINICO GERAL TAQUARA",1
+793,"CLINICO GERAL TAQUARA II",1
+401,"CLINICO GERAL TIJUCA",1
+675,"CLINICO GERAL TIJUCA II",1
+582,"CLINICO GERAL VILA ISABEL I",1
+583,"CLINICO GERAL VILA ISABEL II",1
+478,"CLINICO GERAL VILA OLIMPIA",1
+568,CORINGA,1
+570,"Crislainy Ribeiro Pellegrine	",1
+1116,"DAIENE DO COUTO AMERICO",1
+947,"Dalvinha Andrade Coutinho",1
+1071,"Dandara Correa dos Santos",1
+380,"Dandara Correa dos Santos",1
+565,"Dandara Cristina Pinto Oliveira",1
+836,"Daniel Gonzaga Gracindo	",1
+715,"Daniel Gonzaga Gracindo",1
+807,"Daniel Gonzaga Gracindo (Zdent)",1
+940,"Daniel Peçanha",1
+629,"Daniele Alves Barreto",1
+1014,"Daniele Ribeiro Alves",1
+387,"Daniella Estanho de Lima Flávio",1
+485,"Danielle Batista de Freitas",1
+586,"Danielle Pinheiro Rodrigues",1
+700,"Daniely Gomes Pereira",1
+979,"Danillo Pereira Camargo",1
+835,"Danilo Silva Andrade ",1
+590,"DANUZA BRANDAO DO NASCIMENTO",1
+1104,"Davi Azeredo da Silva Júnior",1
+1120,"Davi Rodrigues",1
+359,"David Santos de Araujo",1
+826,"David Teles Baia",1
+888,"Dayana De Brito Pereira",1
+360,"Dayane Costa",1
+264,"Dayane Costa Germanio Siqueira",0
+384,"Dayanne Martins dos Santos Rangel",1
+1015,"Debora De Almeida",1
+817,"Debora Ferreira Farias",1
+597,"Demetrius Seidl Figueiredo",1
+989,"Denis De Almeida Marques",1
+546,"Denise Batista da Silva Araujo",1
+713,"Denise Sousa da Silva",1
+667,"Dentista Avaliador Av. Paulista",1
+757,"Dentista Avaliador Barra Square",1
+606,"Dentista Avaliador Botafogo",1
+607,"Dentista Avaliador Botafogo II",1
+626,"Dentista Avaliador Botafogo III",1
+768,"Dentista Avaliador Campo Grande",1
+660,"Dentista Avaliador Carioca Shopping",1
+756,"Dentista Avaliador Caxias",1
+661,"Dentista Avaliador Centro ",1
+769,"Dentista Avaliador Copacabana",1
+664,"Dentista Avaliador Madureira",1
+666,"Dentista Avaliador Niterói",1
+663,"Dentista Avaliador Norte Shopping",1
+755,"Dentista Avaliador Nova Iguacu",1
+711,"Dentista Avaliador Recreio Shopping",1
+712,"Dentista Avaliador São João de Meriti",1
+668,"Dentista Avaliador São Vicente",1
+662,"Dentista Avaliador Taquara",1
+665,"Dentista Avaliador Tijuca",1
+698,"Dentista Avaliador Vila Olímpia",1
+1070,"Dentista Teste Integração",1
+1085,"Dentista Teste Integração",1
+1087,"Dentista Teste Integração",1
+1107,"Dentista Teste Integração",1
+1108,"Dentista Teste Integração",1
+1141,"Dentista teste troca dentista expediente",1
+1105,"Diane Queiroz Guerra",1
+110,"DIEGO GUSMAO",0
+706,"Diego Magnani ",1
+599,"Diego Queiroz Mendes",1
+299,"Diogo da Matta",0
+890,"Diogo De Vasconcelos Silva Brites",1
+753,"Diogo Rodrigues Zamith",1
+1106,"Douglas Batista Germanio",1
+1016,"Eder Miguel",1
+966,"EDER MIGUEL DA SILVA",1
+318,"Eduardo Cesar",1
+885,"Eduardo Luiz Pavani filho",1
+1017,"Edvaldo Lopes De Almeida",1
+512,"Elaine Teixeira Mendes Luz Pinto",1
+639,"Elenice Gomes Caldeira",1
+98,ELISANGELA,0
+972,"Elizabeth Dos Santos Melgaço",1
+1146,"Ellen de Aquino",1
+352,"Eloah Nunes de Almeida",1
+740,"Emanuela Ferreira",1
+1018,"Emanuele Maximiano",1
+444,"Emanuelle Maxime Leão de Souza",1
+1077,"EMILY CORREA DOS SANTOS GARCEZ",1
+897,"Endo faria lima",1
+901,"Endo Santo Amaro",1
+900,"Endo São Bernardo ",1
+902,"Endo Vila Olimpia",1
+927,Endodontia,1
+1155,"ENDODONTIA  RECREIO SHOPPING",1
+1142,"ENDODONTISTA  SÃO JOÃO DE MERITI",1
+949,"Enzo Brasil",1
+326,"Érica De Souza Cunha",1
+946,"Erica Lopes",1
+861,"Erica Lopes Santos",1
+442,"Érica Mayara Alves Pereira",1
+780,"Érica Mayara Alves Pereira (Zdent)",1
+1098,"Erik Janson Ferreira Roberto",1
+304,"Erika Mendonca",1
+726,"Erika Mendonca (Zdent)",1
+302,"Erika Mendonca ORTO",1
+66,"Erika Morikawa",0
+931,"Erika Rocha De Souza",1
+877,"Estéfani França Da Silva",1
+624,"Ester Gomes Santiago",1
+779,"Ester Gomes Santiago (Zdent)",1
+991,"Eutimio Cliton Jardim Gabriel",1
+653,"Evelyn Caitano Pianor",1
+980,"Evelyn Monique",1
+965,"Evelyn Munaretto",1
+137,"Evelyn Viana",0
+919,"Fabiana Cristina Rodrigues Silva",1
+823,"Fabiana Lopes de Souza",1
+334,"Fabiana Lopes de Souza",1
+907,"Fábio Atthie Maia	",1
+692,"FABRICIO NUNES FARIA",1
+242,"Felipe Almeida",0
+210,"Felipe Faria de Andrade",1
+709,"Felipe Gil Ferreiro",1
+1103,"Felipe Lucas Ferreira Fadel",1
+70,"FERNANDA AIRES",1
+636,"Fernanda Amorim da Silva",1
+136,"Fernanda Barbosa",1
+690,"FERNANDA CRISTINA GALVAO MACHADO",1
+1125,"Fernanda Gomes da Silva Ferreira",1
+956,"Fernanda Oliveira Do Espirito Santo",1
+481,"Fernanda Ramos",1
+1019,"Fernanda Santo",1
+1136,"Fernanda Silva de Jesus",1
+1020,"Fernando Cardoso",1
+190,"Fernando Goncalves",1
+1021,"Fernando Helou",1
+144,"Fernando Luz",0
+1022,"Flávia Helena Pires Santos Pazos",1
+388,"Flávia Moura Monteiro",1
+172,"Flavia Pessoa",1
+879,"Flavia Pires",1
+876,"Franciele Cristina Costa Gave",1
+733,"Franciely da Silva Oliveira",1
+1100,"Frank Junior de Queiroz Leite",1
+815,"Gabriel Da Silva Costa",1
+542,"Gabriel de Lemos de Oliveira",1
+747,"Gabriel El Hariri Maciel",1
+838,"Gabriel El Hariri Maciel",1
+649,"Gabriela Cury Haddad",1
+827,"Gabriela Daflon",1
+256,"Gabriela Dantas",1
+1023,"Gabriela Das Chagas Silva",1
+680,"Gabriela Iunes Daflon",1
+405,"Gabriela Marques",1
+375,"Gabriela Parente",1
+743,"Gabriella Brito Pace",1
+1073,"Gabriella Brito Pace",1
+935,"Gabrielle Dias Bento",1
+978,"Gabrielle Gonçalves De Almeida",1
+630,"Gabrielly Carvalho Nascimento",1
+108,"Gigliony de Oliveira",0
+152,"GILSE NORMA",1
+497,"Giovanna Favorito Sciammarella",1
+79,GIPSY,0
+133,"Gisele Viana",0
+578,"Giselle Delfim Pereira",1
+301,"Gleuson Leoni Caetano",1
+41,Graciele,0
+938,"Guilherme Mafra Da Silva",1
+1024,"Guilherme Melo Da Costa",1
+130,"Guilherme Moraes",1
+988,"Guilherme Motta",1
+492,"Gustavo Barros da Silva",1
+899,"Gustavo Luis Ferreira Mattos",1
+1134,"Helba Miranda",1
+86,HELLEN,1
+1025,"Hellen Stellet De Oliveira",1
+969,"heloisa santos de melo",1
+1026,"Hilana Carolina Batista Da Silva",1
+814,"Ian Teixeira Ribeiro (zdent)",1
+176,"Igor Silva",1
+825,"IMPLANTE DAY",1
+1091,"Implante Day I",1
+1092,"Implante Day II",1
+1093,"Implante Day III",1
+730,"Implantodontia Cuiabá",1
+650,"Ingrid Kimberly Bezerra dos Santos",1
+1027,"Isabela Rocha Dornelas",1
+347,"Isabella Cadilhe",1
+705,"Isabella de Souza Antunes",1
+828,"Isabella De Souza Antunes",1
+830,"Isabella Portilho",1
+682,"Isabella Portilho de Mello Freitas",1
+1066,"Isabella Ramos reis",1
+934,"Isabella Rocha Neves Da Silva Agra",1
+812,"Isabella Souza da Silva ",1
+54,ISABELLE,1
+871,"Isabelle de souza lopes bispo",1
+1089,"Jacqueline da Rocha Paixão",1
+694,Jamilton,1
+975,"Jaqueline Da Silva Barbosa",1
+135,"Jean Lucas",0
+1144,"Jennifer Katherine da Silva Marcelino",1
+35,JESSICA,0
+872,"Jessica Bueno Soares",1
+860,"Jéssica Da Rocha Esteves",1
+363,"Jessica Tavora",1
+435,"Jéssica Wenceslau da Silva",1
+554,"Jéssica Wenceslau da Silva (ORTO)",1
+645,"Jéssika Bandeira Vital Costa",1
+563,"Jhonatas Gabriel Feijo De Sousa Lima",1
+804,"Jhonatas Gabriel Feijo De Sousa Lima",1
+1028,"Jhonatas Gabriel Feijó De Sousa Lima",1
+390,"JOAO FELIPE LOURENCO MIRANDA",0
+153,"Joao Luis Santos",1
+243,"Joao Marien",1
+507,"Joao Paulo Goncalves",1
+581,"Joao Paulo Goncalves (Orto)",1
+761,"Joao Paulo Goncalves (Zdent)",1
+200,"Joao Pedro",1
+910,"Jomara Paola Nunes Da Silva",1
+986,"Jonathas lima lucio silva",1
+250,"Jorena Borges",1
+122,jorge,1
+691,"JOSÉ HENRIQUE LOURENÇO MIRANDA",1
+67,"José Rodrigo Rangel Walter",0
+587,"José Vinícius Gonçalves",1
+433,"José Vinícius Pires Gonçalves",1
+53,"Joyce Chevi",1
+1029,"Joyce Silva Rodrigues De Mello Guerra",1
+1099,Julia,1
+1126,"Julia Barreto",1
+787,"Júlia Barreto Riscado Rosário",1
+798,"Júlia Carvalho da Silva",1
+777,"Julia De Bragança Cardoso (Zdent)",1
+1030,"Julia Dias Vieira",1
+963,"Julia Dutra Da Silva Gomes",1
+932,"Julia Gonçalves De Jesus",1
+859,"Julia Rabelo Fonseca (Zdent)",1
+916,"Julia Regato Skwara (ENDO)",1
+952,"Júlia Vieira Dias",1
+1095,"Julia Vieira Dias",1
+1031,Juliana,1
+134,"Juliana Cirilo",0
+1033,"Juliana De Brito",1
+553,"Juliana Feital de Oliveira",1
+681,"Juliana Fernandes Leão de Oliveira",1
+832,"Juliana Fernandes Leão De Oliveira",1
+913,"Juliana Ferreira Turques",1
+1032,"Juliana Ioras De Brito",1
+873,"Juliana Marques Trinchão",1
+102,"JULIANA RUSSO",0
+686,"Juliana Sampaio de Jesus Santana",1
+848,"Juliana Santana Santos",1
+802,"Juliana Santana Santos (zdent)",1
+1034,"Juliana Sasha Da Silva",1
+1035,"Juliane Silva Dos Santos",1
+105,"Jully Guimarães",0
+914,"Kaique Rodrigues Luiz Da Silva",1
+1036,"Kamila Nascimento Borges De Farias",1
+503,"Kamilla Martins",1
+813,"Kariny de Castro Gonçalves",1
+689,"KARISSA DE MAIA FERREIRA",1
+992,"Karol Oliveira",1
+990,"Karol Oliveira Gomes da Silva",1
+853,"Karolaine Barbosa De Assis",1
+103,"Keith Camelo",1
+906,"Kelaine Xavier Gonçalves Duarte	",1
+339,"Kelly Tambasco Bezerra",1
+291,"Kennia Pereira Marinho",1
+962,"kezia thalyta de santana santos de moraes",1
+1037,"Kezia Thalyta Santana Santos De Morais",1
+707,"Kezia Wayn Barroso",1
+744,"Kian Mauricio Arruda de Oliveira",1
+215,"kyslla oliveira",1
+796,"Laiza De Holanda Fonseca Da Silva",1
+107,LARA,0
+118,"Lara Pimentel",1
+1038,"Lara Pimentel",1
+225,"Larissa Beatriz",1
+695,"Larissa Christinne Teixeira Eloy",1
+1039,"Larissa Dos Santos Xavier Gomes",1
+574,"Larissa Gil Silva Alves De Jesus",1
+993,"Larissa Gil Silva Alves de Jesus",1
+870,"Larissa Gonçalves Fernandes",1
+379,"Larissa P Borges Santos",1
+894,"Laryssa De Oliveira",1
+109,"Laudicea Castro",0
+278,"Laurinda Sueli Domingos Escaleira Constatino",1
+982,Lavinia,1
+866,"Layla Lacerda",1
+207,"Leandra Matos",1
+27,LEANDRO,1
+13,LEILANE,0
+277,"Lembrando que tem o desconto da roa",1
+473,"Leonardo Ernesto Lopes Schiffler",1
+829,"Leonardo Ernesto Lopes Schiffler",1
+782,"Leonardo Mitsuo Braga Nisizima (Zdent)",1
+716,"Leonardo Pereira Pacheco",1
+847,"Leonardo Ricardo Menezes da Silva",1
+36,"LEONARDO RODRIGUES DE AZEVEDO",1
+252,"Leony Kopke",0
+220,"Leticia Gerhardt",1
+673,"Leticia Lima Fontes Vicente",1
+776,"Leticia Nascimento Nogueira",1
+762,"Letícia Pedrosa",1
+741,"Letícia Pedrosa Rodrigues",1
+63,"LETICIA VIEIRA TINTA",0
+922,"Lidia Coelho",1
+254,"Lidiane Martins Siqueira de Azevedo",1
+749,"Liliam da Silva Frazão",1
+685,"Lilian Cristina Salgueiro",1
+924,"Lilian Franco",1
+161,"Liliane de Sa",0
+1137,"Lineu Figueira Junior",1
+1040,"Lívia Dantas Lopes",1
+976,"Lívia Dantas Lopes",1
+165,"Lívia Izahias",1
+945,"Livia Lyra Borges",1
+163,"Lohanne Lopes",1
+887,"Lorena Beatriz Mello Da Silva",1
+613,"Lorena Oliveira Mauricio",1
+577,"Louhan Luiz Silva",1
+1096,"louise pereira ribeiro",1
+1041,"Luan Paes Da Silva",1
+981,"Luan Paes da Silva",1
+32,"LUANA MORAES",1
+987,"Luana Outor",1
+1042,"Luana Patricia Santos De Moura",1
+234,"Luanne Tavares",1
+721,"Luanne Tavares (Zdent)",1
+1043,"Luanne Tavares Aboul Hosn",1
+821,"Luara Sampaio dos Santos",1
+842,"Lucas chagas ferreira Braga (Zdent)",1
+528,"Lucas de Souza Aguiar Coitinho",1
+534,"Lucas Loreto Ferreira",1
+566,"Luccas Manso Ribeiro",1
+101,LUCIANA,0
+150,"Ludmila Lima",1
+99,"Ludmila Maximo",1
+676,"Luis Fernando Tinoco",1
+1138,"Luisa Furtado Marinho Lemos",1
+833,"Luiz Filipe Bezerra De Melo Saunders",1
+710,"Luiz Filipe Bezerra De Melo Saunders",1
+1044,"Luiz Gabriel",1
+880,"Luiz Gabriel Barbosa de Deus",1
+206,"Luiz Sergio Peixoto Dos Santos Filho",1
+751,"Luíza Euzebio Pereira de Souza Barbosa",1
+214,"Luiza Helena Garcia",1
+403,"Maiara Silva Vieira dos Santos",1
+654,"Manoela Marinho Dias",1
+113,"MARCELE BECK",0
+514,"MARCELE SALES CASSALHA",1
+429,"Marcella Oliveira Morcelli",1
+124,"MARCELLO TOD PEREIRA (99412 9959)",1
+960,"Marcelo Rodrigues",1
+1045,"Marcia Archibusacci",1
+140,"MARCIA CARDOSO",1
+260,"MARCIA MIRANDA",1
+1046,"Marcio Vinicius Borbosa Rodrigues",1
+1047,"Marcos  Vinicius Exposto Dos Santos",1
+679,"Marcos de Paula Albino",1
+432,"Marcos Rego De Carvalho Camilo",1
+909,"Marcus Reis",1
+413,"Maria Eurydice Freire Canellas de Castro",1
+120,"MARIA FERNANDA",0
+378,"Maria Fernanda Calazans Fernandes",1
+1117,"Maria Isabela Carvalho Pereira Lima",1
+889,"Maria Luiza Andrade Balduino",1
+114,"Maria Victoria Maia Melachus",1
+596,"Maria Vitória de Mattos",1
+171,"MARIANA BATISTA",1
+801,"Mariana Carneiro de Mendonça ",1
+925,"Mariana Couto Rocha",1
+844,"Mariana de Oliveira Pister Martins ",1
+383,"Mariana de Souza Barbosa Fontes",1
+620,"Mariana de Souza Barbosa Fontes ORTO",1
+232,"Mariana Dias",1
+180,"Mariana Dias Orto",1
+1090,"Mariana Macedo de Melo",1
+295,"Mariana Novo Souza",1
+463,"Mariana Palomo De Araujo",1
+808,"Mariana Palomo de Araujo",1
+572,"Mariana Silva Vieira Cardoso",1
+28,"Mariana Teixeira Alves Etchegoyen",1
+728,"Marillia Guinancio Nunes De Oliveira (Zdent)",1
+589,"Marina de Oliveira Matos Portela",1
+841,"Marina Ribeiro de Freitas",1
+168,"Mariza Astori",1
+803,"Marly Vieira Oliveira (zdent)",1
+840,"Matheus de Souza Almeida (Zdent)",1
+858,"Matheus Figueira Folly (ENDO)",1
+407,"MAYARA CALLEGARIO",1
+414,"Maysa Kelly Figueiredo de Oliveira",1
+340,"Melissa Rocha Boto",1
+684,"Michel B Cordeiro",1
+1048,"Michelle Cassiane Pinto",1
+410,"MICHELLE DOS PASSOS SILVA FERREIRA",1
+1049,"Milena Abreu Martins",1
+350,"Milena de Maria Cardoso",1
+1050,"Milena De Souza Pimenta",1
+300,"Milena Figueiredo Iung",1
+1135,"Milena Manhaes de Oliveira",1
+494,"Moana Guimarães Silva",1
+548,"Moana Guimarães Silva ORTO",1
+669,"Mônica Aparecida Casimiro Silva",1
+571,"Monica Benedita Peçanha Dias",1
+722,"Monica Cassimiro",1
+14,"Monica Gomes",0
+62,"Monique Lira",0
+1067,"Monique Rodrigues Bezerra",1
+82,Morgana,0
+783,"Myllena de Souza Bitar",1
+898,"Myllena Pereira Flor",1
+247,"Natalia Cardoso",1
+699,"Natália Colchete do Amaral",1
+659,"Natália Ribeiro Lemos",1
+1051,"Natalia Velasco",1
+936,"Natane Ribeiro",1
+994,"Nathália Carolina Saldanha Da Silva",1
+869,"Nathalia Chaves Landsberg",1
+246,"Nathalia Cirne",1
+951,"Nathalia Correia De Melo",1
+933,"Nathália Couto Batista",1
+573,"Nathália de Souza Britto",1
+1153,"Nathalia Gonçalves Ferraz",1
+658,"Nathalia Moura Prado",1
+941,"Nathalia Schlecht Eiras",1
+714,"Nayane Aparecida Rodrigues",1
+40,"Nayanne Camilo",0
+315,"Neide Marta Braga Maciel Franco",1
+781,"Neide Marta Braga Maciel Franco (Zdent)",1
+632,"Neide Marta Braga Maciel Franco ORTO",1
+937,"Nicholas De Castro Espinosa",1
+800,"Nicolas Jefthe Santos de Melo",1
+1080,"Nycole Rodrigues Aragão de Carvalho",1
+1052,Odenir,1
+185,ORTO,1
+11,ORTODONTIA,1
+1154,"ORTODONTIA  RECREIO SHOPPING",1
+729,"Ortodontia Campo grande",1
+1149,"ORTODONTIA I  TAQUARA",1
+1143,"ORTODONTIA I  TIJUCA",1
+612,"ORTODONTIA II",1
+1130,"ORTODONTIA NITEROI",1
+926,"Pablo Carvalho Dantas",1
+892,"Palloma Marcelino De Miranda",1
+878,"Paloma Cristina Reis De Albuquerque",1
+837,"Pâmela De Almeida Silva Costa",1
+622,"Pâmela de Almeida Silva Costa",1
+820,"Pamela Diogo Rodrigues",1
+588,"Pamela Freitas Rosa Machado",1
+750,"Pâmella Santana Nunes",1
+116,"Paola Azevedo",0
+61,PATRICIA,0
+551,"Patrícia Esteves da Silva",1
+1053,"Patricia Maia Gozi",1
+182,"Patricia Mecking",1
+303,"Patrícia Pereira da Costa",1
+723,"Patrícia Pereira da Costa (Zdent)",1
+623,"Patrícia Pereira da Costa Orto",1
+631,"Patrícia Teixeira Azevedo Cerne",1
+809,"Patrícia Teixeira Azevedo Cerne",1
+642,"Patrick de Assis da Silva",1
+191,"Paula Alvarez",1
+1121,"Paula Augusto Roman Muniz",1
+822,"Paula Carvalho Motta (Zdent)",1
+186,"Paula Menezes Periles",1
+984,"Pedro Henrique Da Rocha Bussons",1
+376,"Pedro Ivo Jacinto Fonseca",1
+1054,"Pedro Lucas Pereira Torres",1
+93,"PLANO AZUL",1
+1055,"Poliana Oliveira",1
+593,"PRISCILA AMARAL SERAPHIM",1
+398,"Priscila Batista do Nascimento",1
+132,"PRISCILA DE GODOI",0
+921,"Priscila Dos Santos Ferreira",1
+1133,"Priscila Fernanda Morais Bento de Souza",1
+527,"PRISCILA GALHARDO SEGURA",1
+564,"PRISCILA GALHARDO SEGURA (CLINICO)",1
+973,"Priscila Martins",1
+591,"PRISCILA MENINI DOS SANTOS",1
+697,"Priscilla Aparecida Pedroso",1
+145,"Priscilla Carolina",0
+683,"Priscilla Martins Barbosa Dias",1
+884,"Pryscilla Batista Leite",1
+619,"Rachel Ferreira Serra",1
+38,"Rafael de Amorim de Oliveira",1
+1056,"Rafael De Oliveira Rodrigues",1
+904,"Rafael Ferreira Dos Santos",1
+923,"Rafael Gomes Zumpichiatti Arruda",1
+175,"Rafael Pinto",1
+115,"Rafael Ribeiro",1
+270,"Rafaela Araujo",1
+948,"Rafaela Da Conceição Faria De Almeida",1
+1057,"Rafaela De Vasconcelos Gomes",1
+767,"Rafaela Lois Felippe",1
+1058,"Raiane Costa De Paula",1
+970,"Raimundo Venacio de Barros Filho",1
+69,RAISSA,0
+954,"Raissa Lucia Ferreira Pinheiro",1
+1059,"Raissa Piheiro",1
+1132,"Rana Alice da Cruz Pessoa",1
+1060,"Raphael Maia Tavares",1
+893,"Raphael Oscar Da Fonseca",1
+1147,"Raphaela de Lucena",1
+332,"Raquel Gomes Pimenta",1
+795,"Raquel Gomes Pimenta (Zdent)",1
+1076,"RAYANE SINQUINI DA PAIXÃO",1
+1061,"Rayanne De Araujo",1
+1062,"Raymundo Venancio De Barros Filho",1
+1109,"Rebeca Cavalcante Marreiro",1
+646,"Rebecca Gonzaga VonHelde",1
+772,"Rebecca Gonzaga VonHelde (Zdent) ",1
+765,"Régis Justino Fernandes",1
+138,"Renata Abrantes",0
+985,"Renata Almeida Jorge",1
+643,"Renata Auday Maia",1
+556,"Renata Auday Maia Nassif",1
+128,"RENATA COELHO",1
+955,"Renata Lack Ferreira",1
+785,"Renata Saldanha (Zdent)",1
+703,"Renata Vrech",1
+863,"Rhaquel Rodrigues Campêlo",1
+272,"Rhuan dos santos salgado vieira",1
+141,"RICARDO MOURA",0
+499,"Ridolfi Maria Gouvea de Carvalho",1
+400,"Rita de Cassia Mannis",1
+71,ROBERTA,0
+696,"Roberta Cecim",1
+72,"Roberta Lima da Silva",1
+154,"Roberto Freire",1
+60,"Roberto Panza Bruno",1
+864,"Robson Luiz Rodrigues Vieira Júnior",1
+83,RODRIGO,1
+1084,Rodrigo,1
+218,"Rodrigo Cardoso",1
+9,"RODRIGO NUNES",0
+854,"Rodrigo Souza Delfino (ENDO)",1
+1140,"Roger Linhares de Oliveira",1
+174,"SABRINA DANTAS",0
+372,"Sabrina Manhaes Viana Souza",0
+557,"Samara Lemos De Oliveira",1
+50,"Sandro Lima",0
+487,"Sandy De Oliveira Aguiar",1
+797,"Sandy de Oliveira Aguiar (Zdent)",1
+129,"Sanzia Marreto",0
+1063,"Sara Martins De Souza",1
+905,"Sara Martins Souza",1
+543,"Silvana Lanzuolo",1
+484,"Silvia Helena Siqueira Toledo Franco",1
+725,"Simone (Zdent)",1
+193,"SIMONE ORTO",1
+310,"Simone Ribeiro",1
+33,"SIMONE TADEU DE OLIVEIRA",1
+30,"Stephanie Cristine",1
+1078,"stephanie gomes pessanha",1
+511,"Stephanie James",1
+943,"Stephanie Mesquita",1
+164,"Sullene Freitas",1
+123,"taiane ",0
+355,"Taisa Helena dos Santos Theodoro",1
+308,"Taluya Góes de Farias Alves Bezerra",1
+126,TAMIRES,0
+305,"Tamiris de Oliveira Santos",1
+178,"Tamiris Monteiro",0
+381,"Tatiane da Silva Cruz",1
+717,"Taynara Nascimento de Oliveira",1
+996,"Teste Importacao Dentistas 1",1
+997,"Teste Importacao Dentistas 2",1
+998,"Teste Importacao Dentistas 3",1
+55,"THAINA PEDIATRA",0
+386,"THAINA SOARES",1
+341,"Thais Aguiar Gomes",1
+929,"Thaís De Almeida",1
+1097,"Thais de Souza Maciel Monteiro",1
+1064,"Thais Dos Santos Rocha",1
+942,"Thais Figueiredo",1
+195,"Thais Perrota",1
+351,"THAÍSSA DA SILVA PERANZZETTA",1
+183,THALES,1
+555,"Thamia Adriane Rocha Matos",1
+173,"THAMIRES ALVES",1
+155,"Thamires Terra",1
+603,"Thamirys da Paz Miranda",1
+849,"Thamirys de Oliveira Lemos Inacio",1
+944,"Thamyres Felizardo",1
+46,"THARCILA DE M JABOR",0
+255,"Thassya Verissimo",0
+399,"Thassya Verissimo",1
+1072,"Thatiana Fernandes Vieira",1
+702,"Thatielly Laccino e Silva",1
+602,"Thayane Rezende da Silva Carvalho",1
+760,"Thayluan Machado Rodrigues de Jesus",1
+758,"Thayná Carla Prado Barbosa da Silva",1
+805,"Thayná Santos de Souza Julio",1
+1131,"Thaynara dos Santos Cardoso",1
+687,"Thiago Barros",1
+928,"Thiago Cordeiro",1
+754,"Thiago Granato",1
+233,"Thiago Luiz",1
+964,"Thiago Petroli",1
+742,"Thiago Sá Barreto Granato",1
+784,"Thiago Soares Kanazawa (Zdent)",1
+693,"Túlio Moreira",1
+482,"Vanessa Alves Pereira",1
+68,"Vanessa Botelho",1
+727,"Vanessa Botelho (Zdent)",1
+881,"Vanessa Lóssio",1
+674,"Vicencio Daniel Nóbrega De Araújo E Silva",1
+592,"VICTOR IBANHES",1
+961,"Victoria Sousa Carneiro Reis",1
+1074,"Vinicius de Souza Lemos",1
+48,"Vinicius Gonzalez",1
+142,"Vinicius RioMayor",1
+912,"Vitoria Guimarães Diniz Gomes",1
+891,"Vitória Rangel Da Silva",1
+57,"Vivian Siqueira",1
+80,"Wagner Brandao",0
+852,"Wellerson  Sander Dos Santos",1
+875,"Willian Wallace de Sousa Honorato (Zdent)",1
+143,"Yana Alves",0
+561,"YASMIM ALVES GONÇALO",1
+1065,"Yasmin Fernandes",1
+831,"Yasmin Fernandes Aldea De Oliveira",1
+1069,"Yasmin Nathalie Lopes Silva de Assis",1
+882,"Yasmin Sasha",1
+799,"Yuri Laport Lopes",1
+810,"Yuri Laport Lopes",1

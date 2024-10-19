@@ -1,16 +1,24 @@
 ﻿using DentalRJ.Domain.Entities.Base;
 using DentalRJ.Domain.Exceptions;
 using DentalRJ.Domain.Validators;
+using System.ComponentModel.DataAnnotations;
 namespace DentalRJ.Domain.Entities
 {
 	public class Dentist : NamedBaseEntity
 	{
 
+        [MaxLength(11)]
         public string CPF { get; set; } = string.Empty;
         public DateOnly BirthDate { get; set; }
+        [MaxLength(100)]
         public string Email { get; set; } = string.Empty;
+        [MaxLength(10)]
         public string CRO { get; set; } = string.Empty;
-        public IEnumerable<Dentistry>? Dentistries { get; set; }
+
+
+        #region Relationship
+            public ICollection<DentistDentistry> DentistDentistries { get; set; } = new List<DentistDentistry>();
+        #endregion
 
         private bool IsOlderThan18()
         {

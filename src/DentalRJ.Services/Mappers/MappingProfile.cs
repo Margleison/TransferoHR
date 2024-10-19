@@ -14,11 +14,17 @@ public class MappingProfile : Profile
                 .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()));
 
         CreateMap<ClinicCreateModel, Clinic>();
-        CreateMap<NamedUpdateModel, Clinic>();
+        CreateMap<ClinicUpdateModel, Clinic>();
         CreateMap<Clinic, ClinicGetModel>()
                 .ForMember(dest => dest.CompanyName, opt => opt.MapFrom(src => src.Company.Name))
-                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString())); 
-        
+                .ForMember(dest => dest.StateCode, opt => opt.MapFrom(src => src.StateCode.ToString()))
+                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()));
+
+        CreateMap<DentalInsuranceCreateModel, DentalInsurance>();
+        CreateMap<DentalInsuranceUpdateModel, DentalInsurance>();
+        CreateMap<DentalInsurance, DentalInsuranceGetModel>()
+                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()));
+
         CreateMap<DentistCreateModel, Dentist>();
         CreateMap<DentistUpdateModel, Dentist>();
         CreateMap<Dentist, DentistGetModel>()
@@ -32,6 +38,7 @@ public class MappingProfile : Profile
         CreateMap<PatientCreateModel, Patient>();
         CreateMap<PatientUpdateModel, Patient>();
         CreateMap<Patient, PatientGetModel>()
+                .ForMember(dest => dest.StateCode, opt => opt.MapFrom(src => src.StateCode.ToString()))
                 .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()));
     }
 }

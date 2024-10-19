@@ -48,15 +48,18 @@ namespace DentalRJ.WebApi.Controllers
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] TCreateModel createModel)
     {
-      if (!ModelState.IsValid)
-        return BadRequest(ModelState);
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
 
-      var entity = await _service.Insert(createModel, "system");
-      return CreatedAtAction(nameof(GetById), new { id = entity.Id }, entity);
-    }
+        var entity = await _service.Insert(createModel, "system");
 
-    // PUT: api/{controller}/{id}
-    [HttpPut("{id}")]
+        var dto = _mapper.Map<TNamedGetModel>(entity);
+        return CreatedAtAction(nameof(GetById), new { id = entity.Id }, dto);
+
+     }
+
+        // PUT: api/{controller}/{id}
+        [HttpPut("{id}")]
     public async Task<IActionResult> Update(Guid id, [FromBody] TUpdateModel updateModel)
     {
       if (!ModelState.IsValid)

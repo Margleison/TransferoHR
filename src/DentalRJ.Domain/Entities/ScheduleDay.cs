@@ -10,12 +10,12 @@ namespace DentalRJ.Domain.Entities
         public Guid? DentistId { get; set; }
         public DateOnly Date { get; set; }
 
-        public ScheduleSetup ScheduleSetup { get; set; }
-        public ConsultingRoom ConsultingRoom { get; set; }
-        public Dentistry Dentistry { get; set; }
-        public Dentist? Dentist { get; set; }
+        public required ScheduleSetup ScheduleSetup { get; set; }
+        public required ConsultingRoom ConsultingRoom { get; set; }
+        public required Dentistry Dentistry { get; set; }
+        public required Dentist Dentist { get; set; }
 
-        public IEnumerable<ScheduleSlot> ScheduleSlots { get; set; }
+        public ICollection<ScheduleSlot> ScheduleSlots { get; set; } = new List<ScheduleSlot>();
     }
 }
 

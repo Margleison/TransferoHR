@@ -11,9 +11,9 @@ namespace DentalRJ.Domain.Entities
         public Guid? PatientId { get; set; }
         public TimeOnly Time { get; set; }
 
-        public ScheduleDay ScheduleDay { get; set; }
-        public ConsultingRoom ConsultingRoom { get; set; }
-        public Dentistry Dentistry { get; set; }
+        public required ScheduleDay ScheduleDay { get; set; }
+        public required ConsultingRoom ConsultingRoom { get; set; }
+        public required Dentistry Dentistry { get; set; }
         public Dentist? Dentist { get; set; }
         public Dentist? Patient { get; set; }
 

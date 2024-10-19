@@ -1,4 +1,6 @@
-﻿namespace DentalRJ.Services.Interfaces;
+﻿using System;
+
+namespace DentalRJ.Services.Interfaces;
 
 public interface IBaseEntityRepository<TEntity, TParams>
 {

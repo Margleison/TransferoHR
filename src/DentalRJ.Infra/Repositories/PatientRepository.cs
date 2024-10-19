@@ -41,7 +41,7 @@ namespace DentalRJ.Infra.Repositories
             else
                 predicate = predicate.And(x => x.Status != EntityStatusEnum.Inactive);
 
-            return await ListAsync(predicate);
+            return await ListAsync(predicate, param.PageNumber, param.PageSize);
         }
     }
 }

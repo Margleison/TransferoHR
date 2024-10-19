@@ -1,0 +1,1 @@
+ INSERT INTO dentalrj.Company (Id, Status, CreatedAt, CreatedBy, Name) values (UUID(), 1, now(), 'Loader', 'RJ Dental');

@@ -39,10 +39,10 @@ public class BaseEntityRepository<TEntity, TParams> : IBaseEntityRepository<TEnt
             filter = x => x.Status != EntityStatusEnum.Deleted;
         }
 
-        return await ListAsync(filter);
+        return await ListAsync(filter, param.PageNumber, param.PageSize);
     }
 
-    protected async Task<IEnumerable<TEntity>> ListAsync(Expression<Func<TEntity, bool>> filter)
+    protected async Task<IEnumerable<TEntity>> ListAsync(Expression<Func<TEntity, bool>> filter, int pageNumber, int pageSize)
     {
         IQueryable<TEntity> query = Context.Set<TEntity>();
         query = query.Where(filter);
@@ -50,7 +50,7 @@ public class BaseEntityRepository<TEntity, TParams> : IBaseEntityRepository<TEnt
         if (_include != null)
             query = _include(query);
 
-        return await query.ToListAsync();
+        return await query.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToListAsync();
     }
 
     protected async Task<TEntity> FirstAsync(Expression<Func<TEntity, bool>> filter) {
@@ -83,4 +83,6 @@ public class BaseEntityRepository<TEntity, TParams> : IBaseEntityRepository<TEnt
         Context.Entry(toUpdate).State = EntityState.Modified;
         await Context.SaveChangesAsync();
     }
+
+
 }

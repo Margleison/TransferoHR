@@ -9,6 +9,6 @@ namespace DentalRJ.Services.Model
         public string Email { get; set; } = string.Empty;
         public string? PostalCode { get; set; } = string.Empty;
         public string? CityName { get; set; } = string.Empty;
-        public string? StateCode { get; set; } = string.Empty;
+        public string StateCode { get; set; }
     }
 }

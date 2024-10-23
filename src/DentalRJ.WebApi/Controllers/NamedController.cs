@@ -16,7 +16,7 @@ namespace DentalRJ.WebApi.Controllers
       where TNamedGetModel : NamedGetModel
       where TNamedParams : NamedParams
     {
-    private readonly NamedBaseService<TEntity, TNamedParams, TNamedGetModel> _service;
+    protected readonly NamedBaseService<TEntity, TNamedParams, TNamedGetModel> _service;
     private readonly IMapper _mapper;
 
     public NamedController(NamedBaseService<TEntity, TNamedParams, TNamedGetModel> service, IMapper mapper)
@@ -58,8 +58,8 @@ namespace DentalRJ.WebApi.Controllers
 
      }
 
-        // PUT: api/{controller}/{id}
-        [HttpPut("{id}")]
+    // PUT: api/{controller}/{id}
+    [HttpPut("{id}")]
     public async Task<IActionResult> Update(Guid id, [FromBody] TUpdateModel updateModel)
     {
       if (!ModelState.IsValid)

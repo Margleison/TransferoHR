@@ -5,10 +5,11 @@ using DentalRJ.Infra.Repositories.Base;
 using DentalRJ.Services.Interfaces;
 using DentalRJ.Services.Params;
 using LinqKit;
+using System.Linq.Expressions;
 
 namespace DentalRJ.Infra.Repositories
 {
-    public class DentistRepository : NamedBaseEntityRepository<Dentist, DentistParams>, INamedBaseEntityRepository<Dentist, DentistParams>
+    public class DentistRepository : NamedBaseEntityRepository<Dentist, DentistParams>, IDentistRepository
     {
         public DentistRepository(ApplicationDbContext context) : base(context)
         {
@@ -39,6 +40,36 @@ namespace DentalRJ.Infra.Repositories
                 predicate = predicate.And(x => x.Status != EntityStatusEnum.Inactive);
 
             return await ListAsync(predicate, param.PageNumber, param.PageSize);
+        }
+        public async Task<Dentist> GetByCPF(string CPF, Guid? excId = null)
+        {
+            Expression<Func<Dentist, bool>> filter;
+            if (excId == null)
+                filter = x => x.CPF == CPF && x.Status != EntityStatusEnum.Deleted;
+            else
+                filter = x => x.CPF == CPF && x.Status != EntityStatusEnum.Deleted && x.Id != excId;
+
+            return await FirstAsync(filter);
+        }
+        public async Task<Dentist> GetByEmail(string email, Guid? excId = null)
+        {
+            Expression<Func<Dentist, bool>> filter;
+            if (excId == null)
+                filter = x => x.Email == email && x.Status != EntityStatusEnum.Deleted;
+            else
+                filter = x => x.Email == email && x.Status != EntityStatusEnum.Deleted && x.Id != excId;
+
+            return await FirstAsync(filter);
+        }
+        public async Task<Dentist> GetByCRO(string CRO, Guid? excId = null)
+        {
+            Expression<Func<Dentist, bool>> filter;
+            if (excId == null)
+                filter = x => x.CRO == CRO && x.Status != EntityStatusEnum.Deleted;
+            else
+                filter = x => x.CRO == CRO && x.Status != EntityStatusEnum.Deleted && x.Id != excId;
+
+            return await FirstAsync(filter);
         }
     }
 }

@@ -6,15 +6,27 @@ using DentalRJ.Services.Interfaces;
 using DentalRJ.Services.Params;
 using LinqKit;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace DentalRJ.Infra.Repositories;
 
-public class ClinicRepository : NamedBaseEntityRepository<Clinic, ClinicParams>, INamedBaseEntityRepository<Clinic, ClinicParams>
+public class ClinicRepository : NamedBaseEntityRepository<Clinic, ClinicParams>, IClinicRepository
 {
     public ClinicRepository(ApplicationDbContext db) : base(db)
     {
         _include = clinics => clinics.Include(c => c.Company);
     }
+    public async Task<Clinic> GetByTradeName(string tradeName, Guid? excId = null)
+    {
+        Expression<Func<Clinic, bool>> filter;
+        if (excId == null)
+            filter = x => x.TradeName == tradeName && x.Status != EntityStatusEnum.Deleted;
+        else
+            filter = x => x.TradeName == tradeName && x.Status != EntityStatusEnum.Deleted && x.Id != excId;
+
+        return await FirstAsync(filter);
+    }
+
 
     public async Task<IEnumerable<Clinic>> GetAllAsync(ClinicParams param)
     {

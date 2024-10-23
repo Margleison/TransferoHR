@@ -3,7 +3,6 @@ namespace DentalRJ.Domain.Entities
 {
 	public class ScheduleSlot : BaseEntity
 	{
-
         public Guid ScheduleDayId { get; set; }
         public Guid ConsultingRoomId { get; set; }
         public Guid DentistryId { get; set; }
@@ -16,7 +15,6 @@ namespace DentalRJ.Domain.Entities
         public required Dentistry Dentistry { get; set; }
         public Dentist? Dentist { get; set; }
         public Dentist? Patient { get; set; }
-
     }
 }
 

@@ -1,4 +1,6 @@
-﻿using DentalRJ.Domain.Entities;
+﻿
+
+using DentalRJ.Domain.Entities;
 using DentalRJ.Infra.Database;
 using DentalRJ.Infra.Repositories.Base;
 using DentalRJ.Services.Interfaces;

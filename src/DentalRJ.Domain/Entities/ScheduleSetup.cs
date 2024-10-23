@@ -18,7 +18,6 @@ namespace DentalRJ.Domain.Entities
         public required Dentistry Dentistry { get; set; }
         public required Dentist Dentist { get; set; }
         public ICollection<ScheduleDay> ScheduleDays { get; set; } = new List<ScheduleDay>();
-
     }
 }
 

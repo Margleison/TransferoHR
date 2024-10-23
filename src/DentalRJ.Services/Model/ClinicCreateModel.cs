@@ -6,7 +6,7 @@ namespace DentalRJ.Services.Model;
 public class ClinicCreateModel: NamedCreateModel 
 {
     public Guid CompanyId { get; set; }
-    public string? TradeName { get; set; } = string.Empty;
+    public string TradeName { get; set; } = string.Empty;
     public string? Phone { get; set; } = string.Empty;
     public string? Phone2 { get; set; } = string.Empty;
     public string? PostalCode { get; set; } = string.Empty;

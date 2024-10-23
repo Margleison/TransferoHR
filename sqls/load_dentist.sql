@@ -1,3 +1,8 @@
+select distinct concat('(''', replace(nome_completo, '-', ''), ''',''', cpf, ''',''', (case when data_nascimento = '0000-00-00' then '1950-01-01' else data_nascimento end), ''', ''', email, ''', ''', cro, ''', ', ativo, ', uuid(), now(),  ''loader''),') 
+from dentistas 
+where not (nome_completo like '%Geral%' or nome_completo like '%Teste%' or nome_completo like '%Avaliador%'  or nome_completo like '%Zdent%'   or nome_completo like '%Cirurgia%'  or nome_completo like '%ENDO%'  or nome_completo like '%CLARea%')
+order by replace(nome_completo, '-', '')
+
 INSERT INTO dentalrj.Dentist (Name, CPF, BirthDate, Email, CRO, Status, Id, CreatedAt, CreatedBy) values
 ('Abel Elias de Macedo','37588001615','1950-01-01', 'dr.abel.macedo@terra.com.br', '20144', 1, uuid(), now(),  'loader'),
 ('ADMA ABRAHAO','','1950-01-01', '', '', 0, uuid(), now(),  'loader'),
@@ -682,3 +687,5 @@ INSERT INTO dentalrj.Dentist (Name, CPF, BirthDate, Email, CRO, Status, Id, Crea
 ('Yasmin Sasha','17963024732','1995-09-04', 'yasmin_colutti@hotmail.com', '48000', 1, uuid(), now(),  'loader'),
 ('Yuri Laport Lopes','14689817731','1994-10-03', 'financeiro@021dental.com.br', '50.189', 1, uuid(), now(),  'loader'),
 ('Yuri Laport Lopes','14689817731','1994-10-03', 'yuri-ll@hotmail.com', '50189', 1, uuid(), now(),  'loader');
+
+

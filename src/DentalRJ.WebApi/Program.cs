@@ -29,15 +29,14 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<INamedBaseEntityRepository<NamedBaseEntity, NamedParams>, NamedBaseEntityRepository<NamedBaseEntity, NamedParams>>();
-builder.Services.AddScoped<INamedBaseEntityRepository<Clinic, ClinicParams>, ClinicRepository>();
+builder.Services.AddScoped<IClinicRepository, ClinicRepository>();
 builder.Services.AddScoped<INamedBaseEntityRepository<Company, NamedParams>, CompanyRepository>();
-builder.Services.AddScoped<INamedBaseEntityRepository<DentalInsurance, DentalInsuranceParams>, DentalInsuranceRepository>();
-builder.Services.AddScoped<INamedBaseEntityRepository<Dentist, DentistParams>, DentistRepository>();
+builder.Services.AddScoped<IDentalInsuranceRepository, DentalInsuranceRepository>();
+builder.Services.AddScoped<IDentistRepository, DentistRepository>();
 builder.Services.AddScoped<INamedBaseEntityRepository<Dentistry, NamedParams>, DentistryRepository>();
-builder.Services.AddScoped<INamedBaseEntityRepository<Patient, PatientParams>, PatientRepository>();
+builder.Services.AddScoped<IPatientRepository, PatientRepository>();
 
-
-builder.Services.AddScoped<ClinicService>();
+builder.Services.AddScoped <ClinicService>();
 builder.Services.AddScoped<CompanyService>();
 builder.Services.AddScoped<DentalInsuranceService>();
 builder.Services.AddScoped<DentistService>();
@@ -57,6 +56,7 @@ if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
+//app.UseMiddleware<GlobalExceptionHandling>();
 
 app.Run();
 //  src=> dotnet ef migrations add InitialCreate --project DentalRJ.Infra\DentalRJ.Infra.csproj --startup-project DentalRJ.WebApi\DentalRJ.WebApi.csproj --verbose

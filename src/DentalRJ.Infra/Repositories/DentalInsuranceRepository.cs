@@ -5,20 +5,25 @@ using DentalRJ.Infra.Repositories.Base;
 using DentalRJ.Services.Interfaces;
 using DentalRJ.Services.Params;
 using LinqKit;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Linq.Expressions;
 
 namespace DentalRJ.Infra.Repositories
 {
-    public class DentalInsuranceRepository : NamedBaseEntityRepository<DentalInsurance, DentalInsuranceParams>, INamedBaseEntityRepository<DentalInsurance, DentalInsuranceParams>
+    public class DentalInsuranceRepository : NamedBaseEntityRepository<DentalInsurance, DentalInsuranceParams>, IDentalInsuranceRepository
     {
         public DentalInsuranceRepository(ApplicationDbContext context) : base(context)
         {
         }
+        public async Task<DentalInsurance> GetByBrandName(string brandName, Guid? excId = null)
+        {
+            Expression<Func<DentalInsurance, bool>> filter;
+            if (excId == null)
+                filter = x => x.BrandName == brandName && x.Status != EntityStatusEnum.Deleted;
+            else
+                filter = x => x.BrandName == brandName && x.Status != EntityStatusEnum.Deleted && x.Id != excId;
 
+            return await FirstAsync(filter);
+        }
         public async Task<IEnumerable<DentalInsurance>> GetAllAsync(DentalInsuranceParams param)
         {
             var predicate = PredicateBuilder.New<DentalInsurance>(true);

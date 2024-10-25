@@ -1,9 +1,10 @@
 ﻿using DentalRJ.Domain.Entities;
+using DentalRJ.Services.Interfaces.Generic;
 using DentalRJ.Services.Params;
 
 namespace DentalRJ.Services.Interfaces
 {
-    public interface IDentistRepository : INamedBaseEntityRepository<Dentist, DentistParams>
+    public interface IDentistRepository : INamedEntityRepository<Dentist, DentistParams>
     {
         Task<Dentist>? GetByCRO(string CRO, Guid? excId);
         Task<Dentist>? GetByCPF(string CPF, Guid? excId);

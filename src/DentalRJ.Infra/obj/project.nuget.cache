@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pZ0R+IyzKy0=",
+  "dgSpecHash": "Ph23FqpO2+I=",
   "success": true,
-  "projectFilePath": "C:\\Users\\sergi\\source\\repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.Infra\\DentalRJ.Infra.csproj",
+  "projectFilePath": "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.Infra\\DentalRJ.Infra.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sergi\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\sergi\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

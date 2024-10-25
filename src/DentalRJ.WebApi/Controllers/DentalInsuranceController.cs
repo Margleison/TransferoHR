@@ -10,7 +10,7 @@ namespace DentalRJ.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DentalInsuranceController : NamedController<DentalInsurance, DentalInsuranceCreateModel, DentalInsuranceUpdateModel, DentalInsuranceGetModel, DentalInsuranceParams>
+    public class DentalInsuranceController : GenericController<DentalInsurance, DentalInsuranceCreateModel, DentalInsuranceUpdateModel, DentalInsuranceGetModel, DentalInsuranceParams>
     {
         public DentalInsuranceController(DentalInsuranceService service, IMapper mapper)
             : base(service, mapper)

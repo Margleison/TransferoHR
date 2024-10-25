@@ -1,4 +1,6 @@
-﻿namespace DentalRJ.Services.Params
+﻿using DentalRJ.Services.Params.Generic;
+
+namespace DentalRJ.Services.Params
 {
     public class DentistParams : NamedParams
     {

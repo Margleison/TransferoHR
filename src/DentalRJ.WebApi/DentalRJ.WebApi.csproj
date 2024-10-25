@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Middlewares\**" />
+    <Content Remove="Middlewares\**" />
+    <EmbeddedResource Remove="Middlewares\**" />
+    <None Remove="Middlewares\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.10">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -23,10 +30,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DentalRJ.Infra\DentalRJ.Infra.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Middlewares\" />
   </ItemGroup>
 
 </Project>

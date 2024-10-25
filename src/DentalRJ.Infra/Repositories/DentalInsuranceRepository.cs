@@ -9,7 +9,7 @@ using System.Linq.Expressions;
 
 namespace DentalRJ.Infra.Repositories
 {
-    public class DentalInsuranceRepository : NamedBaseEntityRepository<DentalInsurance, DentalInsuranceParams>, IDentalInsuranceRepository
+    public class DentalInsuranceRepository : NamedEntityRepository<DentalInsurance, DentalInsuranceParams>, IDentalInsuranceRepository
     {
         public DentalInsuranceRepository(ApplicationDbContext context) : base(context)
         {
@@ -24,7 +24,7 @@ namespace DentalRJ.Infra.Repositories
 
             return await FirstAsync(filter);
         }
-        public async Task<IEnumerable<DentalInsurance>> GetAllAsync(DentalInsuranceParams param)
+        public async override Task<IEnumerable<DentalInsurance>> GetAllAsync(DentalInsuranceParams param)
         {
             var predicate = PredicateBuilder.New<DentalInsurance>(true);
 

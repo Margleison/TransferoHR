@@ -6,6 +6,8 @@ using DentalRJ.Services.Params;
 using DentalRJ.Services.Interfaces;
 using DentalRJ.Domain.Enums;
 using DentalRJ.Services.Utils;
+using DentalRJ.Services.Params.Generic;
+using DentalRJ.Services.Interfaces.Generic;
 
 namespace DentalRJ.Services.Implementation;
 
@@ -13,8 +15,8 @@ public class ClinicService : NamedBaseService<Clinic, ClinicParams, ClinicGetMod
 {
 
     private readonly IClinicRepository _repo;
-    private readonly INamedBaseEntityRepository<Company, NamedParams> _companyRepository;
-    public ClinicService(IMapper mapper, IClinicRepository repo, INamedBaseEntityRepository<Company, NamedParams> companyRepo)
+    private readonly ICompanyRepository _companyRepository;
+    public ClinicService(IMapper mapper, IClinicRepository repo, ICompanyRepository companyRepo)
         : base(mapper, repo, "Clinic")
     {
         _repo = repo;

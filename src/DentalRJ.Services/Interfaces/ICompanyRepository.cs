@@ -5,8 +5,7 @@ using DentalRJ.Services.Params;
 
 namespace DentalRJ.Services.Interfaces
 {
-    public interface IClinicRepository : INamedEntityRepository<Clinic, ClinicParams>
+    public interface ICompanyRepository : INamedEntityRepository<Company, CompanyParams>
     {
-        Task<Clinic>? GetByTradeName(string tradeName, Guid? excId);
     }
 }

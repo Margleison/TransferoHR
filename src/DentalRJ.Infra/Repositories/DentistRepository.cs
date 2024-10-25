@@ -9,13 +9,13 @@ using System.Linq.Expressions;
 
 namespace DentalRJ.Infra.Repositories
 {
-    public class DentistRepository : NamedBaseEntityRepository<Dentist, DentistParams>, IDentistRepository
+    public class DentistRepository : NamedEntityRepository<Dentist, DentistParams>, IDentistRepository
     {
         public DentistRepository(ApplicationDbContext context) : base(context)
         {
         }
 
-        public async Task<IEnumerable<Dentist>> GetAllAsync(DentistParams param)
+        public async override Task<IEnumerable<Dentist>> GetAllAsync(DentistParams param)
         {
             var predicate = PredicateBuilder.New<Dentist>(true);
 

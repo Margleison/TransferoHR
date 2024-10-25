@@ -1,15 +1,14 @@
 using AutoMapper;
 using DentalRJ.Domain.Entities;
 using DentalRJ.Services.Model;
-using DentalRJ.Services.Model.Base;
 
 public class MappingProfile : Profile
 {
     public MappingProfile()
     {
         CreateMap<CompanyCreateModel, Company>();
-        CreateMap<NamedUpdateModel, Company>();
-        CreateMap<Company, NamedGetModel>()
+        CreateMap<CompanyUpdateModel, Company>();
+        CreateMap<Company, CompanyGetModel>()
                 .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
                 .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()));
 
@@ -30,9 +29,9 @@ public class MappingProfile : Profile
         CreateMap<Dentist, DentistGetModel>()
                 .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()));
 
-        CreateMap<NamedCreateModel, Dentistry>();
-        CreateMap<NamedUpdateModel, Dentistry>();
-        CreateMap<Dentistry, NamedGetModel>()
+        CreateMap<DentistryCreateModel, Dentistry>();
+        CreateMap<DentistryUpdateModel, Dentistry>();
+        CreateMap<Dentistry, DentistryGetModel>()
                 .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()));
 
         CreateMap<PatientCreateModel, Patient>();

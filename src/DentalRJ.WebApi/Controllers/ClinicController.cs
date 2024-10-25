@@ -11,7 +11,7 @@ namespace DentalRJ.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ClinicController : NamedController<Clinic, ClinicCreateModel,  ClinicUpdateModel, ClinicGetModel, ClinicParams>
+    public class ClinicController : GenericController<Clinic, ClinicCreateModel,  ClinicUpdateModel, ClinicGetModel, ClinicParams>
     {
 
         private readonly IClinicService _clinicService;

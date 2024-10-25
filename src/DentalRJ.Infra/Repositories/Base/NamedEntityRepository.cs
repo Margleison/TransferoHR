@@ -2,17 +2,17 @@
 using DentalRJ.Domain.Entities.Base;
 using DentalRJ.Domain.Enums;
 using DentalRJ.Infra.Database;
-using DentalRJ.Services.Interfaces;
-using DentalRJ.Services.Params;
+using DentalRJ.Services.Interfaces.Generic;
+using DentalRJ.Services.Params.Generic;
 using LinqKit;
 
 namespace DentalRJ.Infra.Repositories.Base;
 
-public class NamedBaseEntityRepository<TEntity, TNamedParams> : BaseEntityRepository<TEntity, GenericParams>, INamedBaseEntityRepository<TEntity, TNamedParams> 
+public class NamedEntityRepository<TEntity, TNamedParams> : BaseEntityRepository<TEntity, GenericParams>, INamedEntityRepository<TEntity, TNamedParams> 
     where TEntity : NamedBaseEntity
     where TNamedParams : NamedParams
 {
-    public NamedBaseEntityRepository(ApplicationDbContext db) : base(db)
+    public NamedEntityRepository(ApplicationDbContext db) : base(db)
     {
         _include = null;
     }
@@ -33,7 +33,7 @@ public class NamedBaseEntityRepository<TEntity, TNamedParams> : BaseEntityReposi
         return await FirstAsync(filter);
     }
 
-    public async Task<IEnumerable<TEntity>> GetAllAsync(TNamedParams param)
+    public async virtual Task<IEnumerable<TEntity>> GetAllAsync(TNamedParams param)
     {
         var predicate = PredicateBuilder.New<TEntity>(true);
 

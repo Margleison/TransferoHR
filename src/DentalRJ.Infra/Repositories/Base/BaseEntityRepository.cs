@@ -3,12 +3,14 @@ using Microsoft.EntityFrameworkCore;
 using DentalRJ.Domain.Entities.Base;
 using DentalRJ.Domain.Enums;
 using DentalRJ.Infra.Database;
-using DentalRJ.Services.Params;
-using DentalRJ.Services.Interfaces;
+using DentalRJ.Services.Params.Generic;
+using DentalRJ.Services.Interfaces.Generic;
 
 namespace DentalRJ.Infra.Repositories.Base;
 
-public class BaseEntityRepository<TEntity, TParams> : IBaseEntityRepository<TEntity, TParams> where TEntity : BaseEntity where TParams: GenericParams
+public class BaseEntityRepository<TEntity, TParams> : IGenericEntityRepository<TEntity, TParams> 
+    where TEntity : BaseEntity 
+    where TParams: GenericParams
 {
     protected ApplicationDbContext Context;
     public  Func<IQueryable<TEntity>, IQueryable<TEntity>>? _include = null;

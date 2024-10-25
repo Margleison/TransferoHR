@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sergi\\Source\\Repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.Domain\\DentalRJ.Domain.csproj",
+      "projectUniqueName": "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.Domain\\DentalRJ.Domain.csproj",
       "projectName": "DentalRJ.Domain",
-      "projectPath": "C:\\Users\\sergi\\Source\\Repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.Domain\\DentalRJ.Domain.csproj",
+      "projectPath": "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.Domain\\DentalRJ.Domain.csproj",
       "packagesPath": "C:\\Users\\sergi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sergi\\Source\\Repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.Domain\\obj\\",
+      "outputPath": "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\sergi\\AppData\\Roaming\\NuGet\\NuGet.Config",

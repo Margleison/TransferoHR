@@ -3891,11 +3891,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sergi\\source\\repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.WebApi\\DentalRJ.WebApi.csproj",
+      "projectUniqueName": "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.WebApi\\DentalRJ.WebApi.csproj",
       "projectName": "DentalRJ.WebApi",
-      "projectPath": "C:\\Users\\sergi\\source\\repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.WebApi\\DentalRJ.WebApi.csproj",
+      "projectPath": "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.WebApi\\DentalRJ.WebApi.csproj",
       "packagesPath": "C:\\Users\\sergi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sergi\\source\\repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.WebApi\\obj\\",
+      "outputPath": "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\sergi\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3913,8 +3913,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\sergi\\source\\repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.Infra\\DentalRJ.Infra.csproj": {
-              "projectPath": "C:\\Users\\sergi\\source\\repos\\sergiowgt\\DentalRJ3\\src\\DentalRJ.Infra\\DentalRJ.Infra.csproj"
+            "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.Infra\\DentalRJ.Infra.csproj": {
+              "projectPath": "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.Infra\\DentalRJ.Infra.csproj"
             }
           }
         }

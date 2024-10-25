@@ -1,4 +1,5 @@
 using DentalRJ.Domain.Enums;
+using DentalRJ.Services.Params.Generic;
 
 namespace DentalRJ.Services.Params;
 

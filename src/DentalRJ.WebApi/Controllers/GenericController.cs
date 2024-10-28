@@ -1,26 +1,28 @@
 ﻿using AutoMapper;
-using DentalRJ.Domain.Entities.Base;
-using DentalRJ.Services.Implementation;
-using DentalRJ.Services.Model.Base;
-using DentalRJ.Services.Params.Generic;
+using TransferoHR.Domain.Entities.Generic;
+using TransferoHR.Services.Implementation;
+using TransferoHR.Services.Model.Generic;
+using TransferoHR.Services.Params.Generic;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DentalRJ.WebApi.Controllers
+namespace TransferoHR.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class GenericController<TEntity, TCreateModel, TUpdateModel, TGetModel, TParams> : ControllerBase, IGenericController<TEntity, TCreateModel, TUpdateModel, TGetModel, TParams>
-      where TEntity : NamedBaseEntity
-      where TCreateModel : class
-      where TUpdateModel : class
+      where TEntity : GenericNamedEntity
+      where TCreateModel : NamedCreateModel
+      where TUpdateModel : NamedUpdateModel
       where TGetModel : NamedGetModel
       where TParams : NamedParams
     {
         protected readonly GenericService<TEntity, TParams, TGetModel> _service;
         private readonly IMapper _mapper;
+        private JobLevelService service;
+        private IMapper mapper;
 
-        public GenericController(NamedBaseService<TEntity, TParams, TGetModel> service, IMapper mapper)
+        public GenericController(GenericNamedService<TEntity, TParams, TGetModel> service, IMapper mapper)
         {
             _service = service;
             _mapper = mapper;

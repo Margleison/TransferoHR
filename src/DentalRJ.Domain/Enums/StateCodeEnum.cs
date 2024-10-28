@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace DentalRJ.Domain.Enums
+namespace TransferoHR.Domain.Enums
 {
     public enum StateCodeEnum
     {

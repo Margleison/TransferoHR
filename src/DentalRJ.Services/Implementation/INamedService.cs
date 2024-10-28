@@ -1,10 +1,10 @@
-﻿using DentalRJ.Domain.Entities.Base;
-using DentalRJ.Services.Implementation;
-using DentalRJ.Services.Model.Base;
-using DentalRJ.Services.Params.Generic;
+﻿using TransferoHR.Domain.Entities.Generic;
+using TransferoHR.Services.Implementation;
+using TransferoHR.Services.Model.Generic;
+using TransferoHR.Services.Params.Generic;
 
 public interface INamedService<T, TParams, TGetModel> : IGenericService<T, TParams, TGetModel>
-      where T : NamedBaseEntity
+      where T : GenericNamedEntity
       where TParams : NamedParams
       where TGetModel : NamedGetModel
 {

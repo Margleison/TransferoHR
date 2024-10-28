@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DentalRJ.Domain.Validators
+namespace TransferoHR.Domain.Validators
 {
     public static class EnumValidator
     {

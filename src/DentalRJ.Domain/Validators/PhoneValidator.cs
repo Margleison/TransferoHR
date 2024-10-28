@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace DentalRJ.Domain.Validators
+namespace TransferoHR.Domain.Validators
 {
     public static class PhoneValidator
     {

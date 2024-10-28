@@ -1,11 +1,11 @@
-﻿using DentalRJ.Domain.Entities;
-using DentalRJ.Services.Interfaces.Generic;
-using DentalRJ.Services.Params;
+﻿using TransferoHR.Domain.Entities;
+using TransferoHR.Services.Interfaces.Generic;
+using TransferoHR.Services.Params;
 
 
-namespace DentalRJ.Services.Interfaces
+namespace TransferoHR.Services.Interfaces
 {
-    public interface ICompanyRepository : INamedEntityRepository<Company, CompanyParams>
+    public interface ICompanyRepository : IGenericNamedEntityRepository<Company, CompanyParams>
     {
     }
 }

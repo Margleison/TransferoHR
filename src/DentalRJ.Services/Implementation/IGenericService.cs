@@ -1,16 +1,16 @@
-﻿using DentalRJ.Domain.Entities.Base;
-using DentalRJ.Services.Model.Base;
-using DentalRJ.Services.Params.Generic;
+﻿using TransferoHR.Domain.Entities.Generic;
+using TransferoHR.Services.Model.Generic;
+using TransferoHR.Services.Params.Generic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DentalRJ.Services.Implementation
+namespace TransferoHR.Services.Implementation
 {
     public interface IGenericService<T, TParams, TGetModel>
-       where T : BaseEntity
+       where T : GenericEntity
        where TParams : GenericParams
        where TGetModel : GetModel
     {

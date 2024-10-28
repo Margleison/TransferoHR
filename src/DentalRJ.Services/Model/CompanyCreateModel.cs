@@ -1,6 +1,6 @@
-using DentalRJ.Services.Model.Base;
+using TransferoHR.Services.Model.Generic;
 
-namespace DentalRJ.Services.Model;
+namespace TransferoHR.Services.Model;
 
 public class CompanyCreateModel: NamedCreateModel 
 {

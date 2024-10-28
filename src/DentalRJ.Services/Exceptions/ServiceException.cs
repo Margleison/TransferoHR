@@ -1,4 +1,4 @@
-﻿namespace DentalRJ.Services.Exceptions;
+﻿namespace TransferoHR.Services.Exceptions;
 public class ServiceException : Exception
 {
     public ServiceException(string message) : base(message) {     }

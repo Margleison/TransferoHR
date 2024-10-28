@@ -1,4 +1,4 @@
-﻿namespace DentalRJ.Domain.Exceptions;
+﻿namespace TransferoHR.Domain.Exceptions;
 
 public class DomainException : Exception
 {

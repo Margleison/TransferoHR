@@ -1,13 +1,13 @@
 using AutoMapper;
-using DentalRJ.Domain.Entities;
-using DentalRJ.Services.Interfaces;
-using DentalRJ.Services.Interfaces.Generic;
-using DentalRJ.Services.Model;
-using DentalRJ.Services.Params;
+using TransferoHR.Domain.Entities;
+using TransferoHR.Services.Interfaces;
+using TransferoHR.Services.Interfaces.Generic;
+using TransferoHR.Services.Model;
+using TransferoHR.Services.Params;
 
-namespace DentalRJ.Services.Implementation;
+namespace TransferoHR.Services.Implementation;
 
-public class CompanyService: NamedBaseService<Company, CompanyParams, CompanyGetModel>
+public class CompanyService: GenericNamedService<Company, CompanyParams, CompanyGetModel>
 {
     public CompanyService(IMapper mapper, ICompanyRepository repo)
         : base(mapper, repo, "Company")

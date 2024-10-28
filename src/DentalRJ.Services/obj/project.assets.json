@@ -108,14 +108,14 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "DentalRJ.Domain/1.0.0": {
+      "TransferoHR.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
-          "bin/placeholder/DentalRJ.Domain.dll": {}
+          "bin/placeholder/TransferoHR.Domain.dll": {}
         },
         "runtime": {
-          "bin/placeholder/DentalRJ.Domain.dll": {}
+          "bin/placeholder/TransferoHR.Domain.dll": {}
         }
       }
     }
@@ -315,33 +315,33 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "DentalRJ.Domain/1.0.0": {
+    "TransferoHR.Domain/1.0.0": {
       "type": "project",
-      "path": "../DentalRJ.Domain/DentalRJ.Domain.csproj",
-      "msbuildProject": "../DentalRJ.Domain/DentalRJ.Domain.csproj"
+      "path": "../DentalRJ.Domain/TransferoHR.Domain.csproj",
+      "msbuildProject": "../DentalRJ.Domain/TransferoHR.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "AutoMapper >= 12.0.1",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
-      "DentalRJ.Domain >= 1.0.0"
+      "TransferoHR.Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sergi\\.nuget\\packages\\": {}
+    "C:\\Users\\margleison.silva\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.Services\\DentalRJ.Services.csproj",
-      "projectName": "DentalRJ.Services",
-      "projectPath": "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.Services\\DentalRJ.Services.csproj",
-      "packagesPath": "C:\\Users\\sergi\\.nuget\\packages\\",
-      "outputPath": "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.Services\\obj\\",
+      "projectUniqueName": "C:\\Margleison\\TransferoHR\\src\\DentalRJ.Services\\TransferoHR.Services.csproj",
+      "projectName": "TransferoHR.Services",
+      "projectPath": "C:\\Margleison\\TransferoHR\\src\\DentalRJ.Services\\TransferoHR.Services.csproj",
+      "packagesPath": "C:\\Users\\margleison.silva\\.nuget\\packages\\",
+      "outputPath": "C:\\Margleison\\TransferoHR\\src\\DentalRJ.Services\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\sergi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\margleison.silva\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -356,8 +356,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.Domain\\DentalRJ.Domain.csproj": {
-              "projectPath": "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.Domain\\DentalRJ.Domain.csproj"
+            "C:\\Margleison\\TransferoHR\\src\\DentalRJ.Domain\\TransferoHR.Domain.csproj": {
+              "projectPath": "C:\\Margleison\\TransferoHR\\src\\DentalRJ.Domain\\TransferoHR.Domain.csproj"
             }
           }
         }
@@ -402,7 +402,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

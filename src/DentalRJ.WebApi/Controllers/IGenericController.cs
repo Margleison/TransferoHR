@@ -1,13 +1,14 @@
-﻿using DentalRJ.Domain.Entities.Base;
-using DentalRJ.Services.Model.Base;
-using DentalRJ.Services.Params.Generic;
+﻿using TransferoHR.Domain.Entities.Generic;
+using TransferoHR.Services.Model.Generic;
+using TransferoHR.Services.Params.Generic;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DentalRJ.WebApi.Controllers
+
+namespace TransferoHR.WebApi.Controllers
 {
 
     public interface IGenericController<TEntity, TCreateModel, TUpdateModel, TGetModel, TParams>
-        where TEntity : NamedBaseEntity
+        where TEntity : GenericNamedEntity
         where TCreateModel : class
         where TUpdateModel : class
         where TGetModel : NamedGetModel

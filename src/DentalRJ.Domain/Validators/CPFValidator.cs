@@ -1,4 +1,4 @@
-﻿namespace DentalRJ.Domain.Validators
+﻿namespace TransferoHR.Domain.Validators
 {
     public class CPFValidator
     {

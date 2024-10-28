@@ -1,4 +1,4 @@
-namespace DentalRJ.Domain.Enums;
+namespace TransferoHR.Domain.Enums;
 
 public enum SlotStatusEnum
 {

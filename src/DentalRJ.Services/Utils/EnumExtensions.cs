@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Reflection;
 
-namespace DentalRJ.Services.Utils
+namespace TransferoHR.Services.Utils
 {
     public static class EnumExtensions
     {

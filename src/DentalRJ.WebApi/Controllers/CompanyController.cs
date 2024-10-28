@@ -1,13 +1,13 @@
 using AutoMapper;
-using DentalRJ.Domain.Entities;
-using DentalRJ.Services.Implementation;
-using DentalRJ.Services.Model;
-using DentalRJ.Services.Model.Base;
-using DentalRJ.Services.Params;
-using DentalRJ.Services.Params.Generic;
+using TransferoHR.Domain.Entities;
+using TransferoHR.Services.Implementation;
+using TransferoHR.Services.Model;
+using TransferoHR.Services.Model.Generic;
+using TransferoHR.Services.Params;
+using TransferoHR.Services.Params.Generic;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DentalRJ.WebApi.Controllers
+namespace TransferoHR.WebApi.Controllers
 {
     [Route("api/[controller]")]
   [ApiController]

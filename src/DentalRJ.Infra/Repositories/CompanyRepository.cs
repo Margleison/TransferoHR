@@ -1,18 +1,18 @@
 ﻿
 
-using DentalRJ.Domain.Entities;
-using DentalRJ.Infra.Database;
-using DentalRJ.Infra.Repositories.Base;
-using DentalRJ.Services.Interfaces;
-using DentalRJ.Services.Interfaces.Generic;
-using DentalRJ.Services.Params;
-using DentalRJ.Services.Params.Generic;
+using TransferoHR.Domain.Entities;
+using TransferoHR.Infra.Database;
+using TransferoHR.Infra.Repositories.Generic;
+using TransferoHR.Services.Interfaces;
+using TransferoHR.Services.Interfaces.Generic;
+using TransferoHR.Services.Params;
+using TransferoHR.Services.Params.Generic;
 
-namespace DentalRJ.Infra.Repositories
+namespace TransferoHR.Infra.Repositories
 {
-    public class CompanyRepository : NamedEntityRepository<Company, CompanyParams>, ICompanyRepository
+    public class CompanyRepository : GenericNamedEntityRepository<Company, CompanyParams>, ICompanyRepository
     {
-        public CompanyRepository(ApplicationDbContext context) : base(context)
+        public CompanyRepository(HRContext context) : base(context)
         {
         }
     }

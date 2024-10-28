@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.WebApi\\DentalRJ.WebApi.csproj": {}
+    "C:\\Margleison\\TransferoHR\\src\\DentalRJ.WebApi\\DentalRJ.WebApi.csproj": {}
   },
   "projects": {
-    "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.Domain\\DentalRJ.Domain.csproj": {
+    "C:\\Margleison\\TransferoHR\\src\\DentalRJ.Domain\\DentalRJ.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.Domain\\DentalRJ.Domain.csproj",
+        "projectUniqueName": "C:\\Margleison\\TransferoHR\\src\\DentalRJ.Domain\\DentalRJ.Domain.csproj",
         "projectName": "DentalRJ.Domain",
-        "projectPath": "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.Domain\\DentalRJ.Domain.csproj",
-        "packagesPath": "C:\\Users\\sergi\\.nuget\\packages\\",
-        "outputPath": "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.Domain\\obj\\",
+        "projectPath": "C:\\Margleison\\TransferoHR\\src\\DentalRJ.Domain\\DentalRJ.Domain.csproj",
+        "packagesPath": "C:\\Users\\margleison.silva\\.nuget\\packages\\",
+        "outputPath": "C:\\Margleison\\TransferoHR\\src\\DentalRJ.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sergi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\margleison.silva\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -61,21 +61,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.Infra\\DentalRJ.Infra.csproj": {
+    "C:\\Margleison\\TransferoHR\\src\\DentalRJ.Infra\\DentalRJ.Infra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.Infra\\DentalRJ.Infra.csproj",
+        "projectUniqueName": "C:\\Margleison\\TransferoHR\\src\\DentalRJ.Infra\\DentalRJ.Infra.csproj",
         "projectName": "DentalRJ.Infra",
-        "projectPath": "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.Infra\\DentalRJ.Infra.csproj",
-        "packagesPath": "C:\\Users\\sergi\\.nuget\\packages\\",
-        "outputPath": "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.Infra\\obj\\",
+        "projectPath": "C:\\Margleison\\TransferoHR\\src\\DentalRJ.Infra\\DentalRJ.Infra.csproj",
+        "packagesPath": "C:\\Users\\margleison.silva\\.nuget\\packages\\",
+        "outputPath": "C:\\Margleison\\TransferoHR\\src\\DentalRJ.Infra\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sergi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\margleison.silva\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -90,11 +90,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.Domain\\DentalRJ.Domain.csproj": {
-                "projectPath": "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.Domain\\DentalRJ.Domain.csproj"
+              "C:\\Margleison\\TransferoHR\\src\\DentalRJ.Domain\\DentalRJ.Domain.csproj": {
+                "projectPath": "C:\\Margleison\\TransferoHR\\src\\DentalRJ.Domain\\DentalRJ.Domain.csproj"
               },
-              "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.Services\\DentalRJ.Services.csproj": {
-                "projectPath": "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.Services\\DentalRJ.Services.csproj"
+              "C:\\Margleison\\TransferoHR\\src\\DentalRJ.Services\\DentalRJ.Services.csproj": {
+                "projectPath": "C:\\Margleison\\TransferoHR\\src\\DentalRJ.Services\\DentalRJ.Services.csproj"
               }
             }
           }
@@ -159,21 +159,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.Services\\DentalRJ.Services.csproj": {
+    "C:\\Margleison\\TransferoHR\\src\\DentalRJ.Services\\DentalRJ.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.Services\\DentalRJ.Services.csproj",
+        "projectUniqueName": "C:\\Margleison\\TransferoHR\\src\\DentalRJ.Services\\DentalRJ.Services.csproj",
         "projectName": "DentalRJ.Services",
-        "projectPath": "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.Services\\DentalRJ.Services.csproj",
-        "packagesPath": "C:\\Users\\sergi\\.nuget\\packages\\",
-        "outputPath": "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.Services\\obj\\",
+        "projectPath": "C:\\Margleison\\TransferoHR\\src\\DentalRJ.Services\\DentalRJ.Services.csproj",
+        "packagesPath": "C:\\Users\\margleison.silva\\.nuget\\packages\\",
+        "outputPath": "C:\\Margleison\\TransferoHR\\src\\DentalRJ.Services\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sergi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\margleison.silva\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -188,8 +188,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.Domain\\DentalRJ.Domain.csproj": {
-                "projectPath": "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.Domain\\DentalRJ.Domain.csproj"
+              "C:\\Margleison\\TransferoHR\\src\\DentalRJ.Domain\\DentalRJ.Domain.csproj": {
+                "projectPath": "C:\\Margleison\\TransferoHR\\src\\DentalRJ.Domain\\DentalRJ.Domain.csproj"
               }
             }
           }
@@ -234,21 +234,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.WebApi\\DentalRJ.WebApi.csproj": {
+    "C:\\Margleison\\TransferoHR\\src\\DentalRJ.WebApi\\DentalRJ.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.WebApi\\DentalRJ.WebApi.csproj",
+        "projectUniqueName": "C:\\Margleison\\TransferoHR\\src\\DentalRJ.WebApi\\DentalRJ.WebApi.csproj",
         "projectName": "DentalRJ.WebApi",
-        "projectPath": "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.WebApi\\DentalRJ.WebApi.csproj",
-        "packagesPath": "C:\\Users\\sergi\\.nuget\\packages\\",
-        "outputPath": "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.WebApi\\obj\\",
+        "projectPath": "C:\\Margleison\\TransferoHR\\src\\DentalRJ.WebApi\\DentalRJ.WebApi.csproj",
+        "packagesPath": "C:\\Users\\margleison.silva\\.nuget\\packages\\",
+        "outputPath": "C:\\Margleison\\TransferoHR\\src\\DentalRJ.WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sergi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\margleison.silva\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -263,8 +263,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.Infra\\DentalRJ.Infra.csproj": {
-                "projectPath": "C:\\work\\Margleison\\DentalRJ3\\src\\DentalRJ.Infra\\DentalRJ.Infra.csproj"
+              "C:\\Margleison\\TransferoHR\\src\\DentalRJ.Infra\\DentalRJ.Infra.csproj": {
+                "projectPath": "C:\\Margleison\\TransferoHR\\src\\DentalRJ.Infra\\DentalRJ.Infra.csproj"
               }
             }
           }
@@ -332,7 +332,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

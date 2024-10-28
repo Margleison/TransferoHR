@@ -1,6 +1,7 @@
 using AutoMapper;
-using DentalRJ.Domain.Entities;
-using DentalRJ.Services.Model;
+using TransferoHR.Domain.Entities;
+using TransferoHR.Services.Model;
+using TransferoHR.Services.Model.Generic;
 
 public class MappingProfile : Profile
 {
@@ -12,32 +13,16 @@ public class MappingProfile : Profile
                 .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
                 .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()));
 
-        CreateMap<ClinicCreateModel, Clinic>();
-        CreateMap<ClinicUpdateModel, Clinic>();
-        CreateMap<Clinic, ClinicGetModel>()
-                .ForMember(dest => dest.CompanyName, opt => opt.MapFrom(src => src.Company.Name))
-                .ForMember(dest => dest.StateCode, opt => opt.MapFrom(src => src.StateCode.ToString()))
+        CreateMap<JobLevelCreateModel, JobLevel>();
+        CreateMap<JobLevelUpdateModel, JobLevel>();
+        CreateMap<JobLevel, JobLevelGetModel>()
+                .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
                 .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()));
 
-        CreateMap<DentalInsuranceCreateModel, DentalInsurance>();
-        CreateMap<DentalInsuranceUpdateModel, DentalInsurance>();
-        CreateMap<DentalInsurance, DentalInsuranceGetModel>()
-                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()));
-
-        CreateMap<DentistCreateModel, Dentist>();
-        CreateMap<DentistUpdateModel, Dentist>();
-        CreateMap<Dentist, DentistGetModel>()
-                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()));
-
-        CreateMap<DentistryCreateModel, Dentistry>();
-        CreateMap<DentistryUpdateModel, Dentistry>();
-        CreateMap<Dentistry, DentistryGetModel>()
-                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()));
-
-        CreateMap<PatientCreateModel, Patient>();
-        CreateMap<PatientUpdateModel, Patient>();
-        CreateMap<Patient, PatientGetModel>()
-                .ForMember(dest => dest.StateCode, opt => opt.MapFrom(src => src.StateCode.ToString()))
+        CreateMap<JobTitleCreateModel, JobTitle>();
+        CreateMap<JobTitleUpdateModel, JobTitle>();
+        CreateMap<JobTitle, JobTitleGetModel>()
+                .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
                 .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()));
     }
 }

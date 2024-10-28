@@ -1,4 +1,4 @@
-namespace DentalRJ.Services.Params.Generic;
+namespace TransferoHR.Services.Params.Generic;
 
 public class NamedParams : GenericParams
 {

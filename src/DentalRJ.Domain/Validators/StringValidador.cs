@@ -1,6 +1,6 @@
-﻿using DentalRJ.Domain.Exceptions;
+﻿using TransferoHR.Domain.Exceptions;
 
-namespace DentalRJ.Domain.Validators;
+namespace TransferoHR.Domain.Validators;
 
 public class StringValidador
 {

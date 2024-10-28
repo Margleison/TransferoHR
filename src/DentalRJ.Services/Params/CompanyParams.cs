@@ -1,6 +1,6 @@
-﻿using DentalRJ.Services.Params.Generic;
+﻿using TransferoHR.Services.Params.Generic;
 
-namespace DentalRJ.Services.Params
+namespace TransferoHR.Services.Params
 {
     public class CompanyParams : NamedParams
     {

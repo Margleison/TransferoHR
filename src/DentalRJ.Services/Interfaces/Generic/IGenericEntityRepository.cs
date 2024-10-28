@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DentalRJ.Services.Interfaces.Generic;
+namespace TransferoHR.Services.Interfaces.Generic;
 
 public interface IGenericEntityRepository<TEntity, TParams>
 {

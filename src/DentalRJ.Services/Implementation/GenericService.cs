@@ -1,20 +1,20 @@
 ﻿using AutoMapper;
-using DentalRJ.Domain.Entities.Base;
-using DentalRJ.Domain.Enums;
-using DentalRJ.Services.Exceptions;
-using DentalRJ.Services.Interfaces.Generic;
-using DentalRJ.Services.Model.Base;
-using DentalRJ.Services.Params.Generic;
+using TransferoHR.Domain.Entities.Generic;
+using TransferoHR.Domain.Enums;
+using TransferoHR.Services.Exceptions;
+using TransferoHR.Services.Interfaces.Generic;
+using TransferoHR.Services.Model.Generic;
+using TransferoHR.Services.Params.Generic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DentalRJ.Services.Implementation
+namespace TransferoHR.Services.Implementation
 {
     public class GenericService<T, TParams, TGetModel>: IGenericService<T, TParams, TGetModel>
-        where T : BaseEntity
+        where T : GenericEntity
         where TParams : GenericParams
         where TGetModel : GetModel
     {
@@ -22,7 +22,7 @@ namespace DentalRJ.Services.Implementation
         protected readonly IGenericEntityRepository<T, TParams> _repo;
         protected readonly IMapper _mapper;
         private IMapper mapper;
-        private IGenericEntityRepository<NamedBaseEntity, TParams> repo;
+        private IGenericEntityRepository<GenericNamedEntity, TParams> repo;
         private string entityName;
 
         public GenericService(IMapper mapper, IGenericEntityRepository<T, TParams> repo, string entityName)

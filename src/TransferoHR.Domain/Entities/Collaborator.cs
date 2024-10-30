@@ -23,7 +23,7 @@ namespace TransferoHR.Domain.Entities
         public required string State { get; set; }
         public required string PostalCode { get; set; }
         public string? EmergencyContact { get; set; }
-        public string? PhoneNumber { get; set; } 
+        public required string? PhoneNumber { get; set; } 
         public required string BankName { get; set; }
         public required string AccountName { get; set; }
         public required string BankBranch { get; set; }

@@ -7,5 +7,6 @@ namespace TransferoHR.Services.Interfaces
 {
     public interface ICompanyRepository : IGenericNamedEntityRepository<Company, CompanyParams>
     {
+        Task<Company>? GetByCNPJ(string cnpj, Guid? excId);
     }
 }

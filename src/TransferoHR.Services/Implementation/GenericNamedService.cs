@@ -13,7 +13,7 @@ namespace TransferoHR.Services.Implementation
         where TParams: NamedParams
         where TGetModel: NamedGetModel
     {
-        protected readonly IGenericNamedEntityRepository<T, TParams> _repo;
+        protected IGenericNamedEntityRepository<T, TParams> _repo;
 
         public GenericNamedService(IMapper mapper, IGenericNamedEntityRepository<T, TParams> repo, string entityName)
             : base(mapper, repo, entityName)

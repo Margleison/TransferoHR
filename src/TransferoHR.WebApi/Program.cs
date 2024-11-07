@@ -8,7 +8,7 @@ using TransferoHR.Domain.Entities;
 using TransferoHR.Infra.Repositories;
 using TransferoHR.Services.Params.Generic;
 using TransferoHR.Services.Interfaces.Generic;
-
+using Microsoft.AspNetCore.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
@@ -19,12 +19,12 @@ builder.Services.AddControllers();
 });
 */
 
-builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()); // Adicione esta linha para registrar o AutoMapper
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()); 
 
 // Configurar o DbContext
 builder.Services.AddDbContext<HRContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
-        new MySqlServerVersion(new Version(8, 0, 21)))); // Use a versão apropriada do MySQL
+        new MySqlServerVersion(new Version(8, 0, 21))).EnableSensitiveDataLogging().EnableDetailedErrors()); // Use a versão apropriada do MySQL
 
 
 // Add services to the container.

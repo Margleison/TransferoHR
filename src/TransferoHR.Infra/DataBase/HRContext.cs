@@ -1,6 +1,9 @@
 ﻿using TransferoHR.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using TransferoHR.Domain.Enums;
+using Microsoft.Extensions.Logging;
+
+
 
 namespace TransferoHR.Infra.Database;
 
@@ -10,7 +13,10 @@ public class HRContext : DbContext
         : base(options)
     {
     }
-
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+       
+    }
     public DbSet<Collaborator> Collaborator { get; set; } = null!;   // Setando as entidades que passaram o modelo do db
     public DbSet<Company> Company { get; set; } = null!;
     public DbSet<Department> Department { get; set; } = null!;

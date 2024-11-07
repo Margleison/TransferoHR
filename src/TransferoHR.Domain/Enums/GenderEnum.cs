@@ -10,5 +10,6 @@ namespace TransferoHR.Domain.Enums
     {
         Man = 1,
         Woman = 2,
+        NotInformed = 3
     }
 }

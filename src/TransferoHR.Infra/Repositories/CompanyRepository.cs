@@ -1,6 +1,8 @@
 ﻿
 
+using System.Linq.Expressions;
 using TransferoHR.Domain.Entities;
+using TransferoHR.Domain.Enums;
 using TransferoHR.Infra.Database;
 using TransferoHR.Infra.Repositories.Generic;
 using TransferoHR.Services.Interfaces;
@@ -14,6 +16,18 @@ namespace TransferoHR.Infra.Repositories
     {
         public CompanyRepository(HRContext context) : base(context)
         {
+        }
+
+
+        public async Task<Company> GetByCNPJ(string cnpj, Guid? excId = null)
+        {
+            Expression<Func<Company, bool>> filter;
+            if (excId == null)
+                filter = x => x.CNPJ == cnpj && x.Status != EntityStatusEnum.Deleted;
+            else
+                filter = x => x.CNPJ == cnpj && x.Status != EntityStatusEnum.Deleted && x.Id != excId;
+
+            return await FirstAsync(filter);
         }
     }
 }

@@ -11,5 +11,6 @@ namespace TransferoHR.Services.Interfaces
 {
     public interface ICollaboratorRepository : IGenericNamedEntityRepository<Collaborator, CollaboratorParams>
     {
+        Task<Collaborator>? GetByCPFandRG(string cpf, string rg, Guid? excId);
     }
 }

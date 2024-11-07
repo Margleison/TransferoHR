@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransferoHR.Domain", "src\T
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{34382914-9A6E-4F90-B7BF-483EA5CBB282}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransferoHR.Test", "TransferoHR.Test\TransferoHR.Test.csproj", "{BBA207E3-8C15-4917-B8AF-27D96FC13F2A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{BB41A50D-B07A-4EC2-B974-5792726AF9A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB41A50D-B07A-4EC2-B974-5792726AF9A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB41A50D-B07A-4EC2-B974-5792726AF9A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBA207E3-8C15-4917-B8AF-27D96FC13F2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBA207E3-8C15-4917-B8AF-27D96FC13F2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBA207E3-8C15-4917-B8AF-27D96FC13F2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBA207E3-8C15-4917-B8AF-27D96FC13F2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{EB9993B0-58A6-4D75-83AC-8C5F0C5538BA} = {FB5EA469-F64F-4FCB-A09D-89515EDF759F}
 		{3AF0EF23-30D9-4DE2-8632-66B0EE36C818} = {FB5EA469-F64F-4FCB-A09D-89515EDF759F}
 		{BB41A50D-B07A-4EC2-B974-5792726AF9A6} = {FB5EA469-F64F-4FCB-A09D-89515EDF759F}
+		{BBA207E3-8C15-4917-B8AF-27D96FC13F2A} = {34382914-9A6E-4F90-B7BF-483EA5CBB282}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {43E508F9-BCCC-4C6E-A44E-229CE80803CA}

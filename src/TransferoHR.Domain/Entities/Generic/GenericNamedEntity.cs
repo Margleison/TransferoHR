@@ -12,5 +12,6 @@ public class GenericNamedEntity : GenericEntity
     {
         base.Validate();
         DomainException.When(String.IsNullOrWhiteSpace(Name), "Name cannot be empty!");
+        DomainException.When(Name.Length > 100, "Name cannot exceed 100 characters");
     }
 }

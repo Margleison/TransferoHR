@@ -6,10 +6,30 @@ namespace TransferoHR.Test.Domain
 {
     public class CollaboratorTests
     {
-        [Fact]
-        public void Validate_ShouldThrowsException_WhenpIfNationalityisBrazilianReturnRequiredCPF()
+
+        private Collaborator Create(
+                NationalityEnum nationality,
+                string cpf = "",
+                string dni = "",
+                string email = "",
+                string workEmail = "",
+                string rg = "",
+                string pixkey = "",
+                string country = "",
+                DateOnly birthDate = new DateOnly(),
+                string address = "",
+                string city = "",
+                string state = "",
+                string postalCode = "",
+                string phoneNumber = "",
+                string bankBranch = "",
+                string emergencyContact = "",
+                string bankName = "",
+                string accountName = "",
+                GenderEnum gender = GenderEnum.Man
+        )
         {
-            var entity = new Collaborator
+            return new Collaborator
             {
                 Id = Guid.NewGuid(),
                 Status = EntityStatusEnum.Active,
@@ -18,239 +38,202 @@ namespace TransferoHR.Test.Domain
                 UpdatedAt = DateTime.UtcNow,
                 UpdatedBy = "System",
                 Name = "Name",
-                Email = "Margleison@gmail.com",
-                WorkEmail = "Margleison@transfero.com",
-                Country = "Brasil",
-                Gender = GenderEnum.Man,
-                RG = "35.216.967-6",
-                BirthDate = DateOnly.Parse("2003-10-18"),
-                Nationality = NationalityEnum.Brasileiro,
-                Address = "address",
-                City = "Nova Iguaçu",
-                State = "Rio de Janeiro",
-                PostalCode = "26291-221",
-                PhoneNumber = "(21)98116-5068",
-                EmergencyContact = "(21)98116-5069",
-                BankBranch = "001",
-                BankName = "Nubank",
-                AccountName = "001",
-                Pixkey = "0659017675"
+                CPF = cpf,
+                DNI = dni,
+                RG = rg,
+                Email = email,
+                WorkEmail = workEmail,
+                Country = country,
+                Gender = gender,
+                BirthDate = birthDate,
+                Nationality = nationality,
+                Address = address,
+                City = city,
+                State = state,
+                PostalCode = postalCode,
+                PhoneNumber = phoneNumber,
+                EmergencyContact = emergencyContact,
+                BankBranch = bankBranch,
+                BankName = bankName,
+                AccountName = accountName,
+                Pixkey = pixkey
             };
-
-            var exception = Assert.Throws<DomainException>(() => entity.Validate());
-            Assert.Equal("CPF is required for Brazilian citizens and cannot be empty!", exception.Message);
         }
 
         [Fact]
-        public void Validate_ShouldThrowsException_WhenpIfNationalityIsArgentineReturnRequiredDNI()
+        public void Validate_ShouldThrowsException_WhenBrazilianAndCPFIsNullOrEmpty()
         {
-            var entity = new Collaborator
-            {
-                Id = Guid.NewGuid(),
-                Status = EntityStatusEnum.Active,
-                CreatedAt = DateTime.UtcNow,
-                CreatedBy = "Admin",
-                UpdatedAt = DateTime.UtcNow,
-                UpdatedBy = "System",
-                Name = "Name",
-                Email = "Margleison@gmail.com",
-                WorkEmail = "Margleison@transfero.com",
-                Country = "Brasil",
-                Gender = GenderEnum.Man,
-                RG = "35.216.967-6",
-                BirthDate = DateOnly.Parse("2003-10-18"),
-                Nationality = NationalityEnum.Argentino,
-                Address = "address",
-                City = "Nova Iguaçu",
-                State = "Rio de Janeiro",
-                PostalCode = "26291-221",
-                PhoneNumber = "(21)98116-5068",
-                EmergencyContact = "(21)98116-5069",
-                BankBranch = "001",
-                BankName = "Nubank",
-                AccountName = "001",
-                Pixkey = "0659017675"
-            };
+            // Arrange
+            var entity = Create(NationalityEnum.Brasileiro);
+
+            // Act
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
-            Assert.Equal("DNI is required for Argentine citizens and cannot be empty!", exception.Message);
+
+            // Assert
+            Assert.Equal("CPF is required for Brazilian citizens!", exception.Message);
         }
-
         [Fact]
-        public void Validate_ShouldThrowsException_WhenCPFIsEmpty()
+        public void Validate_ShouldThrowsException_WhenBrazilianAndCPFIsInvalid()
         {
-            var entity = new Collaborator
-            {
-                Nationality = NationalityEnum.Brasileiro,
-                Id = Guid.NewGuid(),
-                Status = EntityStatusEnum.Active,
-                CreatedAt = DateTime.UtcNow,
-                CreatedBy = "Admin",
-                UpdatedAt = DateTime.UtcNow,
-                UpdatedBy = "System",
-                CPF = " ",
-                Name = "Name",
-                Email = "Margleison@gmail.com",
-                WorkEmail = "Margleison@transfero.com",
-                Country = "Brasil",
-                Gender = GenderEnum.Man,
-                RG = "35.216.967-6",
-                BirthDate = DateOnly.Parse("2003-10-18"),
-                Address = "address",
-                City = "Nova Iguaçu",
-                State = "Rio de Janeiro",
-                PostalCode = "26291-221",
-                PhoneNumber = "(21)98116-5068",
-                EmergencyContact = "(21)98116-5069",
-                BankBranch = "001",
-                BankName = "Nubank",
-                AccountName = "001",
-                Pixkey = "06590176795"
-            };
+            // Arrange
+            var entity = Create(NationalityEnum.Brasileiro, cpf: "010010101010101");
 
+            // Act
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
-            Assert.Equal("CPF is required for Brazilian citizens and cannot be empty!", exception.Message);
-        }
 
-
-        [Fact]
-        public void Validate_ShouldThrowsException_WhenCPFIsInvalid()
-        {
-            var entity = new Collaborator
-            {
-                Id = Guid.NewGuid(),
-                Status = EntityStatusEnum.Active,
-                CreatedAt = DateTime.UtcNow,
-                CreatedBy = "Admin",
-                UpdatedAt = DateTime.UtcNow,
-                UpdatedBy = "System",
-                CPF = "065.000.555-77",
-                Name = "Name",
-                Email = "Margleison@gmail.com",
-                WorkEmail = "Margleison@transfero.com",
-                Country = "Brasil",
-                Gender = GenderEnum.Man,
-                RG = "35.216.967-6",
-                BirthDate = DateOnly.Parse("2003-10-18"),
-                Nationality = NationalityEnum.Brasileiro,
-                Address = "address",
-                City = "Nova Iguaçu",
-                State = "Rio de Janeiro",
-                PostalCode = "26291-221",
-                PhoneNumber = "(21)98116-5068",
-                EmergencyContact = "(21)98116-5069",
-                BankBranch = "001",
-                BankName = "Nubank",
-                AccountName = "001",
-                Pixkey = "06590176795"
-            };
-
-            var exception = Assert.Throws<DomainException>(() => entity.Validate());
+            // Assert
             Assert.Equal("Invalid CPF!", exception.Message);
+        }
+        [Fact]
+        public void Validate_ShouldThrowsException_WhenArgentineAndDNIIsNullOrEmpty()
+        {
+            // Arrange
+            var entity = Create(NationalityEnum.Argentino);
+
+            // Act
+            var exception = Assert.Throws<DomainException>(() => entity.Validate());
+
+            // Assert
+            Assert.Equal("DNI is required for Argentine citizens!", exception.Message);
+        }
+        [Fact]
+        public void Validate_ShouldThrowsException_WhenArgentineAndDNIIsInvalid()
+        {
+            // Arrange
+            var entity = Create(NationalityEnum.Argentino, dni: "010010101010101");
+
+            // Act
+            var exception = Assert.Throws<DomainException>(() => entity.Validate());
+
+            // Assert
+            Assert.Equal("Invalid DNI!", exception.Message);
+        }
+
+        [Fact]
+        public void Validate_ShouldThrowsException_WhenRGIsNull()
+        {
+            // Arrange
+            var entity = Create(NationalityEnum.Argentino, dni: "1111111");
+
+            // Act
+            var exception = Assert.Throws<DomainException>(() => entity.Validate());
+
+            Assert.Equal("RG cannot be empty!", exception.Message);
         }
 
         [Fact]
         public void Validate_ShouldThrowsException_WhenEmailIsEmpty()
         {
-            var entity = new Collaborator
-            {
-                Id = Guid.NewGuid(),
-                Status = EntityStatusEnum.Active,
-                CreatedAt = DateTime.UtcNow,
-                CreatedBy = "Admin",
-                UpdatedAt = DateTime.UtcNow,
-                UpdatedBy = "System",
-                CPF = "065.901.767-95",
-                Name = "Name",
-                Email = " ",
-                WorkEmail = " ",
-                Country = "Brasil",
-                Gender = GenderEnum.Man,
-                RG = "35.216.967-6",
-                BirthDate = DateOnly.Parse("2003-10-18"),
-                Nationality = NationalityEnum.Brasileiro,
-                Address = "address",
-                City = "Nova Iguaçu",
-                State = "Rio de Janeiro",
-                PostalCode = "26291-221",
-                PhoneNumber = "(21)98116-5068",
-                EmergencyContact = "(21)98116-5069",
-                BankBranch = "001",
-                BankName = "Nubank",
-                AccountName = "001",
-                Pixkey = "06590176795"
-            };
+            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: " ");
 
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
             Assert.Equal("Email cannot be empty!", exception.Message);
         }
 
+
+
         [Fact]
         public void Validate_ShouldThrowsException_WhenEmailIsInvalid()
         {
-            var entity = new Collaborator
-            {
-                Id = Guid.NewGuid(),
-                Status = EntityStatusEnum.Active,
-                CreatedAt = DateTime.UtcNow,
-                CreatedBy = "Admin",
-                UpdatedAt = DateTime.UtcNow,
-                UpdatedBy = "System",
-                CPF = "065.901.767-95",
-                Name = "Name",
-                Email = "Margleison",
-                WorkEmail = "Margleison@.com",
-                Country = "Brasil",
-                Gender = GenderEnum.Man,
-                RG = "35.216.967-6",
-                BirthDate = DateOnly.Parse("2003-10-18"),
-                Nationality = NationalityEnum.Brasileiro,
-                Address = "address",
-                City = "Nova Iguaçu",
-                State = "Rio de Janeiro",
-                PostalCode = "26291-221",
-                PhoneNumber = "(21)98116-5068",
-                EmergencyContact = "(21)98116-5069",
-                BankBranch = "001",
-                BankName = "Nubank",
-                AccountName = "001",
-                Pixkey = "06590176795"
-            };
+            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison@.com");
 
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
             Assert.Equal("Invalid Email!", exception.Message);
         }
 
         [Fact]
+        public void Validate_ShouldThrowsException_WhenpMaxLenghtEmailIsInvalid()
+        {
+
+            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silveira@gmail.commmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm");
+
+            var exception = Assert.Throws<DomainException>(() => entity.Validate());
+            Assert.Equal("Email cannot exceed 40 characters", exception.Message);
+        }
+
+        [Fact]
+        public void Validate_ShouldThrowsException_WhenpPixKeyIsEmpty()
+        {
+
+            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: " ");
+
+            var exception = Assert.Throws<DomainException>(() => entity.Validate());
+            Assert.Equal("Pixkey cannot be empty!", exception.Message);
+        }
+
+        [Fact]
+        public void Validate_ShouldThrowsException_WhenpPixKeyIsInvalid()
+        {
+
+            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com",workEmail: "margleison.silva@transfero.com", pixkey: "0659017679");
+
+            var exception = Assert.Throws<DomainException>(() => entity.Validate());
+            Assert.Equal("Invalid Pixkey!", exception.Message);
+        }
+
+        [Fact]
+        public void Validate_ShouldThrowsException_WhenpBankBranchIsEmpty()
+        {
+
+            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: " ");
+
+            var exception = Assert.Throws<DomainException>(() => entity.Validate());
+            Assert.Equal("BankBranch cannot be empty!", exception.Message);
+        }
+
+        [Fact]
+        public void Validate_ShouldThrowsException_WhenpBankBranchIsInvalid()
+        {
+
+            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "00");
+
+            var exception = Assert.Throws<DomainException>(() => entity.Validate());
+            Assert.Equal("Invalid BankBranch!", exception.Message);
+        }
+        [Fact]
+        public void Validate_ShouldThrowsException_WhenpBankNameIsEmpty()
+        {
+
+            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: " " );
+
+            var exception = Assert.Throws<DomainException>(() => entity.Validate());
+            Assert.Equal("BankName cannot be empty!", exception.Message);
+        }
+
+        [Fact]
+        public void Validate_ShouldThrowsException_WhenpBankNameIsInvalid()
+        {
+
+            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "07775");
+
+            var exception = Assert.Throws<DomainException>(() => entity.Validate());
+            Assert.Equal("Invalid BankName!", exception.Message);
+        }
+        [Fact]
+        public void Validate_ShouldThrowsException_WhenpaAccountNameIsEmpty()
+        {
+
+            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", accountName: " ");
+
+            var exception = Assert.Throws<DomainException>(() => entity.Validate());
+            Assert.Equal("AccountName cannot be empty!", exception.Message);
+        }
+
+        [Fact]
+        public void Validate_ShouldThrowsException_WhenpAccountNameIsInvalid()
+        {
+
+            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", accountName: "001005655145nsdabisdajifdhuiosdaguiosfdapbuisfdaphuosfdaphiosfdaphio");
+
+            var exception = Assert.Throws<DomainException>(() => entity.Validate());
+            Assert.Equal("Invalid AccountName!", exception.Message);
+        }
+
+        [Fact]
         public void Validate_ShouldThrowsException_WhenpPostalCodeIsEmpty()
         {
-            var entity = new Collaborator
-            {
-                Id = Guid.NewGuid(),
-                Status = EntityStatusEnum.Active,
-                CreatedAt = DateTime.UtcNow,
-                CreatedBy = "Admin",
-                UpdatedAt = DateTime.UtcNow,
-                UpdatedBy = "System",
-                CPF = "065.901.767-95",
-                Name = "Name",
-                Email = "Margleison@gmail.com",
-                WorkEmail = "Margleison@transfero.com",
-                Country = "Brasil",
-                Gender = GenderEnum.Man,
-                RG = "35.216.967-6",
-                BirthDate = DateOnly.Parse("2003-10-18"),
-                Nationality = NationalityEnum.Brasileiro,
-                Address = "address",
-                City = "Nova Iguaçu",
-                State = "Rio de Janeiro",
-                PostalCode = " ",
-                PhoneNumber = "(21)98116-5068",
-                EmergencyContact = "(21)98116-5069",
-                BankBranch = "001",
-                BankName = "Nubank",
-                AccountName = "001",
-                Pixkey = "06590176795"
-            };
+
+            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", accountName: "001005655145", postalCode: " ");
 
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
             Assert.Equal("Postal Code cannot be empty!", exception.Message);
@@ -259,424 +242,82 @@ namespace TransferoHR.Test.Domain
         [Fact]
         public void Validate_ShouldThrowsException_WhenpPostalCodeIsInvalid()
         {
-            var entity = new Collaborator
-            {
-                Id = Guid.NewGuid(),
-                Status = EntityStatusEnum.Active,
-                CreatedAt = DateTime.UtcNow,
-                CreatedBy = "Admin",
-                UpdatedAt = DateTime.UtcNow,
-                UpdatedBy = "System",
-                CPF = "065.901.767-95",
-                Name = "Name",
-                Email = "Margleison@gmail.com",
-                WorkEmail = "Margleison@transfero.com",
-                Country = "Brasil",
-                Gender = GenderEnum.Man,
-                RG = "35.216.967-6",
-                BirthDate = DateOnly.Parse("2003-10-18"),
-                Nationality = NationalityEnum.Brasileiro,
-                Address = "address",
-                City = "Nova Iguaçu",
-                State = "Rio de Janeiro",
-                PostalCode = "26291-1",
-                PhoneNumber = "(21)98116-5068",
-                EmergencyContact = "(21)98116-5069",
-                BankBranch = "001",
-                BankName = "Nubank",
-                AccountName = "001",
-                Pixkey = "06590176795"
-            };
+
+            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", accountName: "001005655145", postalCode: "26291-00");
 
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
             Assert.Equal("Invalid Postal Code!", exception.Message);
         }
-
         [Fact]
-        public void Validate_ShouldThrowsException_WhenpRGCodeIsEmpty()
+        public void Validate_ShouldThrowsException_WhenpCityIsEmpty()
         {
-            var entity = new Collaborator
-            {
-                Id = Guid.NewGuid(),
-                Status = EntityStatusEnum.Active,
-                CreatedAt = DateTime.UtcNow,
-                CreatedBy = "Admin",
-                UpdatedAt = DateTime.UtcNow,
-                UpdatedBy = "System",
-                CPF = "065.901.767-95",
-                Name = "Name",
-                Email = "Margleison@gmail.com",
-                WorkEmail = "Margleison@transfero.com",
-                Country = "Brasil",
-                Gender = GenderEnum.Man,
-                RG = " ",
-                BirthDate = DateOnly.Parse("2003-10-18"),
-                Nationality = NationalityEnum.Brasileiro,
-                Address = "address",
-                City = "Nova Iguaçu",
-                State = "Rio de Janeiro",
-                PostalCode = "26291-221",
-                PhoneNumber = "(21)98116-5068",
-                EmergencyContact = "(21)98116-5069",
-                BankBranch = "001",
-                BankName = "Nubank",
-                AccountName = "001",
-                Pixkey = "06590176795"
-            };
+
+            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", accountName: "001005655145", postalCode: "26291-221", city: " ");
+
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
-            Assert.Equal("RG cannot be empty!", exception.Message);
+            Assert.Equal("City cannot be empty!", exception.Message);
         }
 
         [Fact]
-        public void Validate_ShouldThrowsException_WhenpRGCodeIsInvalid()
+        public void Validate_ShouldThrowsException_WhenpCityIsInvalid()
         {
-            var entity = new Collaborator
-            {
-                Id = Guid.NewGuid(),
-                Status = EntityStatusEnum.Active,
-                CreatedAt = DateTime.UtcNow,
-                CreatedBy = "Admin",
-                UpdatedAt = DateTime.UtcNow,
-                UpdatedBy = "System",
-                CPF = "065.901.767-95",
-                Name = "Name",
-                Email = "Margleison@gmail.com",
-                WorkEmail = "Margleison@transfero.com",
-                Country = "Brasil",
-                Gender = GenderEnum.Man,
-                RG = ".216.967-6",
-                BirthDate = DateOnly.Parse("2003-10-18"),
-                Nationality = NationalityEnum.Brasileiro,
-                Address = "address",
-                City = "Nova Iguaçu",
-                State = "Rio de Janeiro",
-                PostalCode = "26291-221",
-                PhoneNumber = "(21)98116-5068",
-                EmergencyContact = "(21)98116-5069",
-                BankBranch = "001",
-                BankName = "Nubank",
-                AccountName = "001",
-                Pixkey = "06590176795"
-            };
-            var exception = Assert.Throws<DomainException>(() => entity.Validate());
-            Assert.Equal("Invalid RG!", exception.Message);
 
+            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", accountName: "001005655145", postalCode: "26291-221", city: "25455");
+
+            var exception = Assert.Throws<DomainException>(() => entity.Validate());
+            Assert.Equal("Invalid City!", exception.Message);
         }
 
-        [Fact]
-        public void Validate_ShouldThrowsException_WhenpPixKeyIsEmpty()
-        {
-            var entity = new Collaborator
-            {
-                Id = Guid.NewGuid(),
-                Status = EntityStatusEnum.Active,
-                CreatedAt = DateTime.UtcNow,
-                CreatedBy = "Admin",
-                UpdatedAt = DateTime.UtcNow,
-                UpdatedBy = "System",
-                CPF = "065.901.767-95",
-                Name = "Name",
-                Email = "Margleison@gmail.com",
-                WorkEmail = "Margleison@transfero.com",
-                Country = "Brasil",
-                Gender = GenderEnum.Man,
-                RG = "35.216.967-6",
-                BirthDate = DateOnly.Parse("2003-10-18"),
-                Nationality = NationalityEnum.Brasileiro,
-                Address = "address",
-                City = "Nova Iguaçu",
-                State = "Rio de Janeiro",
-                PostalCode = "26291-221",
-                PhoneNumber = "(21)98116-5068",
-                EmergencyContact = "(21)98116-5069",
-                BankBranch = "001",
-                BankName = "Nubank",
-                AccountName = "001",
-                Pixkey = " "
-            };
-
-            var exception = Assert.Throws<DomainException>(() => entity.Validate());
-            Assert.Equal("Pixkey cannot be empty!", exception.Message);
-
-        }
-        [Fact]
-        public void Validate_ShouldThrowsException_WhenpPixKeyIsInvalid()
-        {
-            var entity = new Collaborator
-            {
-                Id = Guid.NewGuid(),
-                Status = EntityStatusEnum.Active,
-                CreatedAt = DateTime.UtcNow,
-                CreatedBy = "Admin",
-                UpdatedAt = DateTime.UtcNow,
-                UpdatedBy = "System",
-                CPF = "065.901.767-95",
-                Name = "Name",
-                Email = "Margleison@gmail.com",
-                WorkEmail = "Margleison@transfero.com",
-                Country = "Brasil",
-                Gender = GenderEnum.Man,
-                RG = "35.216.967-6",
-                BirthDate = DateOnly.Parse("2003-10-18"),
-                Nationality = NationalityEnum.Brasileiro,
-                Address = "address",
-                City = "Nova Iguaçu",
-                State = "Rio de Janeiro",
-                PostalCode = "26291-221",
-                PhoneNumber = "(21)98116-5068",
-                EmergencyContact = "(21)98116-5069",
-                BankBranch = "001",
-                BankName = "Nubank",
-                AccountName = "001",
-                Pixkey = "0659017675"
-            };
-
-            var exception = Assert.Throws<DomainException>(() => entity.Validate());
-            Assert.Equal("Invalid Pixkey!", exception.Message);
-
-        }
-        [Fact]
-        public void Validate_ShouldThrowsException_WhenpBankBranchIsEmpty()
-        {
-            var entity = new Collaborator
-            {
-                Id = Guid.NewGuid(),
-                Status = EntityStatusEnum.Active,
-                CreatedAt = DateTime.UtcNow,
-                CreatedBy = "Admin",
-                UpdatedAt = DateTime.UtcNow,
-                UpdatedBy = "System",
-                CPF = "065.901.767-95",
-                Name = "Name",
-                Email = "Margleison@gmail.com",
-                WorkEmail = "Margleison@transfero.com",
-                Country = "Brasil",
-                Gender = GenderEnum.Man,
-                RG = "35.216.967-6",
-                BirthDate = DateOnly.Parse("2003-10-18"),
-                Nationality = NationalityEnum.Brasileiro,
-                Address = "address",
-                City = "Nova Iguaçu",
-                State = "Rio de Janeiro",
-                PostalCode = "26291-221",
-                PhoneNumber = "(21)98116-5068",
-                EmergencyContact = "(21)98116-5069",
-                BankBranch = " ",
-                BankName = "Nubank",
-                AccountName = "001",
-                Pixkey = "06590176795"
-            };
-            var exception = Assert.Throws<DomainException>(() => entity.Validate());
-            Assert.Equal("BankBranch cannot be empty!", exception.Message);
-        }
-
-        [Fact]
-        public void Validate_ShouldThrowsException_WhenpBankBranchIsInvalid()
-        {
-            var entity = new Collaborator
-            {
-                Id = Guid.NewGuid(),
-                Status = EntityStatusEnum.Active,
-                CreatedAt = DateTime.UtcNow,
-                CreatedBy = "Admin",
-                UpdatedAt = DateTime.UtcNow,
-                UpdatedBy = "System",
-                CPF = "065.901.767-95",
-                Name = "Name",
-                Email = "Margleison@gmail.com",
-                WorkEmail = "Margleison@transfero.com",
-                Country = "Brasil",
-                Gender = GenderEnum.Man,
-                RG = "35.216.967-6",
-                BirthDate = DateOnly.Parse("2003-10-18"),
-                Nationality = NationalityEnum.Brasileiro,
-                Address = "address",
-                City = "Nova Iguaçu",
-                State = "Rio de Janeiro",
-                PostalCode = "26291-221",
-                PhoneNumber = "(21)98116-5068",
-                EmergencyContact = "(21)98116-5069",
-                BankBranch = "00",
-                BankName = "Nubank",
-                AccountName = "001",
-                Pixkey = "0659017675"
-            };
-
-            var exception = Assert.Throws<DomainException>(() => entity.Validate());
-            Assert.Equal("Invalid BankBranch!", exception.Message);
-    }
-        [Fact]
-        public void Validate_ShouldThrowsException_WhenpMaxLenghtAddressIsInvalid()
-        {
-            var entity = new Collaborator
-            {
-                Id = Guid.NewGuid(),
-                Status = EntityStatusEnum.Active,
-                CreatedAt = DateTime.UtcNow,
-                CreatedBy = "Admin",
-                UpdatedAt = DateTime.UtcNow,
-                UpdatedBy = "System",
-                CPF = "065.901.767-95",
-                Name = "Name",
-                Email = "Margleison@gmail.com",
-                WorkEmail = "Margleison@transfero.com",
-                Country = "Brasil",
-                Gender = GenderEnum.Man,
-                RG = "35.216.967-6",
-                BirthDate = DateOnly.Parse("2003-10-18"),
-                Nationality = NationalityEnum.Brasileiro,
-                Address = new string('c', 101),
-                City = "Nova Iguaçu",
-                State = "Rio de Janeiro",
-                PostalCode = "26291-221",
-                PhoneNumber = "(21)98116-5068",
-                EmergencyContact = "(21)98116-5069",
-                BankBranch = "001",
-                BankName = "Nubank",
-                AccountName = "001",
-                Pixkey = "06590176795"
-            };
-            var exception = Assert.Throws<DomainException>(() => entity.Validate());
-            Assert.Equal("Address cannot exceed 60 characters", exception.Message);
-
-        }
 
         [Fact]
         public void Validate_ShouldThrowsException_WhenpMaxLenghtCityIsInvalid()
         {
-            var entity = new Collaborator
-            {
-                Id = Guid.NewGuid(),
-                Status = EntityStatusEnum.Active,
-                CreatedAt = DateTime.UtcNow,
-                CreatedBy = "Admin",
-                UpdatedAt = DateTime.UtcNow,
-                UpdatedBy = "System",
-                CPF = "065.901.767-95",
-                Name = "Name",
-                Email = "Margleison@gmail.com",
-                WorkEmail = "Margleison@transfero.com",
-                Country = "Brasil",
-                Gender = GenderEnum.Man,
-                RG = "35.216.967-6",
-                BirthDate = DateOnly.Parse("2003-10-18"),
-                Nationality = NationalityEnum.Brasileiro,
-                Address = "Rua Joaquim da Silva Maia",
-                City = new string('c', 22),
-                State = "Rio de Janeiro",
-                PostalCode = "26291-221",
-                PhoneNumber = "(21)98116-5068",
-                EmergencyContact = "(21)98116-5069",
-                BankBranch = "001",
-                BankName = "Nubank",
-                AccountName = "001",
-                Pixkey = "06590176795"
-            };
-        }
-        [Fact]
-        public void Validate_ShouldThrowsException_WhenpMaxLenghtEmailIsInvalid()
-        {
-            var entity = new Collaborator
-            {
-                Id = Guid.NewGuid(),
-                Status = EntityStatusEnum.Active,
-                CreatedAt = DateTime.UtcNow,
-                CreatedBy = "Admin",
-                UpdatedAt = DateTime.UtcNow,
-                UpdatedBy = "System",
-                CPF = "065.901.767-95",
-                Name = "Name",
-                Email = "Margleison@gmail.com",
-                WorkEmail = "Margleison@transfero.commmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm",
-                Country = "Brasil",
-                Gender = GenderEnum.Man,
-                RG = "35.216.967-6",
-                BirthDate = DateOnly.Parse("2003-10-18"),
-                Nationality = NationalityEnum.Brasileiro,
-                Address = "Rua Joaquim da Silva Maia",
-                City = "Nova Iguaçu",
-                State = "Rio de Janeiro",
-                PostalCode = "26291-221",
-                PhoneNumber = "(21)98116-5068",
-                EmergencyContact = "(21)98116-5069",
-                BankBranch = "001",
-                BankName = "Nubank",
-                AccountName = "001",
-                Pixkey = "06590176795"
-            };
+
+            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", accountName: "001005655145", postalCode: "26291-221", city: "Nova Iguaçuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
-            Assert.Equal("Work Email cannot exceed 40 characters", exception.Message);
-        }
-        [Fact]
-        public void Validate_ShouldThrowsException_WhenpDNIIsInvalid()
-        {
-            var entity = new Collaborator
-            {
-                Id = Guid.NewGuid(),
-                Status = EntityStatusEnum.Active,
-                CreatedAt = DateTime.UtcNow,
-                CreatedBy = "Admin",
-                UpdatedAt = DateTime.UtcNow,
-                UpdatedBy = "System",
-                DNI = "1234",
-                Name = "Name",
-                Email = "Margleison@gmail.com",
-                WorkEmail = "Margleison@transfero.com",
-                Country = "Brasil",
-                Gender = GenderEnum.Man,
-                RG = "35.216.967-6",
-                BirthDate = DateOnly.Parse("2003-10-18"),
-                Nationality = NationalityEnum.Argentino,
-                Address = "Rua Joaquim da Silva Maia",
-                City = "Nova Iguaçu",
-                State = "Rio de Janeiro",
-                PostalCode = "26291-221",
-                PhoneNumber = "(21)98116-5068",
-                EmergencyContact = "(21)98116-5069",
-                BankBranch = "001",
-                BankName = "Nubank",
-                AccountName = "001",
-                Pixkey = "06590176795"
-            };
-            var exception = Assert.Throws<DomainException>(() => entity.Validate());
-            Assert.Equal("Invalid DNI!", exception.Message);
+            Assert.Equal("City cannot exceed 20 characters", exception.Message);
         }
 
         [Fact]
-        public void Validate_ShouldThrowsException_WhenpDNIIsEmpty()
+        public void Validate_ShouldThrowsException_WhenpAddressIsEmpty()
         {
-            var entity = new Collaborator
-            {
-                Id = Guid.NewGuid(),
-                Status = EntityStatusEnum.Active,
-                CreatedAt = DateTime.UtcNow,
-                CreatedBy = "Admin",
-                UpdatedAt = DateTime.UtcNow,
-                UpdatedBy = "System",
-                DNI = " ",
-                Name = "Name",
-                Email = "Margleison@gmail.com",
-                WorkEmail = "Margleison@transfero.com",
-                Country = "Brasil",
-                Gender = GenderEnum.Man,
-                RG = "35.216.967-6",
-                BirthDate = DateOnly.Parse("2003-10-18"),
-                Nationality = NationalityEnum.Argentino,
-                Address = "Rua Joaquim da Silva Maia",
-                City = "Nova Iguaçu",
-                State = "Rio de Janeiro",
-                PostalCode = "26291-221",
-                PhoneNumber = "(21)98116-5068",
-                EmergencyContact = "(21)98116-5069",
-                BankBranch = "001",
-                BankName = "Nubank",
-                AccountName = "001",
-                Pixkey = "06590176795"
-            };
+
+            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", accountName: "001005655145", postalCode: "26291-221", city: "Nova Iguaçu", address: " ");
+
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
-            Assert.Equal("DNI is required for Argentine citizens and cannot be empty!", exception.Message);
+            Assert.Equal("Address cannot be empty!", exception.Message);
         }
+
+        [Fact]
+        public void Validate_ShouldThrowsException_WhenpMaxLenghtAddressIsInvalid()
+        {
+
+            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", accountName: "001005655145", postalCode: "26291-221", city: "Nova Iguaçu", address: new string('c', 101));
+
+            var exception = Assert.Throws<DomainException>(() => entity.Validate());
+            Assert.Equal("Address cannot exceed 60 characters", exception.Message);
+        }
+
     }
-} 
+}
 
-
+/*
+            * 
+               "Margleison@gmail.com",
+               "Margleison@transfero.com",
+               "Brasil",
+               "35.216.967-6",
+               DateOnly.Parse("2003-10-18"),
+               "address",
+               "Nova Iguaçu",
+               "Rio de Janeiro",
+               "26291-221",
+               "(21)98116-5068",
+               "(21)98116-5069",
+               "001",
+               "Nubank",
+               "0659017675",
+               "001",
+               GenderEnum.Man
+            * */

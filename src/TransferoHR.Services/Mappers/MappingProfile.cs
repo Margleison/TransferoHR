@@ -37,5 +37,12 @@ public class MappingProfile : Profile
         CreateMap<CollaboratorCreateModel, Collaborator>();
         CreateMap<CollaboratorUpdateModel, Collaborator>();
         CreateMap<Collaborator, CollaboratorGetModel>();
+
+        CreateMap<WorkExperienceCreateModel, WorkExperience>();
+        CreateMap<WorkExperienceUpdateModel, WorkExperience>();
+        CreateMap<WorkExperience, WorkExperienceGetModel>()
+             .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
+             .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()));
+
     }
 }

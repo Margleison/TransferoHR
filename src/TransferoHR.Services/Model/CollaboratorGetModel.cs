@@ -11,6 +11,7 @@ namespace TransferoHR.Services.Model
     public class CollaboratorGetModel : NamedGetModel
     {
         public string CPF { get; set; } = String.Empty;
+        public string DNI { get; set; } = String.Empty;
         public string Email { get; set; } = String.Empty;
         public string WorkEmail { get; set; } = String.Empty;
         public GenderEnum Gender { get; set; } = GenderEnum.NotInformed;

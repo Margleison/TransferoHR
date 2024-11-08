@@ -45,66 +45,57 @@ namespace TransferoHR.Domain.Entities
             //DomainException.When(PhoneNumberValidator.Validate(PhoneNumber) == false, "Invalid PhoneNumber!");
 
             {
+                base.Validate();
                 if (Nationality == NationalityEnum.Brasileiro)
                 {
-                    DomainException.When(string.IsNullOrWhiteSpace(CPF), "CPF is required for Brazilian citizens and cannot be empty!");
-                    base.Validate();
+                    DomainException.When(string.IsNullOrWhiteSpace(CPF), "CPF is required for Brazilian citizens!");
                     DomainException.When(CPFValidator.Validate(CPF) == false, "Invalid CPF!");
+                    DNI = "";
                 }
-
                 else if (Nationality == NationalityEnum.Argentino)
                 {
-                    DomainException.When(string.IsNullOrWhiteSpace(DNI), "DNI is required for Argentine citizens and cannot be empty!");
-                    base.Validate();
+                    DomainException.When(string.IsNullOrWhiteSpace(DNI), "DNI is required for Argentine citizens!");
                     DomainException.When(DniValidator.Validate(DNI) == false, "Invalid DNI!");
+                    CPF = "";
                 }
 
-
-
-
-                base.Validate();
-                DomainException.When(string.IsNullOrWhiteSpace(PostalCode), "Postal Code cannot be empty!");
-                DomainException.When(PostalCodeValidator.Validate(PostalCode) == false, "Invalid Postal Code!");
-
-
-                base.Validate();
                 DomainException.When(string.IsNullOrWhiteSpace(RG), "RG cannot be empty!");
-                DomainException.When(RGValidator.Validate(RG) == false, "Invalid RG!");
 
-                base.Validate();
+
                 DomainException.When(string.IsNullOrWhiteSpace(Email), "Email cannot be empty!");
                 DomainException.When(EmailValidador.Validate(Email) == false, "Invalid Email!");
                 DomainException.When(Email.Length > 40, "Email cannot exceed 40 characters");
 
 
-                base.Validate();
                 DomainException.When(string.IsNullOrWhiteSpace(WorkEmail), "WorkEmail cannot be empty!");
                 DomainException.When(EmailValidador.Validate(WorkEmail) == false, "Invalid WorkEmail!");
                 DomainException.When(WorkEmail.Length > 40, "Work Email cannot exceed 40 characters");
 
 
-                base.Validate();
-                DomainException.When(string.IsNullOrWhiteSpace(BankName), "BankName cannot be empty!");
-                DomainException.When(BankNameValidator.Validate(BankName) == false, "Invalid BankName!");
-
-                base.Validate();
-                DomainException.When(string.IsNullOrWhiteSpace(AccountName), "AccountName cannot be empty!");
-                DomainException.When(AccountNameValidator.Validate(AccountName) == false, "Invalid AccountName!");
-
-                base.Validate();
-                DomainException.When(string.IsNullOrWhiteSpace(BankBranch), "BankBranch cannot be empty!");
-                DomainException.When(BankBranchValidator.Validate(BankBranch) == false, "Invalid BankBranch!");
-
-                base.Validate();
                 DomainException.When(string.IsNullOrWhiteSpace(Pixkey), "Pixkey cannot be empty!");
                 DomainException.When(PixKeyValidator.Validate(Pixkey) == false, "Invalid Pixkey!");
 
-                base.Validate();
+                DomainException.When(string.IsNullOrWhiteSpace(BankBranch), "BankBranch cannot be empty!");
+                DomainException.When(BankBranchValidator.Validate(BankBranch) == false, "Invalid BankBranch!");
+
+
+                DomainException.When(string.IsNullOrWhiteSpace(BankName), "BankName cannot be empty!");
+                DomainException.When(BankNameValidator.Validate(BankName) == false, "Invalid BankName!");
+
+
+                DomainException.When(string.IsNullOrWhiteSpace(AccountName), "AccountName cannot be empty!");
+                DomainException.When(AccountNameValidator.Validate(AccountName) == false, "Invalid AccountName!");
+
+
+                DomainException.When(string.IsNullOrWhiteSpace(PostalCode), "Postal Code cannot be empty!");
+                DomainException.When(PostalCodeValidator.Validate(PostalCode) == false, "Invalid Postal Code!");
+
+
                 DomainException.When(string.IsNullOrWhiteSpace(City), "City cannot be empty!");
                 DomainException.When(CityValidator.Validate(City) == false, "Invalid City!");
                 DomainException.When(City.Length > 20, "City cannot exceed 20 characters");
                 
-                base.Validate();
+
                 DomainException.When(string.IsNullOrWhiteSpace(Address), "Address cannot be empty!");
                 DomainException.When(Address.Length > 60, "Address cannot exceed 60 characters");
             }

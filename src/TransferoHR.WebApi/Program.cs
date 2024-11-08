@@ -36,13 +36,14 @@ builder.Services.AddScoped<IJobLevelRepository, JobLevelRepository>();
 builder.Services.AddScoped<IJobTitleRepository, JobTitleRepository>();
 builder.Services.AddScoped<IDepartmentReposity, DepartmentReposity>();
 builder.Services.AddScoped<ICollaboratorRepository, CollaboratorRepository>();
-
+builder.Services.AddScoped<IWorkExperienceRepository, WorkExperienceRepository>();
 
 builder.Services.AddScoped<CollaboratorService>();
 builder.Services.AddScoped<JobTitleService>();
 builder.Services.AddScoped<CompanyService>();
 builder.Services.AddScoped<JobLevelService>();
 builder.Services.AddScoped<DepartmentService>();
+builder.Services.AddScoped<WorkExperienceService>();
 
 //builder.Services.AddAutoMapper(typeof(Startup)); // Ajuste conforme necessário
 

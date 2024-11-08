@@ -3,7 +3,7 @@ using TransferoHR.Domain.Entities.Generic;
 
 namespace TransferoHR.Domain.Entities
 {
-    public class WorkExperience : GenericEntity
+    public class WorkExperience : GenericNamedEntity
     {
         public required Guid CollaboratorId { get; set; }
         public required DateOnly StartDate { get; set; }

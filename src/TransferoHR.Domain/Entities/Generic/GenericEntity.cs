@@ -2,6 +2,9 @@
 using TransferoHR.Domain.Enums;
 using TransferoHR.Domain.Exceptions;
 using System.ComponentModel.DataAnnotations;
+using System.Reflection;
+using System.ComponentModel;
+using System.Net;
 
 namespace TransferoHR.Domain.Entities.Generic;
 
@@ -11,15 +14,58 @@ public class GenericEntity
     public EntityStatusEnum Status { get; set; }
     public DateTime CreatedAt { get; set; }
     [MaxLength(100)]
+    [DisplayName("Created By")]
     public string CreatedBy { get; set; } = string.Empty;
     public DateTime? UpdatedAt { get; set; }
     [MaxLength(100)]
+    [DisplayName("Updated By")]
     public string? UpdatedBy { get; set; }
+
+    protected int GetMaxLength(string propertyName)
+    {
+        // Usa 'GetType()' para pegar a classe atual sem necessidade de passá-la explicitamente
+        var maxLengthAttribute = (MaxLengthAttribute)GetType()
+            .GetProperty(propertyName)?
+            .GetCustomAttribute(typeof(MaxLengthAttribute));
+
+        return maxLengthAttribute?.Length ?? 0; // Retorna int.MaxValue se MaxLength não estiver definido
+    }
+    protected string GetDisplayName(string propertyName)
+    {
+        var displayNameAttribute = (DisplayNameAttribute)GetType()
+            .GetProperty(propertyName)?
+            .GetCustomAttribute(typeof(DisplayNameAttribute));
+
+        return displayNameAttribute?.DisplayName ?? propertyName; // Retorna o nome amigável ou o nome da propriedade se não houver atributo
+    }
+
+    protected void ValidateStringEmptyAndLenght(string propertyName)
+    {
+        // Usando reflection para acessar a propriedade dinamicamente
+        var propertyValue = GetType().GetProperty(propertyName)?.GetValue(this) as string;
+
+        // Verificando se a propriedade é nula ou contém espaços em branco
+        if (string.IsNullOrWhiteSpace(propertyValue))
+        {
+            var displayName = GetDisplayName(propertyName);
+            var message = $"{displayName} cannot be empty";
+            throw new DomainException(message);
+        }
+        var maxLenght = GetMaxLength(propertyName);
+        if (maxLenght > 0 && propertyValue.Length > maxLenght)
+        {
+            var displayName = GetDisplayName(propertyName);
+            var message = $"{displayName} cannot exceed {maxLenght} characters";
+            throw new DomainException(message);
+
+        }
+    }
 
     public virtual void Validate()
     {
-        DomainException.When(string.IsNullOrWhiteSpace(CreatedBy), "Created By cannot be empty");
-        if (UpdatedAt != null) DomainException.When(string.IsNullOrWhiteSpace(UpdatedBy), "Updated By cannot be empty");
+        ValidateStringEmptyAndLenght("CreatedBy");
+
+        if (UpdatedAt != null) ValidateStringEmptyAndLenght("UpdatedBy");
         if (UpdatedBy != null) DomainException.When(UpdatedAt == null, "Updated At cannot be empty");
     }
 }

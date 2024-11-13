@@ -12,8 +12,8 @@ using TransferoHR.Infra.Database;
 namespace TransferoHR.Infra.Migrations
 {
     [DbContext(typeof(HRContext))]
-    [Migration("20241107165937_DNIAdd")]
-    partial class DNIAdd
+    [Migration("20241107165937_ForeignIdentificationDocumentAdd")]
+    partial class ForeignIdentificationDocumentAdd
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -72,7 +72,7 @@ namespace TransferoHR.Infra.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("varchar(100)");
 
-                    b.Property<string>("DNI")
+                    b.Property<string>("ForeignIdentificationDocument")
                         .HasColumnType("longtext");
 
                     b.Property<string>("Email")

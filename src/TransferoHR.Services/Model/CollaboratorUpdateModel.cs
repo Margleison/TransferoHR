@@ -9,5 +9,6 @@ namespace TransferoHR.Services.Model
 {
     public class CollaboratorUpdateModel : NamedUpdateModel
     {
+
     }
 }

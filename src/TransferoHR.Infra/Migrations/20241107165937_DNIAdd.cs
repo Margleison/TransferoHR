@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace TransferoHR.Infra.Migrations
 {
     /// <inheritdoc />
-    public partial class DNIAdd : Migration
+    public partial class ForeignIdentificationDocumentAdd : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -24,7 +24,7 @@ namespace TransferoHR.Infra.Migrations
                     Nationality = table.Column<int>(type: "int", nullable: false),
                     CPF = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    DNI = table.Column<string>(type: "longtext", nullable: true)
+                    ForeignIdentificationDocument = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Email = table.Column<string>(type: "varchar(40)", maxLength: 40, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),

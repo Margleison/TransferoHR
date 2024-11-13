@@ -5,12 +5,7 @@ using TransferoHR.Services.Exceptions;
 using TransferoHR.Services.Interfaces.Generic;
 using TransferoHR.Services.Model.Generic;
 using TransferoHR.Services.Params.Generic;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using TransferoHR.Domain.Entities;
 namespace TransferoHR.Services.Implementation
 {
     public class GenericService<T, TParams, TGetModel>: IGenericService<T, TParams, TGetModel>

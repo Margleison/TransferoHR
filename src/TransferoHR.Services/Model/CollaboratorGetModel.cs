@@ -11,7 +11,7 @@ namespace TransferoHR.Services.Model
     public class CollaboratorGetModel : NamedGetModel
     {
         public string CPF { get; set; } = String.Empty;
-        public string DNI { get; set; } = String.Empty;
+        public string ForeignIdentificationDocument { get; set; } = String.Empty;
         public string Email { get; set; } = String.Empty;
         public string WorkEmail { get; set; } = String.Empty;
         public GenderEnum Gender { get; set; } = GenderEnum.NotInformed;
@@ -21,7 +21,7 @@ namespace TransferoHR.Services.Model
         public string Nationality { get; set; } = String.Empty;
         public string Address { get; set; } = String.Empty;
         public string City { get; set; } = String.Empty;
-        public string state { get; set; } = String.Empty;
+        public string State { get; set; } = String.Empty;
         public string PostalCode { get; set; } = String.Empty;
         public string PhoneNumber { get; set; } = String.Empty;
         public string BankName { get; set; } = String.Empty;

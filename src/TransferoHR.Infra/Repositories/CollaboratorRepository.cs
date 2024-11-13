@@ -14,17 +14,43 @@ namespace TransferoHR.Infra.Repositories
         {
         }
 
-        public async Task<Collaborator> GetByCPFandRG(string cpf, string rg, Guid? excId = null)
+        public async Task<Collaborator> GetByCPF(string cpf, Guid? excId = null)
         {
             Expression<Func<Collaborator, bool>> filter;
             if (excId == null)
             {
-                filter = x => (x.CPF == cpf || x.RG == rg) && x.Status != EntityStatusEnum.Deleted;
+                filter = x => x.CPF == cpf && x.Status != EntityStatusEnum.Deleted;
             }
             else
-                filter = x => (x.CPF == cpf || x.RG == rg) && x.Status != EntityStatusEnum.Deleted && x.Id != excId;
+                filter = x => x.CPF == cpf && x.Status != EntityStatusEnum.Deleted && x.Id != excId;
 
             return await FirstAsync(filter);
-        }  
+        }
+
+        public async Task<Collaborator> GetByRG(string rg, Guid? excId = null)
+        {
+            Expression<Func<Collaborator, bool>> filter;
+            if (excId == null)
+            {
+                filter = x =>  x.RG == rg && x.Status != EntityStatusEnum.Deleted;
+            }
+            else
+                filter = x => x.RG == rg && x.Status != EntityStatusEnum.Deleted && x.Id != excId;
+
+            return await FirstAsync(filter);
+        }
+
+        public async Task<Collaborator> GetByEmail(string email, Guid? excId = null)
+        {
+            Expression<Func<Collaborator, bool>> filter;
+            if (excId == null)
+            {
+                filter = x => x.Email == email && x.Status != EntityStatusEnum.Deleted;
+            }
+            else
+                filter = x => x.Email == email && x.Status != EntityStatusEnum.Deleted && x.Id != excId;
+
+            return await FirstAsync(filter);
+        }
     }
 }

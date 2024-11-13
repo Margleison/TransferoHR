@@ -8,9 +8,9 @@ namespace TransferoHR.Test.Domain
     {
 
         private Collaborator Create(
-                NationalityEnum nationality,
+                NationalityEnum nationality = NationalityEnum.Brazilian,
                 string cpf = "",
-                string dni = "",
+                string foreignIdentificationDocument = "",
                 string email = "",
                 string workEmail = "",
                 string rg = "",
@@ -21,11 +21,11 @@ namespace TransferoHR.Test.Domain
                 string city = "",
                 string state = "",
                 string postalCode = "",
-                string phoneNumber = "",
+                string phoneNumber = "(21) 98116-5068",
                 string bankBranch = "",
                 string emergencyContact = "",
                 string bankName = "",
-                string accountName = "",
+                string bankAccount = "",
                 GenderEnum gender = GenderEnum.Man
         )
         {
@@ -39,7 +39,7 @@ namespace TransferoHR.Test.Domain
                 UpdatedBy = "System",
                 Name = "Name",
                 CPF = cpf,
-                DNI = dni,
+                ForeignIdentificationDocument = foreignIdentificationDocument,
                 RG = rg,
                 Email = email,
                 WorkEmail = workEmail,
@@ -55,7 +55,7 @@ namespace TransferoHR.Test.Domain
                 EmergencyContact = emergencyContact,
                 BankBranch = bankBranch,
                 BankName = bankName,
-                AccountName = accountName,
+                BankAccount = bankAccount,
                 Pixkey = pixkey
             };
         }
@@ -64,19 +64,19 @@ namespace TransferoHR.Test.Domain
         public void Validate_ShouldThrowsException_WhenBrazilianAndCPFIsNullOrEmpty()
         {
             // Arrange
-            var entity = Create(NationalityEnum.Brasileiro);
+            var entity = Create();
 
             // Act
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
 
             // Assert
-            Assert.Equal("CPF is required for Brazilian citizens!", exception.Message);
+            Assert.Equal("CPF cannot be empty", exception.Message);
         }
         [Fact]
         public void Validate_ShouldThrowsException_WhenBrazilianAndCPFIsInvalid()
         {
             // Arrange
-            var entity = Create(NationalityEnum.Brasileiro, cpf: "010010101010101");
+            var entity = Create(cpf: "010010101010101");
 
             // Act
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
@@ -85,49 +85,49 @@ namespace TransferoHR.Test.Domain
             Assert.Equal("Invalid CPF!", exception.Message);
         }
         [Fact]
-        public void Validate_ShouldThrowsException_WhenArgentineAndDNIIsNullOrEmpty()
+        public void Validate_ShouldThrowsException_WhenArgentineAndForeignIdentificationDocumentIsNullOrEmpty()
         {
             // Arrange
-            var entity = Create(NationalityEnum.Argentino);
+            var entity = Create( nationality: NationalityEnum.Argentine);
 
             // Act
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
 
             // Assert
-            Assert.Equal("DNI is required for Argentine citizens!", exception.Message);
+            Assert.Equal("Foreign Identification Document cannot be empty", exception.Message);
         }
         [Fact]
-        public void Validate_ShouldThrowsException_WhenArgentineAndDNIIsInvalid()
+        public void Validate_ShouldThrowsException_WhenArgentineAndForeignIdentificationDocumentIsInvalid()
         {
             // Arrange
-            var entity = Create(NationalityEnum.Argentino, dni: "010010101010101");
+            var entity = Create(nationality: NationalityEnum.Argentine, foreignIdentificationDocument: "010010101010101");
 
             // Act
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
 
             // Assert
-            Assert.Equal("Invalid DNI!", exception.Message);
+            Assert.Equal("Invalid ForeignIdentificationDocument!", exception.Message);
         }
 
         [Fact]
         public void Validate_ShouldThrowsException_WhenRGIsNull()
         {
             // Arrange
-            var entity = Create(NationalityEnum.Argentino, dni: "1111111");
+            var entity = Create(nationality: NationalityEnum.Argentine, foreignIdentificationDocument: "1111111");
 
             // Act
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
 
-            Assert.Equal("RG cannot be empty!", exception.Message);
+            Assert.Equal("RG cannot be empty", exception.Message);
         }
 
         [Fact]
         public void Validate_ShouldThrowsException_WhenEmailIsEmpty()
         {
-            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: " ");
+            var entity = Create(cpf: "065.901.767-95", rg: "35.216.967.6", email: " ");
 
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
-            Assert.Equal("Email cannot be empty!", exception.Message);
+            Assert.Equal("Email cannot be empty", exception.Message);
         }
 
 
@@ -135,7 +135,7 @@ namespace TransferoHR.Test.Domain
         [Fact]
         public void Validate_ShouldThrowsException_WhenEmailIsInvalid()
         {
-            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison@.com");
+            var entity = Create(cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison@.com");
 
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
             Assert.Equal("Invalid Email!", exception.Message);
@@ -145,7 +145,7 @@ namespace TransferoHR.Test.Domain
         public void Validate_ShouldThrowsException_WhenpMaxLenghtEmailIsInvalid()
         {
 
-            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silveira@gmail.commmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm");
+            var entity = Create(cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silveira@gmail.commmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm");
 
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
             Assert.Equal("Email cannot exceed 40 characters", exception.Message);
@@ -155,7 +155,7 @@ namespace TransferoHR.Test.Domain
         public void Validate_ShouldThrowsException_WhenpPixKeyIsEmpty()
         {
 
-            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: " ");
+            var entity = Create(nationality: NationalityEnum.Brazilian, cpf: "065.901.767-95",foreignIdentificationDocument: "", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: " ");
 
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
             Assert.Equal("Pixkey cannot be empty!", exception.Message);
@@ -165,7 +165,7 @@ namespace TransferoHR.Test.Domain
         public void Validate_ShouldThrowsException_WhenpPixKeyIsInvalid()
         {
 
-            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com",workEmail: "margleison.silva@transfero.com", pixkey: "0659017679");
+            var entity = Create(cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com",workEmail: "margleison.silva@transfero.com", pixkey: "0659017679");
 
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
             Assert.Equal("Invalid Pixkey!", exception.Message);
@@ -175,7 +175,7 @@ namespace TransferoHR.Test.Domain
         public void Validate_ShouldThrowsException_WhenpBankBranchIsEmpty()
         {
 
-            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: " ");
+            var entity = Create( cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: " ");
 
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
             Assert.Equal("BankBranch cannot be empty!", exception.Message);
@@ -185,7 +185,7 @@ namespace TransferoHR.Test.Domain
         public void Validate_ShouldThrowsException_WhenpBankBranchIsInvalid()
         {
 
-            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "00");
+            var entity = Create( cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "00");
 
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
             Assert.Equal("Invalid BankBranch!", exception.Message);
@@ -194,7 +194,7 @@ namespace TransferoHR.Test.Domain
         public void Validate_ShouldThrowsException_WhenpBankNameIsEmpty()
         {
 
-            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: " " );
+            var entity = Create( cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: " " );
 
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
             Assert.Equal("BankName cannot be empty!", exception.Message);
@@ -204,7 +204,7 @@ namespace TransferoHR.Test.Domain
         public void Validate_ShouldThrowsException_WhenpBankNameIsInvalid()
         {
 
-            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "07775");
+            var entity = Create( cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "07775");
 
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
             Assert.Equal("Invalid BankName!", exception.Message);
@@ -213,7 +213,7 @@ namespace TransferoHR.Test.Domain
         public void Validate_ShouldThrowsException_WhenpaAccountNameIsEmpty()
         {
 
-            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", accountName: " ");
+            var entity = Create( cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", bankAccount: " ");
 
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
             Assert.Equal("AccountName cannot be empty!", exception.Message);
@@ -223,7 +223,7 @@ namespace TransferoHR.Test.Domain
         public void Validate_ShouldThrowsException_WhenpAccountNameIsInvalid()
         {
 
-            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", accountName: "001005655145nsdabisdajifdhuiosdaguiosfdapbuisfdaphuosfdaphiosfdaphio");
+            var entity = Create( cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", bankAccount: "001005655145nsdabisdajifdhuiosdaguiosfdapbuisfdaphuosfdaphiosfdaphio");
 
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
             Assert.Equal("Invalid AccountName!", exception.Message);
@@ -233,7 +233,7 @@ namespace TransferoHR.Test.Domain
         public void Validate_ShouldThrowsException_WhenpPostalCodeIsEmpty()
         {
 
-            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", accountName: "001005655145", postalCode: " ");
+            var entity = Create( cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", bankAccount: "001005655145", postalCode: " ");
 
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
             Assert.Equal("Postal Code cannot be empty!", exception.Message);
@@ -243,7 +243,7 @@ namespace TransferoHR.Test.Domain
         public void Validate_ShouldThrowsException_WhenpPostalCodeIsInvalid()
         {
 
-            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", accountName: "001005655145", postalCode: "26291-00");
+            var entity = Create( cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", bankAccount: "001005655145", postalCode: "26291-00");
 
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
             Assert.Equal("Invalid Postal Code!", exception.Message);
@@ -252,7 +252,7 @@ namespace TransferoHR.Test.Domain
         public void Validate_ShouldThrowsException_WhenpCityIsEmpty()
         {
 
-            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", accountName: "001005655145", postalCode: "26291-221", city: " ");
+            var entity = Create( cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", bankAccount: "001005655145", postalCode: "26291-221", city: " ");
 
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
             Assert.Equal("City cannot be empty!", exception.Message);
@@ -262,7 +262,7 @@ namespace TransferoHR.Test.Domain
         public void Validate_ShouldThrowsException_WhenpCityIsInvalid()
         {
 
-            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", accountName: "001005655145", postalCode: "26291-221", city: "25455");
+            var entity = Create( cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", bankAccount: "001005655145", postalCode: "26291-221", city: "25455");
 
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
             Assert.Equal("Invalid City!", exception.Message);
@@ -273,7 +273,7 @@ namespace TransferoHR.Test.Domain
         public void Validate_ShouldThrowsException_WhenpMaxLenghtCityIsInvalid()
         {
 
-            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", accountName: "001005655145", postalCode: "26291-221", city: "Nova Iguaçuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+            var entity = Create( cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", bankAccount: "001005655145", postalCode: "26291-221", city: "Nova Iguaçuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
 
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
             Assert.Equal("City cannot exceed 20 characters", exception.Message);
@@ -283,7 +283,7 @@ namespace TransferoHR.Test.Domain
         public void Validate_ShouldThrowsException_WhenpAddressIsEmpty()
         {
 
-            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", accountName: "001005655145", postalCode: "26291-221", city: "Nova Iguaçu", address: " ");
+            var entity = Create( cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", bankAccount: "001005655145", postalCode: "26291-221", city: "Nova Iguaçu", address: " ");
 
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
             Assert.Equal("Address cannot be empty!", exception.Message);
@@ -293,7 +293,7 @@ namespace TransferoHR.Test.Domain
         public void Validate_ShouldThrowsException_WhenpMaxLenghtAddressIsInvalid()
         {
 
-            var entity = Create(NationalityEnum.Brasileiro, cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", accountName: "001005655145", postalCode: "26291-221", city: "Nova Iguaçu", address: new string('c', 101));
+            var entity = Create( cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", bankAccount: "001005655145", postalCode: "26291-221", city: "Nova Iguaçu", address: new string('c', 101));
 
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
             Assert.Equal("Address cannot exceed 60 characters", exception.Message);

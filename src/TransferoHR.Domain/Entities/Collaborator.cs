@@ -23,7 +23,8 @@ namespace TransferoHR.Domain.Entities
 
         [DisplayName("Birth Date")]
         public required DateOnly BirthDate { get; set; }
-
+        
+        [MaxLength(60)]
         public required string Address { get; set; }
 
         [MaxLength(20)]
@@ -31,13 +32,13 @@ namespace TransferoHR.Domain.Entities
         public required string City { get; set; }
 
         [MaxLength(20)]
-        public required string State { get; set; } //sealed brasileiro, validar se e um dos estados
+        public required string State { get; set; } //se brasileiro, validar se e um dos estados
 
         [DisplayName("Postal Code")]
-        public required string PostalCode { get; set; }//, se brasileiro, checar
+        public required string PostalCode { get; set; }// se brasileiro, checar
 
         [DisplayName("Phone Number")]
-        public required string PhoneNumber { get; set; } //, se brasileiro, checar
+        public required string PhoneNumber { get; set; } // se brasileiro, checar
 
         [MaxLength(40)]
         [DisplayName("Work Email")]
@@ -47,10 +48,8 @@ namespace TransferoHR.Domain.Entities
         [MaxLength(40)]
         public required string Country { get; set; } //se o Nationality = 0, Obrigatorio, Country = Nationality.
 
-
         public required string RG { get; set; } //, se brasileiro, obrigatorio           // OrgaoEmissor, se brasileiro, obrigatorio
 
-        [MaxLength(60)]
         [DisplayName("Emergency Contact")]
         public string? EmergencyContact { get; set; }
         
@@ -66,11 +65,33 @@ namespace TransferoHR.Domain.Entities
         [DisplayName("Pix Key")]
         public required string Pixkey { get; set; }
 
-
         //V A L I D A T E S 
-        private bool CompletedBankAccount()
+        private void ValidadeIdentification()
         {
-            return !string.IsNullOrWhiteSpace(BankName) && !string.IsNullOrWhiteSpace(BankBranch) && !string.IsNullOrWhiteSpace(BankAccount);
+            if (Nationality == NationalityEnum.Brazilian)
+            {
+                ValidateStringEmptyAndLenght("CPF");
+                DomainException.When(CPFValidator.Validate(CPF)==false, "Invalid CPF!");
+                ForeignIdentificationDocument = null;
+            }
+            else
+            {
+                ValidateStringEmptyAndLenght("ForeignIdentificationDocument");
+                CPF = null;
+            }
+        }
+        private void ValidateRG()
+        {
+            if (Nationality == NationalityEnum.Brazilian)
+            {
+                ValidateStringEmptyAndLenght("RG");
+            }
+        }
+
+        private void ValidatePhoneNumber()
+        {
+            ValidateStringEmptyAndLenght("PhoneNumber");
+            DomainException.When(Nationality == NationalityEnum.Brazilian && PhoneNumberValidator.Validate(PhoneNumber) == false, "Invalid PhoneNumber!");
         }
 
         private void ValidateEmail()
@@ -89,65 +110,53 @@ namespace TransferoHR.Domain.Entities
             DomainException.When(WorkEmail.Length > maxLenght, $"Work Email cannot exceed{maxLenght}characters");
 
         }
-
-        private void ValidateCollaboradorBank()
+ 
+        private void ValidateBank()
         {
-            ValidateStringEmptyAndLenght("ForeignIdentificationDocument");
+            ValidateStringEmptyAndLenght("BankBranch");
             DomainException.When(BankBranchValidator.Validate(BankBranch) == false, "Invalid BankBranch!");
 
-            ValidateStringEmptyAndLenght("ForeignIdentificationDocument");
+            ValidateStringEmptyAndLenght("BankName");
             DomainException.When(BankNameValidator.Validate(BankName) == false, "Invalid BankName!");
 
             ValidateStringEmptyAndLenght("BankAccount");
             DomainException.When(AccountNameValidator.Validate(BankAccount) == false, "Invalid BankAccount!");
         }
 
-        private void ValidateCollaboratorAddress() 
+        private void ValidateAddress() 
         {
-            var maxLenght = GetMaxLength("State");
-            DomainException.When(State.Length > maxLenght, $"State cannot exceed {maxLenght} characters");
+            if (Nationality == NationalityEnum.Brazilian)
+            {
+                // Verifica se o estado é um dos estados brasileiros válidos
+                if (!Enum.TryParse<BrazilianStates>(State, out _))
+                {
+                    throw new DomainException("Invalid state");
 
-            DomainException.When(PostalCodeValidator.Validate(PostalCode) == false, "Invalid Postal Code!");
+                }
 
-            maxLenght = GetMaxLength("City");
-            DomainException.When(City.Length > maxLenght, $"City cannot exceed {maxLenght} characters");
+                ValidateStringEmptyAndLenght("PostalCode");
+                DomainException.When(PostalCodeValidator.Validate(PostalCode) == false, "Invalid Postal Code!");
+            }
+
+            ValidateStringEmptyAndLenght("State");
+
+            ValidateStringEmptyAndLenght("City");
             DomainException.When(CityValidator.Validate(City) == false, "Invalid City!");
 
-            maxLenght = GetMaxLength("Address");
-            DomainException.When(Address.Length > maxLenght, $"Address cannot exceed {maxLenght} characters");
+            ValidateStringEmptyAndLenght("Address");
         }
-
 
         public override void Validate()
         {
             {
                 base.Validate();
-                if (Nationality == NationalityEnum.Brazilian)
-                {
-                    ValidateStringEmptyAndLenght("CPF");
-                    DomainException.When(string.IsNullOrWhiteSpace(CPF), "CPF is required for Brazilian citizens!");
-                    DomainException.When(CPFValidator.Validate(CPF) == false, "Invalid CPF!");
-                    ForeignIdentificationDocument = "";
-                }
-                else
-                {
-                    ValidateStringEmptyAndLenght("ForeignIdentificationDocument");
-                    DomainException.When(string.IsNullOrWhiteSpace(ForeignIdentificationDocument), "ForeignIdentificationDocument is required for Argentine citizens!");
-                    DomainException.When(ForeignIdentificationDocumentValidator.Validate(ForeignIdentificationDocument) == false, "Invalid ForeignIdentificationDocument!");
-                    CPF = "";
-                }
-
-                ValidateStringEmptyAndLenght("RG");
-
-                ValidateStringEmptyAndLenght("PhoneNumber");
-                DomainException.When(PhoneNumberValidator.Validate(PhoneNumber) == false, "Invalid PhoneNumber!");
-
-                
-                
+                ValidadeIdentification();
+                ValidateRG();
+                ValidatePhoneNumber();
                 ValidateEmail();
                 ValidateWorkEmail();
-                ValidateCollaboradorBank();
-                ValidateCollaboratorAddress();
+                ValidateBank();
+                ValidateAddress();
             }
         }
     }

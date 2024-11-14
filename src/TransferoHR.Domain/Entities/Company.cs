@@ -11,8 +11,8 @@ public class Company : GenericNamedEntity
 
     public override void Validate()
     {
-        base.Validate();
-        DomainException.When(string.IsNullOrWhiteSpace(CNPJ), "CNPJ cannot be empty!");
+        base.Validate(); 
+        ValidateStringEmptyAndLenght("CNPJ");
         DomainException.When(CNPJValidator.Validate(CNPJ) == false, "Invalid CNPJ!");
     }
 

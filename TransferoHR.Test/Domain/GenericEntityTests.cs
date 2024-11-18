@@ -10,21 +10,31 @@ namespace TransferoHR.Tests.Domain.Entities
     public class GenericEntityTests
     {
 
-
-        [Fact]
-        public void Validate_ShouldThrowException_WhenCreatedByIsEmpty()
+        private GenericEntity Create(
+            string createdby = "",
+            string updatedby = ""
+            ) 
         {
-            // Arrange
-            var entity = new GenericEntity
+            return new GenericEntity
             {
                 Id = Guid.NewGuid(),
                 Status = EntityStatusEnum.Active,
                 CreatedAt = DateTime.UtcNow,
-                CreatedBy = string.Empty
-            };
+                CreatedBy = createdby,
+                UpdatedAt = DateTime.UtcNow,
+                UpdatedBy = updatedby
+            }; 
+        }
+        [Fact]
+        public void Validate_ShouldThrowException_WhenCreatedByIsEmpty()
+        {
+            // Arrange
+            var entity = Create(createdby: "");
 
             // Act & Assert
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
+
+            //Assert
             Assert.Equal("Created By cannot be empty", exception.Message);
         }
 
@@ -32,18 +42,10 @@ namespace TransferoHR.Tests.Domain.Entities
         public void Validate_ShouldThrowException_WhenUpdatedAtIsNotNullButUpdatedByIsEmpty()
         {
             // Arrange
-            var entity = new GenericEntity
-            {
-                Id = Guid.NewGuid(),
-                Status = EntityStatusEnum.Active,
-                CreatedAt = DateTime.UtcNow,
-                CreatedBy = "Admin",
-                UpdatedAt = DateTime.UtcNow,
-                UpdatedBy = string.Empty
-            };
-
+            var entity = Create(createdby: "Admin", updatedby: " ");
             // Act & Assert
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
+
             Assert.Equal("Updated By cannot be empty", exception.Message);
         }
 

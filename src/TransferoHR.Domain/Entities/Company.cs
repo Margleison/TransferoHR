@@ -13,8 +13,8 @@ public class Company : GenericNamedEntity
     {
         base.Validate(); 
         ValidateStringEmptyAndLenght("CNPJ");
-        DomainException.When(CNPJValidator.Validate(CNPJ) == false, "Invalid CNPJ!");
-    }
+        DomainException.When(CNPJValidator.Validate(CNPJ) == false, "Invalid CNPJ");
 
+    }
 }
 

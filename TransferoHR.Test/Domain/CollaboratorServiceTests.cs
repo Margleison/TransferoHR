@@ -57,7 +57,7 @@ public class CollaboratorServiceTests
         NationalityEnum nationality = NationalityEnum.Brazilian,
         string city = "Nova Iguaçy",
         DateOnly? birthDate = null,
-        string state = "Rio de Janeiro",
+        string state = "RJ",
         string postalCode = "26291-221",
         string phoneNumber = "(21) 98116-5068",
         string bankBranch = "001",
@@ -100,7 +100,7 @@ public class CollaboratorServiceTests
         var createModelToPrepare = CreateModel();
         await _collaboratorService.Insert(createModelToPrepare, "admin");
 
-        var newName = createModelToPrepare.Name + "nbe";
+        var newName = createModelToPrepare.Name + "";
         var createModeltoTest = CreateModel(name: newName);
 
 
@@ -117,7 +117,7 @@ public class CollaboratorServiceTests
         // Arrange
         var createModelToPrepare = CreateModel();
         await _collaboratorService.Insert(createModelToPrepare, "admin");
-        var newName = createModelToPrepare.Name + "_new";
+        var newName = createModelToPrepare.Name + "xxxxxxxx";
         var newCpf = "06590176795";
         var createModeltoTest = CreateModel(name: newName, cpf: newCpf);
 
@@ -138,7 +138,7 @@ public class CollaboratorServiceTests
         await _collaboratorService.Insert(createModelToPrepare, "admin");
         
         // Cria um segundo collaborator com nome diferente e email igual assim validando se os emails estão duplicados
-        var newName = createModelToPrepare.Name + "_new";
+        var newName = createModelToPrepare.Name + "xxxxxxx";
         var newCpf = "06590176795";
         var newRG = "35.216.357-9";
         var newEmail = "JohnDoe@gmail.com";
@@ -188,7 +188,7 @@ public class CollaboratorServiceTests
         var initialCollaborator = await _collaboratorService.Insert(createModel, "admin");
          
         var newName = createModel.Name = "Sejo Wellitu";
-        var newCpf = "01834522757";
+        var newCpf = "0183452275";
         var toUpdate = await _collaboratorService.Insert(CreateModel(name: newName, cpf: newCpf), "admin");
 
         var idToUpdate = toUpdate.Id;

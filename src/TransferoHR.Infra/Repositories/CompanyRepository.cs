@@ -14,7 +14,7 @@ namespace TransferoHR.Infra.Repositories
 {
     public class CompanyRepository : GenericNamedEntityRepository<Company, CompanyParams>, ICompanyRepository
     {
-        public CompanyRepository(HRContext context) : base(context)
+        public CompanyRepository(HRContext db) : base(db)
         {
         }
 

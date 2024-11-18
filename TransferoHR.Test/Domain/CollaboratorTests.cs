@@ -151,7 +151,7 @@ namespace TransferoHR.Test.Domain
         }
 
         [Fact]
-        public void Validate_ShouldThrowsException_WhenpMaxLenghtEmailIsInvalid()
+        public void Validate_ShouldThrowsException_WhenMaxLenghtEmailIsInvalid()
         {
 
             var entity = Create(cpf: "065.901.767-95", rg: "35.216.967.6", phoneNumber: "21981165068", email: "margleison.silveira@gmail.commmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm");
@@ -178,7 +178,7 @@ namespace TransferoHR.Test.Domain
         }
 
         [Fact]
-        public void Validate_ShouldThrowsException_WhenpMaxLenghtWorkEmailIsInvalid()
+        public void Validate_ShouldThrowsException_WhenMaxLenghtWorkEmailIsInvalid()
         {
 
             var entity = Create(cpf: "065.901.767-95", rg: "35.216.967.6", phoneNumber: "21981165068", email: "margleison.silveira@gmail.commmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm", workEmail: "margleison.silveira@gmail.commmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm");
@@ -188,7 +188,7 @@ namespace TransferoHR.Test.Domain
         }
 
         //[Fact]
-        //public void Validate_ShouldThrowsException_WhenpPixKeyIsEmpty()
+        //public void Validate_ShouldThrowsException_WhenPixKeyIsEmpty()
         //{
 
         //    var entity = Create(cpf: "065.901.767-95", rg: "35.216.967.6", phoneNumber: "21981165068", email: "margleison.silveira@gmail.com", workEmail: "margleison.silveira@transfero.com");
@@ -197,7 +197,7 @@ namespace TransferoHR.Test.Domain
         //}
 
         //[Fact]
-        //public void Validate_ShouldThrowsException_WhenpPixKeyIsInvalid()
+        //public void Validate_ShouldThrowsException_WhenPixKeyIsInvalid()
         //{
 
         //    var entity = Create(cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com",workEmail: "margleison.silva@transfero.com", pixkey: "0659017679");
@@ -207,7 +207,7 @@ namespace TransferoHR.Test.Domain
         //}
 
         [Fact]
-        public void Validate_ShouldThrowsException_WhenpBankBranchIsEmpty()
+        public void Validate_ShouldThrowsException_WhenBankBranchIsEmpty()
         {
 
             var entity = Create(cpf: "065.901.767-95",rg: "35.216.967.6",phoneNumber:"21981165068", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: " ");
@@ -217,7 +217,7 @@ namespace TransferoHR.Test.Domain
         }
 
         [Fact]
-        public void Validate_ShouldThrowsException_WhenpBankBranchIsInvalid()
+        public void Validate_ShouldThrowsException_WhenBankBranchIsInvalid()
         {
 
             var entity = Create(cpf: "065.901.767-95", rg: "35.216.967.6", phoneNumber: "21981165068", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "00");
@@ -226,7 +226,7 @@ namespace TransferoHR.Test.Domain
             Assert.Equal("Invalid BankBranch!", exception.Message);
         }
         [Fact]
-        public void Validate_ShouldThrowsException_WhenpBankNameIsEmpty()
+        public void Validate_ShouldThrowsException_WhenBankNameIsEmpty()
         {
 
             var entity = Create( cpf: "065.901.767-95", rg: "35.216.967.6", phoneNumber: "21981165068", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: " " );
@@ -236,7 +236,7 @@ namespace TransferoHR.Test.Domain
         }
 
         [Fact]
-        public void Validate_ShouldThrowsException_WhenpBankNameIsInvalid()
+        public void Validate_ShouldThrowsException_WhenBankNameIsInvalid()
         {
 
             var entity = Create( cpf: "065.901.767-95", rg: "35.216.967.6", phoneNumber: "21981165068", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "07775");
@@ -245,7 +245,7 @@ namespace TransferoHR.Test.Domain
             Assert.Equal("Invalid BankName!", exception.Message);
         }
         [Fact]
-        public void Validate_ShouldThrowsException_WhenpaBankAccountIsEmpty()
+        public void Validate_ShouldThrowsException_WhenaBankAccountIsEmpty()
         {
 
             var entity = Create( cpf: "065.901.767-95", rg: "35.216.967.6", phoneNumber: "21981165068", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", bankAccount: " ");
@@ -255,7 +255,7 @@ namespace TransferoHR.Test.Domain
         }
 
         [Fact]
-        public void Validate_ShouldThrowsException_WhenpBankAccountIsInvalid()
+        public void Validate_ShouldThrowsException_WhenBankAccountIsInvalid()
         {
 
             var entity = Create( cpf: "065.901.767-95", rg: "35.216.967.6", phoneNumber: "21981165068", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", bankAccount: "001005655145nsdabisdajifdhuiosdaguiosfdapbuisfdaphuosfdaphiosfdaphio");
@@ -265,7 +265,7 @@ namespace TransferoHR.Test.Domain
         }
 
         [Fact]
-        public void Validate_ShouldThrowsException_WhenpPostalCodeIsEmpty()
+        public void Validate_ShouldThrowsException_WhenPostalCodeIsEmpty()
         {
 
             var entity = Create( cpf: "065.901.767-95", rg: "35.216.967.6", phoneNumber: "21981165068", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", bankAccount: "001005655145", state: "RJ ", postalCode: " ");
@@ -275,7 +275,7 @@ namespace TransferoHR.Test.Domain
         }
 
         [Fact]
-        public void Validate_ShouldThrowsException_WhenpPostalCodeIsInvalid()
+        public void Validate_ShouldThrowsException_WhenPostalCodeIsInvalid()
         {
 
             var entity = Create( cpf: "065.901.767-95", rg: "35.216.967.6", phoneNumber: "21981165068", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", bankAccount: "001005655145", state: "RJ ", postalCode: "26291-00");
@@ -283,8 +283,9 @@ namespace TransferoHR.Test.Domain
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
             Assert.Equal("Invalid Postal Code!", exception.Message);
         }
+
         [Fact]
-        public void Validate_ShouldThrowsException_WhenpCityIsEmpty()
+        public void Validate_ShouldThrowsException_WhenCityIsEmpty()
         {
 
             var entity = Create( cpf: "065.901.767-95", rg: "35.216.967.6", phoneNumber: "21981165068", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", bankAccount: "001005655145", state: "RJ ", postalCode: "26291-221", city: " ");
@@ -294,7 +295,7 @@ namespace TransferoHR.Test.Domain
         }
 
         [Fact]
-        public void Validate_ShouldThrowsException_WhenpCityIsInvalid()
+        public void Validate_ShouldThrowsException_WhenCityIsInvalid()
         {
 
             var entity = Create( cpf: "065.901.767-95", rg: "35.216.967.6", phoneNumber: "21981165068", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", bankAccount: "001005655145", state: "RJ", postalCode: "26291-221", city: "25455");
@@ -303,9 +304,8 @@ namespace TransferoHR.Test.Domain
             Assert.Equal("Invalid City!", exception.Message);
         }
 
-
         [Fact]
-        public void Validate_ShouldThrowsException_WhenpMaxLenghtCityIsInvalid()
+        public void Validate_ShouldThrowsException_WhenMaxLenghtCityIsInvalid()
         {
 
             var entity = Create( cpf: "065.901.767-95", rg: "35.216.967.6", phoneNumber: "21981165068", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", bankAccount: "001005655145", state: "RJ", postalCode: "26291-221", city: "Nova Iguaçuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
@@ -315,7 +315,7 @@ namespace TransferoHR.Test.Domain
         }
 
         [Fact]
-        public void Validate_ShouldThrowsException_WhenpAddressIsEmpty()
+        public void Validate_ShouldThrowsException_WhenAddressIsEmpty()
         {
 
             var entity = Create( cpf: "065.901.767-95", rg: "35.216.967.6", phoneNumber: "21981165068", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", bankAccount: "001005655145", state: "RJ", postalCode: "26291-221", city: "Nova Iguaçu", address: " ");
@@ -325,7 +325,7 @@ namespace TransferoHR.Test.Domain
         }
 
         [Fact]
-        public void Validate_ShouldThrowsException_WhenpMaxLenghtAddressIsInvalid()
+        public void Validate_ShouldThrowsException_WhenMaxLenghtAddressIsInvalid()
         {
 
             var entity = Create( cpf: "065.901.767-95", rg: "35.216.967.6", phoneNumber: "21981165068", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", bankAccount: "001005655145", state: "RJ", postalCode: "26291-221", city: "Nova Iguaçu", address: new string('c', 101));
@@ -334,25 +334,14 @@ namespace TransferoHR.Test.Domain
             Assert.Equal("Address cannot exceed 60 characters", exception.Message);
         }
 
+        [Fact]
+        public void Validate_Ok()
+        {
+
+            var entity = Create(cpf: "065.901.767-95", rg: "35.216.967.6", phoneNumber: "21981165068", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", bankAccount: "001005655145", state: "RJ", postalCode: "26291-221", city: "Nova Iguaçu", address: "rua joaquim da silva maia quadra d lote 20");
+            entity.Validate();
+            Assert.True(true);
+           
+        }
     }
 }
-
-/*
-            * 
-               "Margleison@gmail.com",
-               "Margleison@transfero.com",
-               "Brasil",
-               "35.216.967-6",
-               DateOnly.Parse("2003-10-18"),
-               "address",
-               "Nova Iguaçu",
-               "Rio de Janeiro",
-               "26291-221",
-               "(21)98116-5068",
-               "(21)98116-5069",
-               "001",
-               "Nubank",
-               "0659017675",
-               "001",
-               GenderEnum.Man
-            * */

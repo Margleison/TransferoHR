@@ -8,40 +8,60 @@ namespace TransferoHR.Test.Domain
 {
     public class CompanyTests
     {
-        [Fact]
-        public void Validate_ShouldThrowException_WhenCNPJIsEmpty()
+        private Company Create(
+            string name = "",
+            string cnpj = ""
+            )
         {
-            var entity = new Company
+            return new Company
             {
                 Id = Guid.NewGuid(),
                 Status = EntityStatusEnum.Active,
                 CreatedAt = DateTime.UtcNow,
                 CreatedBy = "Admin",
                 UpdatedAt = DateTime.UtcNow,
-                UpdatedBy = "string.Empty",
-                Name = "EquipeX",
-                CNPJ = ""
+                UpdatedBy = "Admin",
+                Name = name,
+                CNPJ = cnpj
             };
-            var exception = Assert.Throws<DomainException>(()=> entity.Validate());
-            Assert.Equal("CNPJ cannot be empty!", exception.Message);
+        }
+
+
+        [Fact]
+        public void Validate_ShouldThrowException_WhenCNPJIsEmpty()
+        {
+            //Arrenge
+            var entity = Create(name: "HR", cnpj: " ");
+
+            //Action       
+            var exception = Assert.Throws<DomainException>(() => entity.Validate());
+
+            //Assert
+            Assert.Equal("CNPJ cannot be empty", exception.Message);
 
         }
         [Fact]
         public void Validate_ShouldThrowException_WhenCNPJisInvalid()
         {
-            var entity = new Company
-            {
-                Id = Guid.NewGuid(),
-                Status = EntityStatusEnum.Active,
-                CreatedAt = DateTime.UtcNow,
-                CreatedBy = "Margleison",
-                UpdatedAt = DateTime.UtcNow,
-                UpdatedBy = "Nesse tempo ai",
-                Name = "Equipe X",
-                CNPJ = ".438.522/0001-42"
-            };
-            var exception = Assert.Throws<DomainException>(()=> entity.Validate());
-            Assert.Equal("Invalid CNPJ!", exception.Message );
+            //Arrenge
+            var entity = Create(name: "HR", cnpj: "035620.3064192063");
+
+            //Action
+            var exception = Assert.Throws<DomainException>(() => entity.Validate());
+
+            //Assert
+            Assert.Equal("Invalid CNPJ", exception.Message);
+
+        }
+
+        [Fact]
+        public void Validate_Ok() 
+        {
+            var entity = Create(name: "HR", cnpj: "32.657.259/0001-04");
+
+            entity.Validate();
+
+            Assert.True(true);
         }
     }
 }

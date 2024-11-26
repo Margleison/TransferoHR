@@ -9,7 +9,9 @@ using TransferoHR.Services.Params;
 
 namespace TransferoHR.Services.Interfaces
 {
-    public interface IWorkExperienceRepository : IGenericNamedEntityRepository<WorkExperience, WorkExperienceParams>
+    public interface IWorkExperienceRepository : IGenericEntityRepository<WorkExperience, WorkExperienceParams>
     {
+        Task <bool> Exists(Guid companyId, Guid collaboratorId, Guid jobLevelId, Guid jobTitleId);
+        
     }
 }

@@ -41,7 +41,7 @@ public class MappingProfile : Profile
         CreateMap<WorkExperienceCreateModel, WorkExperience>();
         CreateMap<WorkExperienceUpdateModel, WorkExperience>();
         CreateMap<WorkExperience, WorkExperienceGetModel>()
-             .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
+             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
              .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()));
 
     }

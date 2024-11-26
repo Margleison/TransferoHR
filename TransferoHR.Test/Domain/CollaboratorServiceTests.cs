@@ -1,23 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using AutoMapper;
-using Xunit;
-using TransferoHR.Domain.Entities;
 using TransferoHR.Domain.Enums;
 using TransferoHR.Services.Implementation;
 using TransferoHR.Services.Model;
-using TransferoHR.Services.Model.Generic;
-using TransferoHR.Services.Params;
 using TransferoHR.Services.Interfaces;
 using TransferoHR.Infra.Repositories;
 using TransferoHR.Services.Exceptions;
 using TransferoHR.Infra.Database;
-using System;
-using Microsoft.EntityFrameworkCore.Metadata;
-using System.Diagnostics.Metrics;
-using System.Net;
-using System.Reflection;
-using System.Xml.Linq;
-using System.IO;
 
 public class CollaboratorServiceTests
 {
@@ -47,9 +36,9 @@ public class CollaboratorServiceTests
     }
 
     private CollaboratorCreateModel CreateModel(
-        string cpf = "01834522757",
+        string cpf = "06590176795",
         string name = "John DOE",
-        string rg = "35.216.967-6",
+        string rg = "35.216.967-5",
         string email = "JohnDoe@gmail.com",
         string workEmail = "Margleison@transfero.com",
         string country = "Brasil",
@@ -184,11 +173,11 @@ public class CollaboratorServiceTests
     private async Task Update_ShouldThrowException_WhenUpdateCPFToRepeated()
     {
         //Arrange -> preparo
-        var createModel = CreateModel();
+        var createModel = CreateModel(rg: "35.216.967.6", phoneNumber: "21981165068", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", bankBranch: "001", bankName: "Nubank", bankAccount: "001005655145", state: "RJ", postalCode: "26291-221", city: "Nova Iguaçu", address: "rua joaquim da silva maia quadra d lote 20");
         var initialCollaborator = await _collaboratorService.Insert(createModel, "admin");
          
         var newName = createModel.Name = "Sejo Wellitu";
-        var newCpf = "0183452275";
+        var newCpf = "06590176795";
         var toUpdate = await _collaboratorService.Insert(CreateModel(name: newName, cpf: newCpf), "admin");
 
         var idToUpdate = toUpdate.Id;

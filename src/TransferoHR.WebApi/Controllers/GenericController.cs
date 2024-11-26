@@ -10,19 +10,19 @@ namespace TransferoHR.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class GenericController<TEntity, TCreateModel, TUpdateModel, TGetModel, TParams> : ControllerBase, IGenericController<TEntity, TCreateModel, TUpdateModel, TGetModel, TParams>
-      where TEntity : GenericNamedEntity
-      where TCreateModel : NamedCreateModel
-      where TUpdateModel : NamedUpdateModel
-      where TGetModel : NamedGetModel
-      where TParams : NamedParams
+    public class GenericController<TEntity, TCreateModel, TUpdateModel, TGetModel, TParams> : ControllerBase
+      where TEntity : GenericEntity
+      where TCreateModel : CreateModel
+      where TUpdateModel : UpdateModel
+      where TGetModel : GetModel
+      where TParams : GenericParams
     {
         protected readonly GenericService<TEntity, TParams, TGetModel> _service;
         private readonly IMapper _mapper;
         private JobLevelService service;
         private IMapper mapper;
 
-        public GenericController(GenericNamedService<TEntity, TParams, TGetModel> service, IMapper mapper)
+        public GenericController(GenericService<TEntity, TParams, TGetModel> service, IMapper mapper)
         {
             _service = service;
             _mapper = mapper;

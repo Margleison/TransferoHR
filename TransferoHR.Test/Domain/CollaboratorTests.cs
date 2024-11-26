@@ -139,8 +139,6 @@ namespace TransferoHR.Test.Domain
             Assert.Equal("Email cannot be empty", exception.Message);
         }
 
-
-
         [Fact]
         public void Validate_ShouldThrowsException_WhenEmailIsInvalid()
         {
@@ -339,6 +337,7 @@ namespace TransferoHR.Test.Domain
         {
 
             var entity = Create(cpf: "065.901.767-95", rg: "35.216.967.6", phoneNumber: "21981165068", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", bankAccount: "001005655145", state: "RJ", postalCode: "26291-221", city: "Nova Iguaçu", address: "rua joaquim da silva maia quadra d lote 20");
+            
             entity.Validate();
             Assert.True(true);
            

@@ -8,7 +8,7 @@ using TransferoHR.Services.Model.Generic;
 
 namespace TransferoHR.Services.Model
 {
-    public class WorkExperienceUpdateModel : NamedUpdateModel
+    public class WorkExperienceUpdateModel : UpdateModel
     {
     }
 }

@@ -12,7 +12,7 @@ using TransferoHR.Infra.Database;
 namespace TransferoHR.Infra.Migrations
 {
     [DbContext(typeof(HRContext))]
-    [Migration("20241114211711_InitialCreate")]
+    [Migration("20241119175907_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -175,36 +175,36 @@ namespace TransferoHR.Infra.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("4f59d6c8-876b-4ef4-ab4f-2ff3caf647cb"),
+                            Id = new Guid("1c04ede8-cdca-429c-88e9-fae3cb2031e6"),
                             CNPJ = "30.934.964/0001-78",
-                            CreatedAt = new DateTime(2024, 11, 14, 18, 17, 10, 767, DateTimeKind.Local).AddTicks(2903),
+                            CreatedAt = new DateTime(2024, 11, 19, 14, 59, 7, 410, DateTimeKind.Local).AddTicks(5277),
                             CreatedBy = "system",
                             Name = "TRANSF. GESTÃO DE ATIVOS DIGITAIS - EIRELI",
                             Status = (byte)1
                         },
                         new
                         {
-                            Id = new Guid("f075086b-ba64-44d3-bd64-d35ca4c13daf"),
+                            Id = new Guid("8eaa146b-8a49-4909-85de-617bb007be71"),
                             CNPJ = "28.360.810/0001-78",
-                            CreatedAt = new DateTime(2024, 11, 14, 18, 17, 10, 767, DateTimeKind.Local).AddTicks(2905),
+                            CreatedAt = new DateTime(2024, 11, 19, 14, 59, 7, 410, DateTimeKind.Local).AddTicks(5278),
                             CreatedBy = "system",
                             Name = "TRANSFERO SWISS LTD",
                             Status = (byte)1
                         },
                         new
                         {
-                            Id = new Guid("0d30210b-c779-4115-a7bf-d9691ba1c3ab"),
+                            Id = new Guid("ecaa5cf1-4091-45d6-ae64-a7aa5be3e66c"),
                             CNPJ = "42.155.153/0001-58",
-                            CreatedAt = new DateTime(2024, 11, 14, 18, 17, 10, 767, DateTimeKind.Local).AddTicks(2906),
+                            CreatedAt = new DateTime(2024, 11, 19, 14, 59, 7, 410, DateTimeKind.Local).AddTicks(5282),
                             CreatedBy = "system",
                             Name = "TRANSFERO GESTORA DE RECURSOS LTDA",
                             Status = (byte)1
                         },
                         new
                         {
-                            Id = new Guid("da02253f-597d-419b-a9fc-e00f362cd8b8"),
+                            Id = new Guid("3eecb69a-ee20-4e80-b259-208a95fed670"),
                             CNPJ = "45.685.859/0001-10",
-                            CreatedAt = new DateTime(2024, 11, 14, 18, 17, 10, 767, DateTimeKind.Local).AddTicks(2908),
+                            CreatedAt = new DateTime(2024, 11, 19, 14, 59, 7, 410, DateTimeKind.Local).AddTicks(5283),
                             CreatedBy = "system",
                             Name = "TRANSFERO PAGAMENTOS HOLDING",
                             Status = (byte)1
@@ -247,16 +247,16 @@ namespace TransferoHR.Infra.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("3040fe92-4ea9-432e-8895-4c9e590daf2e"),
-                            CreatedAt = new DateTime(2024, 11, 14, 18, 17, 10, 767, DateTimeKind.Local).AddTicks(2927),
+                            Id = new Guid("cb072957-8cfb-4fcb-af0a-4231bc8aa9db"),
+                            CreatedAt = new DateTime(2024, 11, 19, 14, 59, 7, 410, DateTimeKind.Local).AddTicks(5298),
                             CreatedBy = "system",
                             Name = "Infraestrutura",
                             Status = (byte)1
                         },
                         new
                         {
-                            Id = new Guid("14c10f5a-3116-4ac3-b361-eaf5d41e416d"),
-                            CreatedAt = new DateTime(2024, 11, 14, 18, 17, 10, 767, DateTimeKind.Local).AddTicks(2931),
+                            Id = new Guid("8abf7bf7-c24b-4201-b5f8-a65b07dd5b5b"),
+                            CreatedAt = new DateTime(2024, 11, 19, 14, 59, 7, 410, DateTimeKind.Local).AddTicks(5300),
                             CreatedBy = "system",
                             Name = "Asset",
                             Status = (byte)1
@@ -299,32 +299,32 @@ namespace TransferoHR.Infra.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("72185742-ab7c-4de8-821e-ef33539314dd"),
-                            CreatedAt = new DateTime(2024, 11, 14, 18, 17, 10, 767, DateTimeKind.Local).AddTicks(2685),
+                            Id = new Guid("73f8d319-8c24-45ac-b5be-d564ebdc5bbe"),
+                            CreatedAt = new DateTime(2024, 11, 19, 14, 59, 7, 410, DateTimeKind.Local).AddTicks(5109),
                             CreatedBy = "system",
                             Name = "Junior",
                             Status = (byte)1
                         },
                         new
                         {
-                            Id = new Guid("1a667dbc-a336-48d4-a3a8-b99a4a10cf4c"),
-                            CreatedAt = new DateTime(2024, 11, 14, 18, 17, 10, 767, DateTimeKind.Local).AddTicks(2700),
+                            Id = new Guid("9724945d-4aa8-48f5-9dba-55f3d5472ca0"),
+                            CreatedAt = new DateTime(2024, 11, 19, 14, 59, 7, 410, DateTimeKind.Local).AddTicks(5123),
                             CreatedBy = "system",
                             Name = "Senior",
                             Status = (byte)1
                         },
                         new
                         {
-                            Id = new Guid("90600262-4527-40fe-b0f5-bcbcee2f1e94"),
-                            CreatedAt = new DateTime(2024, 11, 14, 18, 17, 10, 767, DateTimeKind.Local).AddTicks(2701),
+                            Id = new Guid("3bce7356-75f3-4219-97fe-9dc9b9f43df0"),
+                            CreatedAt = new DateTime(2024, 11, 19, 14, 59, 7, 410, DateTimeKind.Local).AddTicks(5135),
                             CreatedBy = "system",
                             Name = "Pleno",
                             Status = (byte)1
                         },
                         new
                         {
-                            Id = new Guid("cbe2725d-29b4-4902-822a-7e10565ac501"),
-                            CreatedAt = new DateTime(2024, 11, 14, 18, 17, 10, 767, DateTimeKind.Local).AddTicks(2703),
+                            Id = new Guid("3341c55f-241a-4b1e-ae62-480478eb17d0"),
+                            CreatedAt = new DateTime(2024, 11, 19, 14, 59, 7, 410, DateTimeKind.Local).AddTicks(5136),
                             CreatedBy = "system",
                             Name = "Gerente",
                             Status = (byte)1
@@ -367,32 +367,32 @@ namespace TransferoHR.Infra.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("42dbf04a-fca1-4d40-ba23-9cf3ee215e07"),
-                            CreatedAt = new DateTime(2024, 11, 14, 18, 17, 10, 767, DateTimeKind.Local).AddTicks(2864),
+                            Id = new Guid("a7859c25-1d92-44fd-88c0-0abb5c735a47"),
+                            CreatedAt = new DateTime(2024, 11, 19, 14, 59, 7, 410, DateTimeKind.Local).AddTicks(5254),
                             CreatedBy = "system",
                             Name = "DBA",
                             Status = (byte)1
                         },
                         new
                         {
-                            Id = new Guid("35cc223b-bd6b-48f2-88cd-94847ce9b6cd"),
-                            CreatedAt = new DateTime(2024, 11, 14, 18, 17, 10, 767, DateTimeKind.Local).AddTicks(2877),
+                            Id = new Guid("b62abc4e-6f29-48ab-9471-5d30cd3ceb03"),
+                            CreatedAt = new DateTime(2024, 11, 19, 14, 59, 7, 410, DateTimeKind.Local).AddTicks(5256),
                             CreatedBy = "system",
                             Name = "Analista de suporte",
                             Status = (byte)1
                         },
                         new
                         {
-                            Id = new Guid("f3c9ff5e-11f5-49fe-9023-ec870e20cded"),
-                            CreatedAt = new DateTime(2024, 11, 14, 18, 17, 10, 767, DateTimeKind.Local).AddTicks(2879),
+                            Id = new Guid("a1d6fdd8-04b2-408e-be7a-8859a6936c68"),
+                            CreatedAt = new DateTime(2024, 11, 19, 14, 59, 7, 410, DateTimeKind.Local).AddTicks(5258),
                             CreatedBy = "system",
                             Name = "Desenvolvedor",
                             Status = (byte)1
                         },
                         new
                         {
-                            Id = new Guid("5c276000-6235-4573-8c6b-b733552565e6"),
-                            CreatedAt = new DateTime(2024, 11, 14, 18, 17, 10, 767, DateTimeKind.Local).AddTicks(2881),
+                            Id = new Guid("892a50d6-d3c7-4e2c-a5e0-d648f64e1b35"),
+                            CreatedAt = new DateTime(2024, 11, 19, 14, 59, 7, 410, DateTimeKind.Local).AddTicks(5259),
                             CreatedBy = "system",
                             Name = "Analista de Asset",
                             Status = (byte)1
@@ -406,6 +406,9 @@ namespace TransferoHR.Infra.Migrations
                         .HasColumnType("char(36)");
 
                     b.Property<Guid>("CollaboratorId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid>("CompanyId")
                         .HasColumnType("char(36)");
 
                     b.Property<DateTime>("CreatedAt")
@@ -427,11 +430,6 @@ namespace TransferoHR.Infra.Migrations
 
                     b.Property<Guid>("LeaderId")
                         .HasColumnType("char(36)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
 
                     b.Property<DateOnly>("StartDate")
                         .HasColumnType("date");

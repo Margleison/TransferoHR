@@ -1,6 +1,6 @@
 namespace TransferoHR.Services.Model.Generic;
 
-public class NamedUpdateModel : GenericModel
+public class NamedUpdateModel : UpdateModel
 {
     public string Name { get; set; }= String.Empty;
 }

@@ -166,6 +166,7 @@ namespace TransferoHR.Infra.Migrations
                     CollaboratorId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     StartDate = table.Column<DateOnly>(type: "date", nullable: false),
                     EndDate = table.Column<DateOnly>(type: "date", nullable: true),
+                    CompanyId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     JobTitleId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     JobLevelId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     LeaderId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
@@ -175,8 +176,6 @@ namespace TransferoHR.Infra.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     UpdatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: true),
                     UpdatedBy = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Name = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
@@ -214,10 +213,10 @@ namespace TransferoHR.Infra.Migrations
                 columns: new[] { "Id", "CNPJ", "CreatedAt", "CreatedBy", "Name", "Status", "UpdatedAt", "UpdatedBy" },
                 values: new object[,]
                 {
-                    { new Guid("0d30210b-c779-4115-a7bf-d9691ba1c3ab"), "42.155.153/0001-58", new DateTime(2024, 11, 14, 18, 17, 10, 767, DateTimeKind.Local).AddTicks(2906), "system", "TRANSFERO GESTORA DE RECURSOS LTDA", (byte)1, null, null },
-                    { new Guid("4f59d6c8-876b-4ef4-ab4f-2ff3caf647cb"), "30.934.964/0001-78", new DateTime(2024, 11, 14, 18, 17, 10, 767, DateTimeKind.Local).AddTicks(2903), "system", "TRANSF. GESTÃO DE ATIVOS DIGITAIS - EIRELI", (byte)1, null, null },
-                    { new Guid("da02253f-597d-419b-a9fc-e00f362cd8b8"), "45.685.859/0001-10", new DateTime(2024, 11, 14, 18, 17, 10, 767, DateTimeKind.Local).AddTicks(2908), "system", "TRANSFERO PAGAMENTOS HOLDING", (byte)1, null, null },
-                    { new Guid("f075086b-ba64-44d3-bd64-d35ca4c13daf"), "28.360.810/0001-78", new DateTime(2024, 11, 14, 18, 17, 10, 767, DateTimeKind.Local).AddTicks(2905), "system", "TRANSFERO SWISS LTD", (byte)1, null, null }
+                    { new Guid("1c04ede8-cdca-429c-88e9-fae3cb2031e6"), "30.934.964/0001-78", new DateTime(2024, 11, 19, 14, 59, 7, 410, DateTimeKind.Local).AddTicks(5277), "system", "TRANSF. GESTÃO DE ATIVOS DIGITAIS - EIRELI", (byte)1, null, null },
+                    { new Guid("3eecb69a-ee20-4e80-b259-208a95fed670"), "45.685.859/0001-10", new DateTime(2024, 11, 19, 14, 59, 7, 410, DateTimeKind.Local).AddTicks(5283), "system", "TRANSFERO PAGAMENTOS HOLDING", (byte)1, null, null },
+                    { new Guid("8eaa146b-8a49-4909-85de-617bb007be71"), "28.360.810/0001-78", new DateTime(2024, 11, 19, 14, 59, 7, 410, DateTimeKind.Local).AddTicks(5278), "system", "TRANSFERO SWISS LTD", (byte)1, null, null },
+                    { new Guid("ecaa5cf1-4091-45d6-ae64-a7aa5be3e66c"), "42.155.153/0001-58", new DateTime(2024, 11, 19, 14, 59, 7, 410, DateTimeKind.Local).AddTicks(5282), "system", "TRANSFERO GESTORA DE RECURSOS LTDA", (byte)1, null, null }
                 });
 
             migrationBuilder.InsertData(
@@ -225,8 +224,8 @@ namespace TransferoHR.Infra.Migrations
                 columns: new[] { "Id", "CreatedAt", "CreatedBy", "Name", "Status", "UpdatedAt", "UpdatedBy" },
                 values: new object[,]
                 {
-                    { new Guid("14c10f5a-3116-4ac3-b361-eaf5d41e416d"), new DateTime(2024, 11, 14, 18, 17, 10, 767, DateTimeKind.Local).AddTicks(2931), "system", "Asset", (byte)1, null, null },
-                    { new Guid("3040fe92-4ea9-432e-8895-4c9e590daf2e"), new DateTime(2024, 11, 14, 18, 17, 10, 767, DateTimeKind.Local).AddTicks(2927), "system", "Infraestrutura", (byte)1, null, null }
+                    { new Guid("8abf7bf7-c24b-4201-b5f8-a65b07dd5b5b"), new DateTime(2024, 11, 19, 14, 59, 7, 410, DateTimeKind.Local).AddTicks(5300), "system", "Asset", (byte)1, null, null },
+                    { new Guid("cb072957-8cfb-4fcb-af0a-4231bc8aa9db"), new DateTime(2024, 11, 19, 14, 59, 7, 410, DateTimeKind.Local).AddTicks(5298), "system", "Infraestrutura", (byte)1, null, null }
                 });
 
             migrationBuilder.InsertData(
@@ -234,10 +233,10 @@ namespace TransferoHR.Infra.Migrations
                 columns: new[] { "Id", "CreatedAt", "CreatedBy", "Name", "Status", "UpdatedAt", "UpdatedBy" },
                 values: new object[,]
                 {
-                    { new Guid("1a667dbc-a336-48d4-a3a8-b99a4a10cf4c"), new DateTime(2024, 11, 14, 18, 17, 10, 767, DateTimeKind.Local).AddTicks(2700), "system", "Senior", (byte)1, null, null },
-                    { new Guid("72185742-ab7c-4de8-821e-ef33539314dd"), new DateTime(2024, 11, 14, 18, 17, 10, 767, DateTimeKind.Local).AddTicks(2685), "system", "Junior", (byte)1, null, null },
-                    { new Guid("90600262-4527-40fe-b0f5-bcbcee2f1e94"), new DateTime(2024, 11, 14, 18, 17, 10, 767, DateTimeKind.Local).AddTicks(2701), "system", "Pleno", (byte)1, null, null },
-                    { new Guid("cbe2725d-29b4-4902-822a-7e10565ac501"), new DateTime(2024, 11, 14, 18, 17, 10, 767, DateTimeKind.Local).AddTicks(2703), "system", "Gerente", (byte)1, null, null }
+                    { new Guid("3341c55f-241a-4b1e-ae62-480478eb17d0"), new DateTime(2024, 11, 19, 14, 59, 7, 410, DateTimeKind.Local).AddTicks(5136), "system", "Gerente", (byte)1, null, null },
+                    { new Guid("3bce7356-75f3-4219-97fe-9dc9b9f43df0"), new DateTime(2024, 11, 19, 14, 59, 7, 410, DateTimeKind.Local).AddTicks(5135), "system", "Pleno", (byte)1, null, null },
+                    { new Guid("73f8d319-8c24-45ac-b5be-d564ebdc5bbe"), new DateTime(2024, 11, 19, 14, 59, 7, 410, DateTimeKind.Local).AddTicks(5109), "system", "Junior", (byte)1, null, null },
+                    { new Guid("9724945d-4aa8-48f5-9dba-55f3d5472ca0"), new DateTime(2024, 11, 19, 14, 59, 7, 410, DateTimeKind.Local).AddTicks(5123), "system", "Senior", (byte)1, null, null }
                 });
 
             migrationBuilder.InsertData(
@@ -245,10 +244,10 @@ namespace TransferoHR.Infra.Migrations
                 columns: new[] { "Id", "CreatedAt", "CreatedBy", "Name", "Status", "UpdatedAt", "UpdatedBy" },
                 values: new object[,]
                 {
-                    { new Guid("35cc223b-bd6b-48f2-88cd-94847ce9b6cd"), new DateTime(2024, 11, 14, 18, 17, 10, 767, DateTimeKind.Local).AddTicks(2877), "system", "Analista de suporte", (byte)1, null, null },
-                    { new Guid("42dbf04a-fca1-4d40-ba23-9cf3ee215e07"), new DateTime(2024, 11, 14, 18, 17, 10, 767, DateTimeKind.Local).AddTicks(2864), "system", "DBA", (byte)1, null, null },
-                    { new Guid("5c276000-6235-4573-8c6b-b733552565e6"), new DateTime(2024, 11, 14, 18, 17, 10, 767, DateTimeKind.Local).AddTicks(2881), "system", "Analista de Asset", (byte)1, null, null },
-                    { new Guid("f3c9ff5e-11f5-49fe-9023-ec870e20cded"), new DateTime(2024, 11, 14, 18, 17, 10, 767, DateTimeKind.Local).AddTicks(2879), "system", "Desenvolvedor", (byte)1, null, null }
+                    { new Guid("892a50d6-d3c7-4e2c-a5e0-d648f64e1b35"), new DateTime(2024, 11, 19, 14, 59, 7, 410, DateTimeKind.Local).AddTicks(5259), "system", "Analista de Asset", (byte)1, null, null },
+                    { new Guid("a1d6fdd8-04b2-408e-be7a-8859a6936c68"), new DateTime(2024, 11, 19, 14, 59, 7, 410, DateTimeKind.Local).AddTicks(5258), "system", "Desenvolvedor", (byte)1, null, null },
+                    { new Guid("a7859c25-1d92-44fd-88c0-0abb5c735a47"), new DateTime(2024, 11, 19, 14, 59, 7, 410, DateTimeKind.Local).AddTicks(5254), "system", "DBA", (byte)1, null, null },
+                    { new Guid("b62abc4e-6f29-48ab-9471-5d30cd3ceb03"), new DateTime(2024, 11, 19, 14, 59, 7, 410, DateTimeKind.Local).AddTicks(5256), "system", "Analista de suporte", (byte)1, null, null }
                 });
 
             migrationBuilder.CreateIndex(

@@ -70,8 +70,7 @@ namespace TransferoHR.Domain.Entities
         {
             if (Nationality == NationalityEnum.Brazilian)
             {
-                ValidateStringEmptyAndLenght("CPF");
-                DomainException.When(CPFValidator.Validate(CPF)==false, "Invalid CPF!");
+                ValidateStringEmptyAndLenght("CPF", CPFValidator.Validate);
                 ForeignIdentificationDocument = null;
             }
             else
@@ -86,6 +85,10 @@ namespace TransferoHR.Domain.Entities
             {
                 ValidateStringEmptyAndLenght("RG");
             }
+            else
+            {
+                RG = "";
+            }
         }
 
         private void ValidatePhoneNumber()
@@ -96,31 +99,21 @@ namespace TransferoHR.Domain.Entities
 
         private void ValidateEmail()
         {
-            ValidateStringEmptyAndLenght("Email");
-            DomainException.When(EmailValidador.Validate(Email) == false, "Invalid Email!");
-            var maxLenght = GetMaxLength("Email");
-            DomainException.When(WorkEmail.Length > maxLenght, $"Email cannot exceed{maxLenght}characters");
+            ValidateStringEmptyAndLenght("Email", EmailValidador.Validate);
         }
 
         private void ValidateWorkEmail()
         {
-            ValidateStringEmptyAndLenght("WorkEmail"); 
-            DomainException.When(EmailValidador.Validate(WorkEmail) == false, "Invalid Work Email!");
-            var maxLenght = GetMaxLength("WorkEmail");
-            DomainException.When(WorkEmail.Length > maxLenght, $"Work Email cannot exceed{maxLenght}characters");
-
+            ValidateStringEmptyAndLenght("WorkEmail", EmailValidador.Validate);
         }
- 
+
         private void ValidateBank()
         {
-            ValidateStringEmptyAndLenght("BankBranch");
-            DomainException.When(BankBranchValidator.Validate(BankBranch) == false, "Invalid BankBranch!");
+            ValidateStringEmptyAndLenght("BankBranch", BankBranchValidator.Validate);
 
-            ValidateStringEmptyAndLenght("BankName");
-            DomainException.When(BankNameValidator.Validate(BankName) == false, "Invalid BankName!");
+            ValidateStringEmptyAndLenght("BankName", BankNameValidator.Validate);
 
-            ValidateStringEmptyAndLenght("BankAccount");
-            DomainException.When(AccountNameValidator.Validate(BankAccount) == false, "Invalid BankAccount!");
+            ValidateStringEmptyAndLenght("BankAccount", AccountNameValidator.Validate);
         }
 
         private void ValidateAddress() 
@@ -134,14 +127,12 @@ namespace TransferoHR.Domain.Entities
 
                 }
 
-                ValidateStringEmptyAndLenght("PostalCode");
-                DomainException.When(PostalCodeValidator.Validate(PostalCode) == false, "Invalid Postal Code!");
+                ValidateStringEmptyAndLenght("PostalCode", PostalCodeValidator.Validate);
             }
 
             ValidateStringEmptyAndLenght("State");
 
-            ValidateStringEmptyAndLenght("City");
-            DomainException.When(CityValidator.Validate(City) == false, "Invalid City!");
+            ValidateStringEmptyAndLenght("City", CityValidator.Validate);
 
             ValidateStringEmptyAndLenght("Address");
         }

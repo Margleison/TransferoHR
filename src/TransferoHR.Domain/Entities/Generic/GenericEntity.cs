@@ -39,7 +39,7 @@ public class GenericEntity
         return displayNameAttribute?.DisplayName ?? propertyName; // Retorna o nome amigável ou o nome da propriedade se não houver atributo
     }
 
-    protected void ValidateStringEmptyAndLenght(string propertyName)
+    protected void ValidateStringEmptyAndLenght(string propertyName, Func<string, bool>? validationFunction=null)
     {
         // Usando reflection para acessar a propriedade dinamicamente
         var propertyValue = GetType().GetProperty(propertyName)?.GetValue(this) as string;
@@ -51,13 +51,22 @@ public class GenericEntity
             var message = $"{displayName} cannot be empty";
             throw new DomainException(message);
         }
-        var maxLenght = GetMaxLength(propertyName);
-        if (maxLenght > 0 && propertyValue.Length > maxLenght)
+
+        // Verificando o tamanho máximo da propriedade
+        var maxLength = GetMaxLength(propertyName);
+        if (maxLength > 0 && propertyValue.Length > maxLength)
         {
             var displayName = GetDisplayName(propertyName);
-            var message = $"{displayName} cannot exceed {maxLenght} characters";
+            var message = $"{displayName} cannot exceed {maxLength} characters";
             throw new DomainException(message);
+        }
 
+        // Aplicando a função de validação personalizada, se fornecida
+        if (validationFunction != null && !validationFunction(propertyValue))
+        {
+            var displayName = GetDisplayName(propertyName);
+            var message = $"Invalid {displayName}!";
+            throw new DomainException(message);
         }
     }
 

@@ -20,6 +20,7 @@
   <ItemGroup>
     <ProjectReference Include="..\src\TransferoHR.Domain\TransferoHR.Domain.csproj" />
     <ProjectReference Include="..\src\TransferoHR.Infra\TransferoHR.Infra.csproj" />
+    <ProjectReference Include="..\src\TransferoHR.WebApi\TransferoHR.WebApi.csproj" />
   </ItemGroup>
 
   <ItemGroup>

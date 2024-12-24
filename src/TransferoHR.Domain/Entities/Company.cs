@@ -12,9 +12,7 @@ public class Company : GenericNamedEntity
     public override void Validate()
     {
         base.Validate(); 
-        ValidateStringEmptyAndLenght("CNPJ");
-        DomainException.When(CNPJValidator.Validate(CNPJ) == false, "Invalid CNPJ");
-
+        ValidateStringEmptyAndLenght("CNPJ", CNPJValidator.Validate);
     }
 }
 

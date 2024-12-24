@@ -170,6 +170,46 @@ namespace TransferoHR.Test.Domain {
             // Assert
             Assert.Null(exception);  // Espera-se que não haja exceção
         }
+
+        [Fact]
+        public async void Activate_Ok()
+        {
+            // Arrange
+            var entity = Create(startDate: DateOnly.Parse("2024-01-01"),
+                endDate: DateOnly.Parse("2025-01-01"),
+                collaboratorId: Guid.NewGuid(),
+                companyId: Guid.NewGuid(),
+                jobTitleId: Guid.NewGuid(),
+                jobLevelId: Guid.NewGuid(),
+                leaderId: Guid.NewGuid());
+
+            //Act
+            entity.Status = EntityStatusEnum.Inactive;
+            entity.Status = EntityStatusEnum.Active;
+
+            //Assert
+            Assert.Equal(EntityStatusEnum.Active, entity.Status);
+        }
+
+        [Fact]
+        public void Deactivate_Ok()
+        {
+
+            // Arrange
+            var entity = Create(startDate: DateOnly.Parse("2024-01-01"),
+                endDate: DateOnly.Parse("2025-01-01"),
+                collaboratorId: Guid.NewGuid(),
+                companyId: Guid.NewGuid(),
+                jobTitleId: Guid.NewGuid(),
+                jobLevelId: Guid.NewGuid(),
+                leaderId: Guid.NewGuid());
+
+            //Act
+            entity.Status = EntityStatusEnum.Inactive;
+
+            //Assert
+            Assert.Equal(EntityStatusEnum.Inactive, entity.Status);
+        }
     }
 }
 

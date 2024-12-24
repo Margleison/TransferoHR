@@ -15,6 +15,7 @@ namespace TransferoHR.Domain.Entities
         public required Guid JobLevelId { get; set; }
         public required Guid LeaderId { get; set; }
 
+        public Company Company { get; set; }
         public JobTitle JobTitle {  get; set; }
         public  JobLevel JobLevel { get; set; }
         public Collaborator Collaborator { get; set; }
@@ -47,6 +48,15 @@ namespace TransferoHR.Domain.Entities
                 throw new DomainException("Leader ID cannot be empty.");
             }
         }
+        public void Activate()
+        {
+            throw new InvalidOperationException("WorkExperience cannot be activated.");
+        }
+
+        public void Deactivate()
+        {
+            throw new InvalidOperationException("WorkExperience cannot be deactivated.");
+        }
         private void ValidateDate()
         {
             // Verifica se a data de início é igual à data de fim
@@ -62,10 +72,12 @@ namespace TransferoHR.Domain.Entities
             }
         }
 
-        public void Validate()
+        public override void Validate()
         {
             ValidateDate();
             ValidateRequired();
+            Activate();
+            Deactivate();
         }
 
 

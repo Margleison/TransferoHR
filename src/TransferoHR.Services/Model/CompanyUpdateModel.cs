@@ -10,5 +10,6 @@ namespace TransferoHR.Services.Model
 {
     public class CompanyUpdateModel: NamedUpdateModel
     {
+        public required string CNPJ { get; set; }
     }
 }

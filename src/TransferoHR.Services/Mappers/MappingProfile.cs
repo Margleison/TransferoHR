@@ -1,5 +1,6 @@
 using AutoMapper;
 using TransferoHR.Domain.Entities;
+using TransferoHR.Domain.Entities.Generic;
 using TransferoHR.Services.Model;
 using TransferoHR.Services.Model.Generic;
 
@@ -41,6 +42,12 @@ public class MappingProfile : Profile
         CreateMap<WorkExperienceCreateModel, WorkExperience>();
         CreateMap<WorkExperienceUpdateModel, WorkExperience>();
         CreateMap<WorkExperience, WorkExperienceGetModel>()
+             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
+             .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()));
+
+        CreateMap<NamedCreateModel, GenericNamedEntity>();
+        CreateMap<NamedUpdateModel, GenericNamedEntity>();
+        CreateMap<GenericNamedEntity, NamedGetModel>()
              .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
              .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()));
 

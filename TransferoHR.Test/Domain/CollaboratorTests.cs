@@ -1,6 +1,7 @@
 ﻿using TransferoHR.Domain.Entities;
 using TransferoHR.Domain.Enums;
 using TransferoHR.Domain.Exceptions;
+using TransferoHR.Services.Model.Generic;
 
 namespace TransferoHR.Test.Domain
 {
@@ -110,7 +111,7 @@ namespace TransferoHR.Test.Domain
         }
 
         [Fact]
-        public void Validate_ShouldThrowsException_PhoneNumberIsNullOrEmpety()
+        public void Validate_ShouldThrowsException_PhoneNumberIsNullOrEmpty()
         {
             var entity = Create(nationality: NationalityEnum.Argentine, foreignIdentificationDocument: "1111111", phoneNumber: " ");
 
@@ -120,7 +121,7 @@ namespace TransferoHR.Test.Domain
             Assert.Equal("Phone Number cannot be empty", exception.Message);
         }
         [Fact]
-        public void Validate_ShouldThrowsException_WhenBrazilianPhoneNumberIsInvalide()
+        public void Validate_ShouldThrowsException_WhenBrazilianPhoneNumberIsInvalid()
         {
             var entity = Create(cpf: "06590176795",rg: "35.216.967-6", phoneNumber: "21554562");
 
@@ -185,25 +186,6 @@ namespace TransferoHR.Test.Domain
             Assert.Equal("Email cannot exceed 40 characters", exception.Message);
         }
 
-        //[Fact]
-        //public void Validate_ShouldThrowsException_WhenPixKeyIsEmpty()
-        //{
-
-        //    var entity = Create(cpf: "065.901.767-95", rg: "35.216.967.6", phoneNumber: "21981165068", email: "margleison.silveira@gmail.com", workEmail: "margleison.silveira@transfero.com");
-        //    var exception = Assert.Throws<DomainException>(() => entity.Validate());
-        //    Assert.Equal("Email cannot exceed 40 characters", exception.Message);
-        //}
-
-        //[Fact]
-        //public void Validate_ShouldThrowsException_WhenPixKeyIsInvalid()
-        //{
-
-        //    var entity = Create(cpf: "065.901.767-95", rg: "35.216.967.6", email: "margleison.silva@gmail.com",workEmail: "margleison.silva@transfero.com", pixkey: "0659017679");
-
-        //    var exception = Assert.Throws<DomainException>(() => entity.Validate());
-        //    Assert.Equal("Invalid Pixkey!", exception.Message);
-        //}
-
         [Fact]
         public void Validate_ShouldThrowsException_WhenBankBranchIsEmpty()
         {
@@ -221,7 +203,7 @@ namespace TransferoHR.Test.Domain
             var entity = Create(cpf: "065.901.767-95", rg: "35.216.967.6", phoneNumber: "21981165068", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "00");
 
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
-            Assert.Equal("Invalid BankBranch!", exception.Message);
+            Assert.Equal("Invalid Bank Branch!", exception.Message);
         }
         [Fact]
         public void Validate_ShouldThrowsException_WhenBankNameIsEmpty()
@@ -240,7 +222,7 @@ namespace TransferoHR.Test.Domain
             var entity = Create( cpf: "065.901.767-95", rg: "35.216.967.6", phoneNumber: "21981165068", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "07775");
 
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
-            Assert.Equal("Invalid BankName!", exception.Message);
+            Assert.Equal("Invalid Bank Name!", exception.Message);
         }
         [Fact]
         public void Validate_ShouldThrowsException_WhenaBankAccountIsEmpty()
@@ -259,7 +241,7 @@ namespace TransferoHR.Test.Domain
             var entity = Create( cpf: "065.901.767-95", rg: "35.216.967.6", phoneNumber: "21981165068", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", bankAccount: "001005655145nsdabisdajifdhuiosdaguiosfdapbuisfdaphuosfdaphiosfdaphio");
 
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
-            Assert.Equal("Invalid BankAccount!", exception.Message);
+            Assert.Equal("Invalid Bank Account!", exception.Message);
         }
 
         [Fact]
@@ -299,7 +281,7 @@ namespace TransferoHR.Test.Domain
             var entity = Create( cpf: "065.901.767-95", rg: "35.216.967.6", phoneNumber: "21981165068", email: "margleison.silva@gmail.com", workEmail: "margleison.silva@transfero.com", pixkey: "06590176795", bankBranch: "001", bankName: "Nubank", bankAccount: "001005655145", state: "RJ", postalCode: "26291-221", city: "25455");
 
             var exception = Assert.Throws<DomainException>(() => entity.Validate());
-            Assert.Equal("Invalid City!", exception.Message);
+            Assert.Equal("Invalid City Of Address!", exception.Message);
         }
 
         [Fact]
@@ -341,6 +323,34 @@ namespace TransferoHR.Test.Domain
             entity.Validate();
             Assert.True(true);
            
+        }
+
+        [Fact]
+        public void Activate_Ok()
+        {
+            // Arrange
+            var entity = Create();
+
+            //Act
+            entity.Status = EntityStatusEnum.Inactive;
+
+            entity.Status = EntityStatusEnum.Active;
+
+            //Assert
+            Assert.Equal(EntityStatusEnum.Active, entity.Status);
+        }
+
+        [Fact]
+        public void Deactivate_Ok()
+        {
+            //Arrange
+            var entity = Create();
+
+            //Act
+            entity.Status = EntityStatusEnum.Inactive;
+
+            //Assert
+            Assert.Equal(EntityStatusEnum.Inactive, entity.Status);
         }
     }
 }

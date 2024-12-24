@@ -37,6 +37,17 @@ namespace TransferoHR.Services.Implementation
             //Teste
             ServiceException.When(await _repo.Exists(entity.CompanyId, entity.CollaboratorId, entity.JobLevelId, entity.JobTitleId), $"{_entityName} Work Experience already exists. [Value={entity}]");
         }
+
+        public override async Task Activate(Guid id, string updateBy)
+        {
+            throw new ServiceException("Activating a WorkExperience is not allowed.");
+
+        }
+        public override async Task Deactivate(Guid id, string updatedBy)
+        {
+            // Lançando uma exceção informando que não é permitido desativar uma WorkExperience
+            throw new ServiceException("Deactivating a WorkExperience is not allowed.");
+        }
     }
 }   
 

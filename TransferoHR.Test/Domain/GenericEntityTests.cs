@@ -86,5 +86,34 @@ namespace TransferoHR.Tests.Domain.Entities
             var exception = Record.Exception(() => entity.Validate());
             Assert.Null(exception);
         }
+
+        [Fact]
+        public void Activate_Ok()
+        {
+            // Arrange
+            var entity = Create();
+
+            //Act
+            entity.Status = EntityStatusEnum.Inactive;
+
+            entity.Status = EntityStatusEnum.Active;
+
+            //Assert
+            Assert.Equal(EntityStatusEnum.Active, entity.Status);
+        }
+
+        [Fact]
+        public void Deactivate_Ok()
+        {
+            //Arrange
+            var entity = Create();
+
+            //Act
+            entity.Status = EntityStatusEnum.Inactive;
+
+            //Assert
+            Assert.Equal(EntityStatusEnum.Inactive, entity.Status);
+        }
+
     }
 }

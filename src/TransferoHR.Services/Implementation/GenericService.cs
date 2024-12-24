@@ -67,7 +67,7 @@ namespace TransferoHR.Services.Implementation
             obj.UpdatedBy = updateBy;
             await _repo.UpdateAsync(obj);
         }
-        public async Task Activate(Guid id, string updateBy)
+        public virtual async Task Activate(Guid id, string updateBy)
         {
             var obj = await Get(id);
 
@@ -77,11 +77,11 @@ namespace TransferoHR.Services.Implementation
             obj.UpdatedBy = updateBy;
             await _repo.ChangeStatusAsync(obj);
         }
-        public async Task Deactivate(Guid id, string updateBy)
+        public virtual async Task Deactivate(Guid id, string updateBy)
         {
             var obj = await Get(id);
 
-            ServiceException.When(obj.Status == EntityStatusEnum.Inactive, $"{_entityName} already inactive. [Id={id}]");
+            ServiceException.When(obj.Status == EntityStatusEnum.Inactive, $"{_entityName} already deactive. [Id={id}]");
             obj.Status = EntityStatusEnum.Inactive;
             obj.UpdatedAt = DateTime.Now;
             obj.UpdatedBy = updateBy;
@@ -90,8 +90,6 @@ namespace TransferoHR.Services.Implementation
         public async Task Delete(Guid id, string updateBy)
         {
             var obj = await Get(id);
-
-            ServiceException.When(obj.Status == EntityStatusEnum.Deleted, $"{_entityName} already deleted. [Id={id}]");
             obj.Status = EntityStatusEnum.Deleted;
             obj.UpdatedAt = DateTime.Now;
             obj.UpdatedBy = updateBy;

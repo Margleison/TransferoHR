@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using TransferoHR.Domain.Enums;
 using Microsoft.Extensions.Logging;
+using TransferoHR.Domain.Entities.Generic;
 
 
 
@@ -23,6 +24,8 @@ public class HRContext : DbContext
     public DbSet<JobLevel> JobLevel { get; set; } = null!;
     public DbSet<JobTitle> JobTitle { get; set; } = null!;
     public DbSet<WorkExperience> WorkExperience { get; set; } = null!;
+    public DbSet<GenericNamedEntity> GenericNamedEntity { get; set; } = null!;
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);

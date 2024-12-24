@@ -14,4 +14,5 @@ namespace TransferoHR.Services.Interfaces
         Task <bool> Exists(Guid companyId, Guid collaboratorId, Guid jobLevelId, Guid jobTitleId);
         
     }
+
 }

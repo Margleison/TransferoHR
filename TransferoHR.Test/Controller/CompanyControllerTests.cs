@@ -70,6 +70,19 @@ public class CompanyControllerTests
     }
 
     [Fact]
+    public async Task GetById_NotFound()
+    {
+        // Arrange
+        var nonExistentId = Guid.NewGuid(); // Gera um ID inexistente
+
+        // Act
+        var result = await _companyController.GetById(nonExistentId);
+
+        // Assert
+        Assert.IsType<NotFoundResult>(result);
+    }
+
+    [Fact]
     public async Task GetById_Ok()
     {
         // Arrange
@@ -107,6 +120,20 @@ public class CompanyControllerTests
         var okResult = Assert.IsType<OkObjectResult>(result);
         var companies = Assert.IsType<List<CompanyGetModel>>(okResult.Value);
         Assert.Contains(companies, c => c.Id == createdCompany.Id && c.Name == "Company Test");
+    }
+
+    [Fact]
+    public async Task Create_InvalidCNPJ()
+    {
+        // Arrange
+        var companyCreate = CreateModel(name: "Invalid Company", cnpj: "12345678901234"); // CNPJ inválido
+
+        // Act
+        var result = await _companyController.Create(companyCreate);
+
+        // Assert
+        var badRequestResult = Assert.IsType<BadRequestObjectResult>(result);
+        Assert.Equal("Invalid CNPJ!", badRequestResult.Value); // Ajuste conforme a mensagem esperada
     }
 
     [Fact]
